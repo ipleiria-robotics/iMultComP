@@ -6,9 +6,9 @@ industrial Multi Communication Protocol
 
 ## PRU-ICSS Industrial Software for Sitara™ Processors AM3358 (Beaglebone)
 
-[x] PRU-ICSS Getting Starting on ti-sdk-linux 
+- [x] PRU-ICSS Getting Starting on ti-sdk-linux 
 
-[x] PRU Getting Starting on TI-RTOS 
+- [x] PRU Getting Starting on TI-RTOS 
 
 
 ## PRU C Compiler 
