@@ -41,6 +41,10 @@ cat /dev/rpmsg_pru31
 ```
 - [x] PRU Getting Starting on TI-RTOS 
 
+    
+
+
+
 
 -------------
 ## PRU C Compiler 
