@@ -10,7 +10,7 @@ industrial Multi Communication Protocol
 PRU-ICSS was designed with real-time industrial communications in mind. Ethernet, Fieldbus,interface, and redundancy protocols are available for the PRU-ICSS, including certified solutions for EtherCATš, PROFIBUSš, PROFINET. 
 
     In the context of the SoC, there are three environments in which the PRU-ICSS is used: Code Composer Studio(CCS), TI RTOS running on the Arm core, and Linux running on the Arm core.
-
+### TI-SDK-LINUX
 - [x] PRU-ICSS Getting Starting on TI-SDK-LINUX
     In the Processor SDK Linux, TI provides prebuilt PRU-ICSS firmware to implement 100Mbps Ethernet
 ports. In addition to the PRU firmware provided, TI has also created and provided the Linux drivers necessary to use the PRU Ethernet ports from user space applications.
@@ -22,7 +22,7 @@ There are two essential firmware to work with linux SDK:
 
     - RPMsg 
         RPMsg is a method for transmitting messages and data between the PRU cores and the ARM core running Linux, making it possible to communicate with the PRUs from the user space. 
-### Example TI-SDK-Linux with RemoteProc and RPMsg
+#### Example TI-SDK-Linux with RemoteProc and RPMsg
 ```Makefile
 echo 'am335x-pru0-fw' > /sys/class/remoteproc/remoteproc1/firmware # specify the name of the firmware to be loaded PRU0
 echo 'am335x-pru1-fw' > /sys/class/remoteproc/remoteproc2/firmware # specify the name of the firmware to be loaded PRU1
@@ -39,10 +39,10 @@ echo "message_2" > /dev/rpmsg_pru31
 cat /dev/rpmsg_pru30
 cat /dev/rpmsg_pru31
 ```
+### TI-RTOS 
 - [x] PRU Getting Starting on TI-RTOS 
 
     
-
 
 
 
