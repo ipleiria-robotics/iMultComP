@@ -1,9 +1,10 @@
 # Example with PRUs
-- In this short tutorial I demonstrate how to program and work with PRUs. You must have Code Composer Studio (CCS) and PRU Compiler installed. The PRU Compiler can be found in the App Center, CCS's own plugin.
+- In this short tutorial I demonstrate how to program and work with PRUs. You must have Code Composer Studio (CCS) and PRU Compiler installed. The PRU C Compiler can be found in the App Center, CCS's own plugin.
 
 - The beaglebone processor, Am3358 has two PRUs. In this example, PRU0 has the function of reading a digital input and generating an interruption for PRU1 and then toggle led when the button is pressed. The main objective is to understand how the pins are addressed to the core PRUs and also to understand how the PRUs communicate with each other.
 
 - In this example the beaglebone white (version A6a) is used because it has Debug Probe XDS100v2 and while supporting the traditional JTAG standard. This emulator was removed from the beaglebone black, which is possessed by connectors to weld an external JTAG emulator.
+
 
 ## Register and Pinout 
 - There are two special register (R30 and R31)
