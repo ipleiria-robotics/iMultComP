@@ -1,0 +1,136 @@
+//---------------------------------
+// Gel file for AM335x BBB PRU CAPE
+// rev 1.1
+
+// name function to inicialize on CCStudio
+menuitem "PRU_config"
+
+/* AM335x specific mux bit defines */
+// 9.2.2 Pad Control Registers - manual sitara_am335x 
+#define AM335X_SLEWCTRL_FAST            (0 << 6)
+#define AM335X_SLEWCTRL_SLOW            (1 << 6)
+#define AM335X_INPUT_EN                 (1 << 5)
+#define AM335X_PULL_UP                  (1 << 4)
+/* bit 3: 0 - enable, 1 - disable for pull enable */
+#define AM335X_PULL_DISA                (1 << 3)
+
+#define AM335X_PIN_OUTPUT               (0)
+#define AM335X_PIN_OUTPUT_PULLUP        (AM335X_PULL_UP)
+#define AM335X_PIN_INPUT                (AM335X_INPUT_EN | AM335X_PULL_DISA)
+#define AM335X_PIN_INPUT_PULLUP         (AM335X_INPUT_EN | AM335X_PULL_UP)
+#define AM335X_PIN_INPUT_PULLDOWN       (AM335X_INPUT_EN)
+
+// main function 
+hotmenu PRU_Cape_Init()
+{
+	PRU_PINMUX_Config();  // function for pin configuration
+	PRU_PRCM_Enable();    // ative os PRU's 
+	PRU_ICSS_Reset();     // 
+}
+
+hotmenu PRU_PINMUX_Config()
+{
+
+	GEL_TextOut("****** pin configuration for the Led blink example  ***** \n","Output",1,1,1);
+
+//**********************************************************
+// 					PINOUT 
+//	Pag.25 Table 9 am335xPRUReferenceGuide.pdf 
+//	-> table is provided in order to maximize the usage of the PRU register file for embedded processing applications 
+//
+//	-> The PRU module interface consists of the PRU internal registers 30 and 31 (R30 and R31). The register
+// R31 serves as an interface with the dedicated PRU general purpose input (GPI) pins and INTC. Reading
+// R31 returns status information from the GPI pins and INTC via the PRU Real Time Status Interface.
+// Writing to R31generates PRU system events via the PRU Event Interface. The register R30 serves as an
+// interface with the dedicated PRU general purpose output (GPO) pins
+//
+//
+//**********************************************************
+// Pinos --> PRU 0 -->  Four pins were configured to be connected to the PRU0, so the main processor no longer has access.
+// mode 5 -> output
+	//  pr1_pru0_r30_0  (MCASP0_ACLKX - mode 5)  --> PIN_31_P9
+	*((unsigned int*) 0x44e10990) = AM335X_PIN_OUTPUT | 5;
+
+	// pr1_pru0_r30_1 (MCASP0_FSX - mode 5)      --> PIN_29_P9
+	*((unsigned int*) 0x44e10994) = AM335X_PIN_OUTPUT | 5;
+
+	//  pr1_pru0_r30_2 (MCASP0_AXR0 - mode 5)    --> PIN_30_P9
+	*((unsigned int*) 0x44e10998) = AM335X_PIN_OUTPUT | 5;
+
+	// pr1_pru0_r30_3 (MCASP0_AHCLKR - mode 5)   --> PIN_28_P9
+	*((unsigned int*) 0x44e1099c) = AM335X_PIN_OUTPUT | 5;
+
+}
+
+
+
+hotmenu PRU_PRCM_Enable()
+{
+
+	GEL_TextOut("\t****** Enabling PRU-ICSS clock ****** \n","Output",1,1,1);
+
+	*((unsigned int*) 0x44E000E8 ) |= 0x02;	// enabling the pru-icss module taking it out of idle
+
+	//CSS_Reset();
+
+}
+
+hotmenu PRU_ICSS_Reset()
+{
+
+	GEL_TextOut("*\t***** Reseting the PRU-ICSS   ******\n","Output",1,1,1);
+
+	*((unsigned int*) 0x44E00C00 ) |= 0x2;
+	*((unsigned int*) 0x44E00C00 ) &= 0xFFFFFFFD;
+
+}
+
+hotmenu PRU0_Pause()
+{
+	GEL_TextOut("*\t***** Halting PRU 0  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a322000) = 0x0;
+
+}
+
+hotmenu PRU1_Pause()
+{
+	GEL_TextOut("*\t***** Halting PRU 1  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a324000) = 0x0;
+
+}
+
+hotmenu PRU0_1_Pause()
+{
+	GEL_TextOut("*\t***** Halting PRU 0  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a322000) = 0x0;
+
+	GEL_TextOut("*\t***** Halting PRU 1  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a324000) = 0x0;
+
+}
+
+hotmenu PRU0_Start()
+{
+	GEL_TextOut("*\t***** Starting PRU 0  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a322000) = 0x2;
+
+}
+
+hotmenu PRU1_Start()
+{
+	GEL_TextOut("*\t***** Starting PRU 1  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a324000) = 0x2;
+
+}
+
+hotmenu PRU0_1_Start()
+{
+	GEL_TextOut("*\t***** Starting PRU 0  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a322000) = 0x2;
+
+	GEL_TextOut("*\t***** Starting PRU 1  ******\n","Output",1,1,1);
+	*((unsigned int*) 0x4a324000) = 0x2;
+
+}
+
+

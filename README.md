@@ -4,7 +4,14 @@ industrial Multi Communication Protocol
 
 ## BeagleBone Black Development Board
 
+### Sharing Internet with Beaglebone   
+- It is possible to share internet sharing from the linux or windows laptop to the beaglebone, via USB. The main steps are to enable internet sharing on the windows or linux laptop and then add the default route for BeagleBone to try to connect to the internet through the laptop, as explained in both tutorials.  
 
+    - [x] In windows it is easier, just go to the original page of [beaglebone.org](https://beagleboard.org/getting-started), follow the steps there to install the beaglebone software. Then just open the internet sharing center(Network Configuration settings in the Windows Control Panel), go to the interface properties for example the wifi, and activate the internet sharing with the beaglebone.  
+        . This ["Digi-Key"] tutorial (https://www.digikey.com/en/maker/blogs/how-to-connect-a-beaglebone-black-to-the-internet-using-usb) demonstrates how to enable internet sharing on windows.  
+
+    - [x] This tutorial available on [github]("https://gist.github.com/pdp7/d2711b5ff1fbb000240bd8337b859412"), demonstrates very well how to enable internet sharing of a linux laptop with the beaglebone.  
+ 
 ## PRU 
 
 
