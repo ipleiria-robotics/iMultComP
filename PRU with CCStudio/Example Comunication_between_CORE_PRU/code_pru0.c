@@ -16,12 +16,12 @@ volatile register uint32_t __R31;
 #define PRU1
 
 /* PRU0-to-PRU1 interrupt */
-#define PRU0_PRU1_EVT       (16)          // neste exemplo utilizou - se 
-#define PRU0_PRU1_TRIGGER   (__R31 = (PRU0_PRU1_EVT - 16) | (1 << 5)) // write Register R31 the interrupt 
-#define TOGGLE_BLUE     (__R30 ^= (1 << 3))
+#define PRU0_PRU1_EVT       (16)          // Interruput 16
+#define PRU0_PRU1_TRIGGER   (__R31 = (PRU0_PRU1_EVT - 16) | (1 << 5)) // write Register R31 the interrupt -> 5 because the CMR4 channel was used
+#define TOGGLE_BLUE     (__R30 ^= (1 << 3))   // define pin as configured in the .gel file
 
 // define button no pino P9_27  -> corresponde ao pino pr1_pru0_pru_r30_5 
-#define SW1     (1 << 5)
+#define SW1     (1 << 5)        // 
 
 /* INTC configuration
  *event 16 para o  Host 1

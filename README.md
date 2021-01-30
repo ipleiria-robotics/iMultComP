@@ -1,5 +1,5 @@
 # iMultComP
-industrial Multi Communication Protocol
+Industrial Multi Communication Protocol
 
 
 ## BeagleBone Black Development Board

@@ -7,6 +7,7 @@
 volatile register uint32_t __R30;
 volatile register uint32_t __R31;
 
+
 /* Defines */
 #define PRU1
 #define HOST1_MASK      (0x80000000)  // offset 80h -> GPIO -> global prioritized index Register 

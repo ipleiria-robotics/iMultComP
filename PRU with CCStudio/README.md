@@ -34,8 +34,8 @@
   - Open the PRU tab, insert some name, and then select Empty Project(With main.c)
   - Click Finish to continue 
   - With the project created, copy the contents of the main.c file found in the `Example Led blink` folder to the new main.c file created in CCStudio.
-  - To compile the project it is necessary to include the header files of the PRU. Click with the right mouse button and select properties> Bluid> PRU Compiler> Include options and double click on `${CCS_BASE_ROOT}/pru/include` to edit the directory. Next click on Browse and point to the `Includes` folder found in the `PRU with CCStudio` folder, and click OK.
-  - To be able to load the binary into the PRU it is necessary to create a TragetConfiguration, this step is necessary to create a .ccxml file. The .ccxml file is used by CCStudio to configure the connection between the board and the PC using the JTAG protocol. Select the View > TargetConfiguration tab. On the right side of the screen, a new tab will appear, it is necessary to open the "User Defined" folder to view the new .ccxml file created.
+  - To compile the project it is necessary to include the header files of the PRU. Click with the right mouse button and select properties> Bluid> PRU Compiler> Include options and double click on `${CCS_BASE_ROOT}/pru/include` to edit the directory. Next click on Browse and point to the `Includes` folder found in the `PRU with CCStudio` folder, click Open folder and next OK.
+  - To be able to load the binary into the PRU it is necessary to create a TragetConfiguration, this step is necessary to create a .ccxml fie.l The .ccxml file is used by CCStudio to configure the connection between the board and the PC using the JTAG protocol. Select the View > TargetConfiguration tab. On the right side of the screen, a new tab will appear, it is necessary to open the "User Defined" folder to view the new .ccxml file created.
   - It is necessary to edit the .ccxml file to have the information contained in the .gel file. In the 'Connection' field select "XDS100v2 USB Debug Probe", consult the datasheet of your development board to see which emulator is present, in 'Board/Device' select the "Beaglebone" board. At the bottom of the tab, switch to the Advanced tab, select the main core "CortexA8" and then in the 'initiazation script' field click on browse and point to the .gel file in the `Example Led Blink` folder. Finally save the settings. 
   - Right-click on the .ccxml file created earlier and select 'Launch selected Configuration'. If everything went well, the connection between the PC and the card was successful.
   - A tree will appear with the devices found by the emulator on the development board. Select the Arm CortexA8, click with the right mouse button and select 'Connection Target'. Now it's time to load the .gel file to the main core, in the Script tab select 'PRU_config'> 'PRU_cape_Init'. This step loads the configurations that the .gel file has to the board.
@@ -50,13 +50,11 @@
 
  - Open CCS and create two new PRU projects, one project to load into PRU0 and the other to load into PRU1. The following instruction applies to both projects.
  - Go to the project properties and in Build Include Options, edit the path `${CCS_BASE_ROOT}/pru/include` so that this path points to the folder `Includes` found in the `PRU with CCStudio` folder.
- - Copy the code from the file 'code_pru0.c' to the project inherent to PRU0 and the code code_pru1.c to the PRU1 project.
- - Then, it is necessary to modify a 'target_configuration.ccxml' created in the previous project, in the 'Advanced' tab, select the main core "CortexA8" and then in the 'initiazation script' field click on browse and point to the .gel file in the Example `xample Comunication_between_CORE_PRU`  folder. Finally save the settings.
+ - Copy the code from the file 'code_pru0.c' to the project inherent to PRU0 and the code code_pru1.c to the PRU1 project and build project.
+ - Then, it is necessary to modify a 'target_configuration.ccxml' created in the previous project, in the 'Advanced' tab, select the main core "CortexA8" and then in the 'initiazation script' field click on browse and point to the .gel file in the Example `Example Comunication_between_CORE_PRU`  folder. Finally save the settings.
  - In the targetConfiguration file created, select the "Launch Selected Configuration" option, starting the debug mode.
  - Then it is necessary to connect to the main Processor, CortexA8 and load the startup script, in the "Scripts" tab and select "PRU_config".
 After completing the previous step, it is necessary to load the corresponding binaries into PRU0 and PRU1.
-
-
 
 The purpose of this simple example is to understand how PRUs work and their interaction with the main processor, without an operating system, such as Linux or TI-RTOS.
 
