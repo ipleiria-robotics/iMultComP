@@ -29,18 +29,18 @@
 
 - To understand the configuration of the pins it is necessary to look at the `.gel` file located in the" Example Led Blink "folder. As explained, it is necessary to load the .gel file on the main processor 'ARM' to configure and initialize the PRU's. The file contains the pin configurations to be associated with the PRU0 as well as the configurations of the main registers. For more details it is recommended to read the comments in the .gel file.
 
--- Open CCStudio and click File -> New -> CCS Project
--- Next, in the target field, select am335x - Beaglebone
--- Open the PRU tab, insert some name, and then select Empty Project(With main.c)
--- Click Finish to continue 
--- With the project created, copy the contents of the main.c file found in the `Example Led blink` folder to the new main.c file created in CCStudio.
--- To compile the project it is necessary to include the header files of the PRU. Click with the right mouse button and select properties> Bluid> PRU Compiler> Include options and double click on `${CCS_BASE_ROOT}/pru/include` to edit the directory. Next click on Browse and point to the `Includes` folder found in the `PRU with CCStudio` folder, and click OK.
--- To be able to load the binary into the PRU it is necessary to create a TragetConfiguration, this step is necessary to create a .ccxml file. The .ccxml file is used by CCStudio to configure the connection between the board and the PC using the JTAG protocol. Select the View > TargetConfiguration tab. On the right side of the screen, a new tab will appear, it is necessary to open the "User Defined" folder to view the new .ccxml file created.
--- It is necessary to edit the .ccxml file to have the information contained in the .gel file. In the 'Connection' field select "XDS100v2 USB Debug Probe", consult the datasheet of your development board to see which emulator is present, in 'Board/Device' select the "Beaglebone" board. At the bottom of the tab, switch to the Advanced tab, select the main core "CortexA8" and then in the 'initiazation script' field click on browse and point to the .gel file in the `Example Led Blink` folder. Finally save the settings. 
--- Right-click on the .ccxml file created earlier and select 'Launch selected Configuration'. If everything went well, the connection between the PC and the card was successful.
--- A tree will appear with the devices found by the emulator on the development board. Select the Arm CortexA8, click with the right mouse button and select 'Connection Target'. Now it's time to load the .gel file to the main core, in the Script tab select 'PRU_config'> 'PRU_cape_Init'. This step loads the configurations that the .gel file has to the board.
--- The next step is to load the generated binary into PRU0, select the PRU and connect to it as done in the previous step. At the end of the connection, click on the Run> load> tab and look for the binary in the Debug folder of the created project.
--- Then click F8 or play to start. 
+  - Open CCStudio and click File -> New -> CCS Project
+  - Next, in the target field, select am335x - Beaglebone
+  - Open the PRU tab, insert some name, and then select Empty Project(With main.c)
+  - Click Finish to continue 
+  - With the project created, copy the contents of the main.c file found in the `Example Led blink` folder to the new main.c file created in CCStudio.
+  - To compile the project it is necessary to include the header files of the PRU. Click with the right mouse button and select properties> Bluid> PRU Compiler> Include options and double click on `${CCS_BASE_ROOT}/pru/include` to edit the directory. Next click on Browse and point to the `Includes` folder found in the `PRU with CCStudio` folder, and click OK.
+  - To be able to load the binary into the PRU it is necessary to create a TragetConfiguration, this step is necessary to create a .ccxml file. The .ccxml file is used by CCStudio to configure the connection between the board and the PC using the JTAG protocol. Select the View > TargetConfiguration tab. On the right side of the screen, a new tab will appear, it is necessary to open the "User Defined" folder to view the new .ccxml file created.
+  - It is necessary to edit the .ccxml file to have the information contained in the .gel file. In the 'Connection' field select "XDS100v2 USB Debug Probe", consult the datasheet of your development board to see which emulator is present, in 'Board/Device' select the "Beaglebone" board. At the bottom of the tab, switch to the Advanced tab, select the main core "CortexA8" and then in the 'initiazation script' field click on browse and point to the .gel file in the `Example Led Blink` folder. Finally save the settings. 
+  - Right-click on the .ccxml file created earlier and select 'Launch selected Configuration'. If everything went well, the connection between the PC and the card was successful.
+  - A tree will appear with the devices found by the emulator on the development board. Select the Arm CortexA8, click with the right mouse button and select 'Connection Target'. Now it's time to load the .gel file to the main core, in the Script tab select 'PRU_config'> 'PRU_cape_Init'. This step loads the configurations that the .gel file has to the board.
+  - The next step is to load the generated binary into PRU0, select the PRU and connect to it as done in the previous step. At the end of the connection, click on the Run> load> tab and look for the binary in the Debug folder of the created project.
+  - Then click F8 or play to start. 
 
 ### Example - Comunication between CORE`s PRU 
 
