@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "unistd.h": "c",
+        "fcntl.h": "c",
+        "string.h": "c",
+        "poll.h": "c",
+        "kernel.h": "c",
+        "rpmsg.h": "c"
+    }
+}
