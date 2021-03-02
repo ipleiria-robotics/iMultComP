@@ -22,8 +22,10 @@ Industrial Multi Communication Protocol
 - The programmable of the PRU, along with its access to pins, events and all system-on-chip (SoC) resources, provides flexibility in implementing fast
 real-time responses. 
 - Am335x processors have two PRU`s cores internally. They are programmed with a small, deterministic instruction set. Each PRU can operate independently or in coordination with each other and can also work in coordination with the device-level host CPU (ARM). The interaction between processors is determined by the nature of the firmware loaded into the PRU’s instruction memories. 
+ 
+![PRU_ICSS_Block](https://user-images.githubusercontent.com/65302944/109708007-bf4f0280-7b92-11eb-83ce-fad872dfa510.PNG)
 
-
+##
 
 ## PRU-ICSS Industrial Software for Sitara Processors AM335X
 
