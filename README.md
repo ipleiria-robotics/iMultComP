@@ -12,24 +12,25 @@ Industrial Multi Communication Protocol
 
     - [x] This tutorial available on [github]("https://gist.github.com/pdp7/d2711b5ff1fbb000240bd8337b859412"), demonstrates very well how to enable internet sharing of a linux laptop with the beaglebone.  
  
-## PRU 
-
 
 ## Install softwares and Tutoriais 
 
 
-## PRU-ICSS Industrial Software for Sitaraª Processors AM3358 (Beaglebone)
+## Module PRU-ICSS 
+
+- The Programmable Real-time Unit and Industrial Communication SubSystem (PRU-ICSS) consists of dual 32-bit RISC architecture cores, shared data, instruction memories, internal peripheral modules, and an interrupt controller (INTC). 
+- The programmable of the PRU, along with its access to pins, events and all system-on-chip (SoC) resources, provides flexibility in implementing fast
+real-time responses. 
+- Am335x processors have two PRU`s cores internally. They are programmed with a small, deterministic instruction set. Each PRU can operate independently or in coordination with each other and can also work in coordination with the device-level host CPU (ARM). The interaction between processors is determined by the nature of the firmware loaded into the PRU’s instruction memories. 
+
+
+
+## PRU-ICSS Industrial Software for Sitara Processors AM335X
 
 - [Link to Dowload SDK for AM335x](https://www.ti.com/tool/PROCESSOR-SDK-AM335X)
 PRU-ICSS was designed with real-time industrial communications in mind. Ethernet, Fieldbus,interface, and redundancy protocols are available for the PRU-ICSS, including certified solutions for EtherCAT, PROFIBUS, PROFINET. 
 
- In the context of the SoC, there are three environments in which the PRU-ICSS is used: (CCStudio), TI RTOS running on the Arm core, and Linux running on the Arm core.
-### TI-SDK-LINUX
-
-
-### TI-RTOS 
-
-
+ In the context of the SoC, there are three environments in which the PRU-ICSS is used: CCStudio without operation system, with SDK TI RTOS running on the Arm core, and Linux running on the Arm core.
 
 -------------
 ## PRU C Compiler 
