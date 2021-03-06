@@ -22,6 +22,7 @@ Industrial Multi Communication Protocol
 - The programmable of the PRU, along with its access to pins, events and all system-on-chip (SoC) resources, provides flexibility in implementing fast
 real-time responses. 
 - Am335x processors have two PRU`s cores internally. They are programmed with a small, deterministic instruction set. Each PRU can operate independently or in coordination with each other and can also work in coordination with the device-level host CPU (ARM). The interaction between processors is determined by the nature of the firmware loaded into the PRU’s instruction memories. 
+- In the folder AM335x PRU Examples, you can find more information about PRU`s and practical examples.
  
 ![PRU_ICSS_Block](https://user-images.githubusercontent.com/65302944/109708007-bf4f0280-7b92-11eb-83ce-fad872dfa510.PNG)
 
@@ -38,3 +39,4 @@ PRU-ICSS was designed with real-time industrial communications in mind. Ethernet
 ## PRU C Compiler 
 
 TI provides de PRU C compiler in the PRU Code Generation Tools package, available in the `linuxdevkit/sysroots/x86_64_arago-linux/usr/share/ti/cgt-pru/`, if the operation system is ubuntu, this package is located in the installation folder of the Linux sdk, example: `~/ti-processor-sdk-linux-am335x-evm-xx.xx.xx.xx/linux-devkit/sysroots/x86_64-arago-linux/usr/share/ti/cgt-pru`. This C compiler is available as an add-on package for CCSudio or it can be transferred to the beaglebone, if you have the `Debian` version, and compile on the beaglebone itself.
+
