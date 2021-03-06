@@ -1,0 +1,10 @@
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\bin\Release\App_Industry_comu.exe.config
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\bin\Release\App_Industry_comu.exe
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\bin\Release\App_Industry_comu.pdb
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\obj\Release\App_Industry_comu.Form1.resources
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\obj\Release\App_Industry_comu.modbus_win.resources
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\obj\Release\App_Industry_comu.Properties.Resources.resources
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\obj\Release\App_Industry_comu.csproj.GenerateResource.cache
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\obj\Release\App_Industry_comu.csproj.CoreCompileInputs.cache
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\obj\Release\App_Industry_comu.exe
+C:\Users\varod\OneDrive\Ambiente de Trabalho\Projeto_ipl\APP_Windows\App_Industry_comu\App_Industry_comu\obj\Release\App_Industry_comu.pdb
