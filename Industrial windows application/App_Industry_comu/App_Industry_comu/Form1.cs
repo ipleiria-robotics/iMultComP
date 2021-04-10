@@ -17,12 +17,17 @@ namespace App_Industry_comu
             InitializeComponent();
         }
 
+
         private void Btn_modbus_win_Click(object sender, EventArgs e)
         {
             modbus_win mod_win_form = new modbus_win();
             mod_win_form.Show(); 
         }
 
-
+        private void but_board_Click(object sender, EventArgs e)
+        {
+            Board_comunication board_comunication = new Board_comunication();
+            board_comunication.Show(); 
+        }
     }
 }

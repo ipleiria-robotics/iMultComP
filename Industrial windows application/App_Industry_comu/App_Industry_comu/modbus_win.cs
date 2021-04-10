@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO.Ports; 
 
 
 namespace App_Industry_comu
 {
     public partial class modbus_win : Form
     {
-
+        // osbject private EasyModbus, 
         private EasyModbus.ModbusClient modbusClient;
+
+
 
         public modbus_win()
         {
@@ -24,7 +27,9 @@ namespace App_Industry_comu
             // modbusClient.ReceiveDataChanged += new EasyModbus.ModbusClient.ReceiveDataChangedHandler();
             modbusClient.SendDataChanged += new EasyModbus.ModbusClient.SendDataChangedHandler(Update_send_Data);
 
-            
+
+
+            comboBox_Serial_port_SelectedIndexChanged(null, null);
             Verificar_btn_color_connect(null, null); 
         }
 
@@ -110,9 +115,33 @@ namespace App_Industry_comu
           // 
         private void comboBox_Serial_port_SelectedIndexChanged(object sender, EventArgs e)
         {
+            String[] ArrayComPortsAvailable = null;
+            int index = -1;
+            String ComPortName = null;
+
             if (modbusClient.Connected) modbusClient.Disconnect();
-            modbusClient.SerialPort = comboBox_Serial_port.SelectedItem.ToString();
-            modbusClient.UnitIdentifier = byte.Parse(textBox_Slave_ID.Text); 
+            //modbusClient.SerialPort = comboBox_Serial_port.SelectedItem.ToString();
+            //modbusClient.UnitIdentifier = byte.Parse(textBox_Slave_ID.Text); 
+
+            ArrayComPortsAvailable = SerialPort.GetPortNames();
+
+            do {
+                index += 1;
+                comboBox_Serial_port.Items.Add(ArrayComPortsAvailable[index]); 
+            } while (!((ArrayComPortsAvailable[index] == ComPortName) || (index == ArrayComPortsAvailable.GetUpperBound(0))));
+
+            Array.Sort(ArrayComPortsAvailable); 
+
+            if(index == ArrayComPortsAvailable.GetUpperBound(0))
+            {
+                ComPortName = ArrayComPortsAvailable[0]; 
+            }
+
+            if (comboBox_Serial_port.Items[0] == null)
+            {
+                comboBox_Serial_port.Items[0] = "COM 1";
+            }
+
         }
 
         private void Btn_connect_Click(object sender, EventArgs e)
@@ -358,5 +387,12 @@ namespace App_Industry_comu
 
             
         }
+
+
+        
+
+
+
+
     }
 }
