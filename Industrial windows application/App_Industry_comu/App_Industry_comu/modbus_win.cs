@@ -101,12 +101,12 @@ namespace App_Industry_comu
                 comboBox_parity.Visible = true;
                 comboBox_stopbits.Visible = true;
                 textBox_Baud.Visible = true;
-                comboBox_Serial_port.SelectedIndex = 0;     //select serial port 
+              //  comboBox_Serial_port.SelectedIndex = 0;     //select serial port 
                 comboBox_parity.SelectedIndex = 0;           // select parity 
                 //comboBox_parity.SelectedIndex = 0;           // select parity 
                 comboBox_stopbits.SelectedIndex = 0; 
 
-                if (comboBox_Serial_port.SelectedText == "") comboBox_Serial_port.SelectedItem.ToString(); 
+              //  if (comboBox_Serial_port.SelectedText == "") comboBox_Serial_port.SelectedItem.ToString(); 
 
 
             } 
@@ -124,23 +124,33 @@ namespace App_Industry_comu
             //modbusClient.UnitIdentifier = byte.Parse(textBox_Slave_ID.Text); 
 
             ArrayComPortsAvailable = SerialPort.GetPortNames();
-
-            do {
-                index += 1;
-                comboBox_Serial_port.Items.Add(ArrayComPortsAvailable[index]); 
-            } while (!((ArrayComPortsAvailable[index] == ComPortName) || (index == ArrayComPortsAvailable.GetUpperBound(0))));
-
-            Array.Sort(ArrayComPortsAvailable); 
-
-            if(index == ArrayComPortsAvailable.GetUpperBound(0))
+            try
             {
-                ComPortName = ArrayComPortsAvailable[0]; 
+                do
+                {
+                    index += 1;
+                    comboBox_Serial_port.Items.Add(ArrayComPortsAvailable[index]);
+                } while (!((ArrayComPortsAvailable[index] == ComPortName) || (index == ArrayComPortsAvailable.GetUpperBound(0))));
+
+                Array.Sort(ArrayComPortsAvailable);
+
+                if (index == ArrayComPortsAvailable.GetUpperBound(0))
+                {
+                    ComPortName = ArrayComPortsAvailable[0];
+                }
+
+                if (comboBox_Serial_port.Items[0] == null)
+                {
+                    comboBox_Serial_port.Items[0] = "COM 1";
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
 
-            if (comboBox_Serial_port.Items[0] == null)
-            {
-                comboBox_Serial_port.Items[0] = "COM 1";
-            }
+
+            
 
         }
 

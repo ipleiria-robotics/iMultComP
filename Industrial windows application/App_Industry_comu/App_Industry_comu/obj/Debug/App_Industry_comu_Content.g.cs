@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/tmdsice3359_tmdsice3359_board_image.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/arrow_1.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/arrow_2.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/arrow_left.png")]

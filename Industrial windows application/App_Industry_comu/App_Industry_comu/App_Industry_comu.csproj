@@ -95,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,13 +117,19 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\Logo.png" />
+    <Content Include="Image\tmdsice3359_tmdsice3359_board_image.jpg" />
     <Content Include="Resources\arrow_1.png" />
     <Content Include="Resources\arrow_2.png" />
     <Content Include="Resources\arrow_left.png" />
     <Content Include="Resources\circle_delete.png" />
     <Content Include="Resources\circle_delete1.png" />
     <Content Include="Resources\circle_minus.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\eduportugal_ipleiria_n.jpg" />
+    <None Include="Resources\eduportugal_ipleiria_11n.jpg" />
     <Content Include="Resources\PLCLoggerCompact.jpg" />
+    <None Include="Resources\tmdsice3359_tmdsice3359_board_image.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -266,7 +266,7 @@ namespace App_Industry_comu
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label1.Location = new System.Drawing.Point(20, 38);
+            this.label1.Location = new System.Drawing.Point(5, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 20);
@@ -279,7 +279,7 @@ namespace App_Industry_comu
             this.Combox_type_comunication.Items.AddRange(new object[] {
             "ModbusTCP (Ethernet)",
             "ModbusRTU (Serial)"});
-            this.Combox_type_comunication.Location = new System.Drawing.Point(243, 39);
+            this.Combox_type_comunication.Location = new System.Drawing.Point(261, 38);
             this.Combox_type_comunication.Margin = new System.Windows.Forms.Padding(4);
             this.Combox_type_comunication.Name = "Combox_type_comunication";
             this.Combox_type_comunication.Size = new System.Drawing.Size(217, 24);

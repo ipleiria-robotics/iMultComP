@@ -46,8 +46,16 @@ namespace App_Industry_comu
 
         private void button_open_Click(object sender, EventArgs e)
         {
-            com.PortName = combox_portt.Items[combox_portt.SelectedIndex].ToString();
-            com.Open_Port(); 
+            try
+            {
+                com.PortName = combox_portt.Items[combox_portt.SelectedIndex].ToString();
+                com.Open_Port();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
             
         }
 
