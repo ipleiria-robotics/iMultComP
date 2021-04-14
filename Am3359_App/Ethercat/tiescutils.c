@@ -34,6 +34,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
 
+
 #include <stdint.h>
 #ifndef AMIC11X_ONCHIP_MEM_MODE
 // get the firmware loaded as header files!
@@ -81,6 +82,8 @@
 #include <Include/Board_am335x/board_spi.h>
 #include <Include/Board_am335x/board_i2cLed.h>
 
+#include "app.h"
+
 
 /* ========================================================================== */
 /*                           Macros & Typedefs                                */
@@ -88,25 +91,28 @@
 /** \brief Global Structure pointer holding PRUSS0 memory Map. */
 PRUICSS_Handle pruIcss1Handle;
 
+#define ESC_ADDR_SM0_PHYS_ADDR      (0x800)
+#define ESC_ADDR_SM1_PHYS_ADDR      (ESC_ADDR_SM0_PHYS_ADDR + 8)
+#define ESC_ADDR_SM2_PHYS_ADDR      (ESC_ADDR_SM0_PHYS_ADDR + 2 * 8)
+#define ESC_ADDR_SM3_PHYS_ADDR      (ESC_ADDR_SM0_PHYS_ADDR + 3 * 8)
+
 /* ========================================================================== */
 /*                            Global Variables                                */
 /* ========================================================================== */
+uint8_t info_mailbox;
 
+void Demo_Application(void);
+void Demo_StateTrans(unsigned short state);
 
-extern void Demo_Application(void);
-extern void Demo_StateTrans(unsigned short state);
 extern uint8_t HardwareOpened;
 
-#ifdef iceAMIC11x
-extern int32_t Board_phyReset(uint8_t numPorts);
-#endif
-TaskP_Handle tsk1;               // ECAT mainloop
+
 TaskP_Handle pdiTask; // ECAT sw ISR
 TaskP_Handle uartTask;           // UART processing
 TaskP_Handle ledTaskHndl;        // LED Control Task
 TaskP_Handle sync0Task;          // ECAT SYNC0 ISR
 
-TaskP_Handle sync0Task; // ECAT SYNC0 ISR
+
 void Sync0task(uint32_t arg0, uint32_t arg1);
 TaskP_Handle sync1Task; // ECAT SYNC1 ISR
 void Sync1task(uint32_t arg0, uint32_t arg1);
@@ -117,55 +123,42 @@ pECAT_SLAVE_INTERFACE pSlaveInterface = NULL;
 #define PD_INPUT_SIZE 4
 #define PD_OUTPUT_SIZE 4
 
+/****************************************************************************************
+ *         ---------------   task1 ---------------
+ ****************************************************************************************/
+
 void task1(uint32_t arg0, uint32_t arg1)
 {
+
+    info_mailbox = 0;                      // Variable to delete task -> read to mailbox
     Bool bRunApplication = TRUE;
     TaskP_Params taskParams;
 
-#ifndef DISABLE_UART_PRINT
-    UART_printf("\nVersion - ");
-    UART_printf(IND_PKG_VERSION);
+    UART_printf("\nVersion - ");UART_printf(IND_PKG_VERSION);
 
-    Board_IDInfo boardInfo;
-#ifndef SOC_K2G
-    Board_getIDInfo(&boardInfo);
-#endif
+    if(isEtherCATDevice()) UART_printf("EtherCAT Device\n");
+    else UART_printf("Non-EtherCAT Device\n");
 
-    UART_printf("\nBoard name \t: ");
-    UART_printf(boardInfo.boardName);
-
-    UART_printf("\n\rBoard Revision \t: ");
-    UART_printf(boardInfo.version);
-
-    if(isEtherCATDevice())
-    {
-        UART_printf("EtherCAT Device\n\r");
-    }
-
-    else
-    {
-        UART_printf("Non-EtherCAT Device\n\r");
-    }
-
-    UART_printf("\n\rSYS/BIOS EtherCAT Demo application");
+    UART_printf("IPLeiria BIOS EtherCAT Demo application");
     UART_printf(APPL_BUILD_VER);
-    UART_printf("\r\nBuild Timestamp      : %s %s", __DATE__, __TIME__);
-#endif
+    UART_printf("\r\nBuild Timestamp      : %s %s \n", __DATE__, __TIME__);
 
+    // init peripleral board
     bsp_soc_evm_init();
+    UART_printf("bsp_soc_evm_init\n");
 
-#ifndef AMIC11X_ONCHIP_MEM_MODE
     /* map the array which contains pru firmware instrcutions.
-       If the application is built to execute from internal RAM completely,then
-       pru instructions are expcted to be stored in SPI flash and this mapping is
-       not required*/
-
+           If the application is built to execute from internal RAM completely,then
+           pru instructions are expcted to be stored in SPI flash and this mapping is
+           not required*/
     bsp_set_pru_firmware((uint32_t *)FrameProc, sizeof(FrameProc),
-                         (uint32_t *)HostProc, sizeof(HostProc));
+                             (uint32_t *)HostProc, sizeof(HostProc));
 
-#endif
+    // define PDO -> configuration on Twincat -> Input and Output  -> ESI -> slave information xml file
     pSlaveInterface = Ecat_Open(PD_INPUT_SIZE, PD_OUTPUT_SIZE);
 
+    // init satefy over ethercat
+    // transfer of safety-critical control data through the same medium
     tiesc_foe_eoe_init();
 
     if(pSlaveInterface != NULL)
@@ -182,17 +175,20 @@ void task1(uint32_t arg0, uint32_t arg1)
         taskParams.arg0 = (void *)pruIcss1Handle;
         pdiTask = TaskP_create(PDItask, &taskParams);
 
+        /* Create led Task */
         TaskP_Params_init(&taskParams);
         taskParams.priority = 4;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;
         ledTaskHndl = TaskP_create(LEDtask, &taskParams);
 
+        // SYNC1 IRQ handler in the EtherCAT slave stack
         TaskP_Params_init(&taskParams);
         taskParams.priority = 8;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;
         taskParams.arg0 = (void *)pruIcss1Handle;
         sync0Task = TaskP_create(Sync0task, &taskParams);
 
+        // SYNC1 IRQ handler in the EtherCAT slave stack
         TaskP_Params_init(&taskParams);
         taskParams.priority = 8;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;
@@ -201,16 +197,28 @@ void task1(uint32_t arg0, uint32_t arg1)
 
         do
         {
+
             Ecat_OnTimer();
             TaskP_yield();
+            Mailbox_pend(mailbox_Handle_Ethercat, &info_mailbox, BIOS_NO_WAIT);
+            if(info_mailbox == 3){
+                bRunApplication = FALSE;
+                TaskP_delete(&pdiTask);
+                TaskP_delete(&ledTaskHndl);
+                TaskP_delete(&sync0Task);
+                TaskP_delete(&sync1Task);
+                Ecat_Close();
+                UART_printf("    Terminate Ethercat protocol \n    ");
+            }
+            info_mailbox = 0;
+        }while(bRunApplication == TRUE);
+
         }
-        while(bRunApplication == TRUE);
-    }
 
-    Ecat_Close();
 
-    OSAL_OS_exit(0);
+
 }
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -237,7 +245,9 @@ void HW_EcatIsr(void)
 
 #endif
 }
-
+/****************************************************************************************
+ *
+ ****************************************************************************************/
 
 void PDItask(uint32_t arg1, uint32_t arg2)
 {
@@ -246,13 +256,16 @@ void PDItask(uint32_t arg1, uint32_t arg2)
 
     while(1)
     {
+        // arg1 -> pruIcss1Handle
         PRUICSS_pruWaitEvent((PRUICSS_Handle)arg1, evtOutNum);
         /* ISR processing */
         HW_EcatIsr();
     }
 }
 
-
+/****************************************************************************************
+ *
+ ****************************************************************************************/
 
 void LEDtask(uint32_t arg0, uint32_t arg1)
 {
@@ -313,6 +326,10 @@ void LEDtask(uint32_t arg0, uint32_t arg1)
 
 }
 
+/****************************************************************************************
+ *         ---------------   task sysnc0task ---------------
+ ****************************************************************************************/
+
 void Sync0task(uint32_t arg1, uint32_t arg2)
 {
 #ifdef PROFILE_ECAT_STACK
@@ -348,6 +365,10 @@ void Sync0task(uint32_t arg1, uint32_t arg2)
     }
 }
 
+/****************************************************************************************
+ *         ---------------   task sysnc1task ---------------
+ ****************************************************************************************/
+
 void Sync1task(uint32_t arg1, uint32_t arg2)
 {
 #ifdef PROFILE_ECAT_STACK
@@ -369,32 +390,80 @@ void Sync1task(uint32_t arg1, uint32_t arg2)
         ENABLE_ESC_INT();
     }
 }
-void common_main()
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+\brief    This function will called from the synchronisation ISR
+            or from the mainloop if no synchronisation is supported
+*////////////////////////////////////////////////////////////////////////////////////////
+
+void Demo_Application(void)
 {
-    TaskP_Params taskParams;
-#ifdef iceAMIC11x
-    Board_init(BOARD_INIT_MODULE_CLOCK);
+    /* Buffer containing the received data */
+    uint8_t rxBuf[1U] = {0xFFU};
 
-    Board_phyReset(2);
+    static uint8_t prevState = 55;
 
-    /* mux PRU MII after PHY reset in case PRU drives signals
-     * on the pins and interfere with the PHY bootstrap configurations
-    */
-#ifndef DISABLE_UART_PRINT
-    Board_init(BOARD_INIT_UART_STDIO | BOARD_INIT_ICSS_PINMUX);
-#else
-    Board_init(BOARD_INIT_ICSS_PINMUX);
+    if(!pSlaveInterface)
+    {
+        return;
+    }
 
-#endif
-#else
-    Board_init(BOARD_INIT_PINMUX_CONFIG | BOARD_INIT_MODULE_CLOCK |
-               BOARD_INIT_ICSS_PINMUX | BOARD_INIT_UART_STDIO);
-#endif
-    TaskP_Params_init(&taskParams);
-    taskParams.priority = 4;
-    taskParams.stacksize = 2048*TIESC_TASK_STACK_SIZE_MUL;
-    tsk1 = TaskP_create(task1, &taskParams);
-    OSAL_OS_start();
+
+    uint8_t LED = (*(pSlaveInterface->pOutput)) & 0xFF;
+    Board_getDigInput(rxBuf);
+
+    uint32_t INPUT = (uint32_t)(*rxBuf & 0xFF);
+
+    INPUT |=   0xaabbcc00;
+    *(pSlaveInterface->pInput) = INPUT;
+    if(LED != prevState)
+    {
+        Board_setDigOutput(LED);
+    }
+
+    prevState = LED;
 }
 
+void Demo_StateTrans(unsigned short state)
+{
+    uint32_t addr_len;
+
+    switch(state)
+    {
+        //INIT_2_PREOP
+        case 0x12:
+            HW_EscReadDWord(addr_len, ESC_ADDR_SM0_PHYS_ADDR);
+            bsp_set_sm_properties(pruIcss1Handle, MAILBOX_WRITE, (addr_len & 0xFFFF),
+                                  (addr_len >> 16));
+            HW_EscReadDWord(addr_len, ESC_ADDR_SM1_PHYS_ADDR);
+            bsp_set_sm_properties(pruIcss1Handle, MAILBOX_READ, (addr_len & 0xFFFF),
+                                  (addr_len >> 16));
+            break;
+
+        //PREOP_2_SAFEOP
+        case 0x24:
+            HW_EscReadDWord(addr_len, ESC_ADDR_SM3_PHYS_ADDR);
+            bsp_set_sm_properties(pruIcss1Handle, PROCESS_DATA_IN, (addr_len & 0xFFFF),
+                                  (addr_len >> 16));
+            break;
+
+        //SAFEOP_2_OP
+        case 0x48:
+            HW_EscReadDWord(addr_len, ESC_ADDR_SM2_PHYS_ADDR);
+            bsp_set_sm_properties(pruIcss1Handle, PROCESS_DATA_OUT, (addr_len & 0xFFFF),
+                                  (addr_len >> 16));
+            break;
+
+        //OP_2_SAFEOP
+        case 0x84:
+            *(pSlaveInterface->pOutput) = 0;
+            break;
+
+        default:
+            break;
+    }
+
+}
 

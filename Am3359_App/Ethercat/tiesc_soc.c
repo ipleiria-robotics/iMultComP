@@ -177,15 +177,19 @@ void EnableBusSwitch()
 void bsp_soc_evm_init()
 {
 
-    GPIO_init();
+   // GPIO_init();
+
 #ifdef TIESC_SPI_SLAVE_MODE
     GPIO_write((SPI_SLAVE_FIRMWARE_LOADED_PIN), GPIO_PIN_VAL_LOW);
 #endif
 
     UTILsInitCpswIcssPorts();
+    UART_printf("UTILsInitCpswIcssPorts\n");
+
 
 #ifndef iceAMIC11x
     Board_phyReset(2);
+    UART_printf("Board_phyReset\n");
 #endif
 
     pruIcss1Handle = PRUICSS_create(pruss_config, PRUICSS_INSTANCE);
@@ -193,20 +197,24 @@ void bsp_soc_evm_init()
     //Disable PRUs - This is to ensure PRUs are not running when application is not initialized
     PRUICSS_pruDisable(pruIcss1Handle, 0);
     PRUICSS_pruDisable(pruIcss1Handle, 1);
+    UART_printf("PRUICSS_pinMuxConfig and PRUICSS_pruDisable \n");
+
 #ifdef iceAMIC11x
     /* clear LED_RUN and LED_ERROR */
     InitLedRunError();
 
 #else
     /* I2C Init */
-    Board_i2cLedInit();
+   // Board_i2cLedInit();
+
 
 #endif
 #ifndef iceAMIC11x
     /* Oled Init */
     const char oled_line1[] = OLED_DISPLAY_VERSION_STRING;
     const char oled_line2[] = "EtherCAT App";
-    Board_oledInit();
+   // Board_oledInit();
+
     clear();
     setline(0);
     setOrientation(1);
@@ -215,6 +223,7 @@ void bsp_soc_evm_init()
     setOrientation(1);
     printstr((int8_t *)oled_line2);
     scrollDisplayRight();
+
 
     /* Rotary Switch Init */
     uint8_t switch_state = 0;
@@ -237,6 +246,7 @@ void bsp_soc_evm_init()
     /* Always call Flash Init for AM335x after HVS Init as HVS init resets the SPI settings */
     /* Flash Init */
     flashHandle = Board_flashOpen((uint32_t) NULL, (uint32_t) NULL, NULL);
+
 }
 
 void display_esc_version(uint16_t revision, uint16_t build)

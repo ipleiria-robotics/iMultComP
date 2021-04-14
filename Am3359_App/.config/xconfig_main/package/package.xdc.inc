@@ -1,0 +1,12 @@
+package.xdc
+package.xs
+package/xconfig_main.sch
+package/.vers_g200
+package/.vers_r200
+package/.vers_b200
+package/.xdc-G16
+package/xconfig_main.java
+package/xconfig_main.class
+package/package_xconfig_main.c
+package/package.defs.h
+package/xconfig_main.ccs

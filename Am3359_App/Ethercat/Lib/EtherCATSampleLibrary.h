@@ -12,6 +12,7 @@
 ------                                                                                                                                                                 ------
 -----------------------------------------------------------------------------------------*/
 
+
 typedef struct
 {
     unsigned long * pInput;
@@ -19,8 +20,7 @@ typedef struct
     
     void (* pApplication)(void);
     void (* pStateTrans)(unsigned short transind);
-}
-ECAT_SLAVE_INTERFACE, *pECAT_SLAVE_INTERFACE;
+}ECAT_SLAVE_INTERFACE, *pECAT_SLAVE_INTERFACE;
 
 
 pECAT_SLAVE_INTERFACE Ecat_Open(unsigned short InputSize, unsigned short OutputSize);

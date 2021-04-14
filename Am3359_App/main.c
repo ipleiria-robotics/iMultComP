@@ -3,7 +3,11 @@
 #include "app.h"
 
 
-int main(){
 
-    return;
+
+int main(){
+    init_peripheral();
+    return(0);
 }
+
+

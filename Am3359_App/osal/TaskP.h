@@ -60,9 +60,10 @@ typedef enum TaskP_Status_e
     TaskP_FAILURE    = (-(int32_t)1)
 } TaskP_Status;
 
-/*!
+/*
  *  @brief    Number Ticks by OS in 1 millisecond
  */
+
 #define OS_TICKS_IN_MILLI_SEC   1 /* 1000us tick */
 
 /*!
@@ -71,6 +72,7 @@ typedef enum TaskP_Status_e
  *  A TaskP_Handle returned from the ::TaskP_create represents that
  *  instance and  is used in the other instance based functions
  */
+
 typedef  void *TaskP_Handle;
 
 /*!
@@ -79,6 +81,7 @@ typedef  void *TaskP_Handle;
  *  Structure that contains the parameters are passed into ::TaskP_create
  *  when creating a TaskP instance.
  */
+
 typedef struct TaskP_Params_s
 {
     uint8_t *name;           /*!< Name of the task instance.                  */
@@ -89,6 +92,7 @@ typedef struct TaskP_Params_s
     void *arg1;           /*!< arg1                                        */
     void *stack;       /*!< pointer to stack memory, if NULL OS will allocate internally */
 } TaskP_Params;
+
 
 /*!
  *  @brief  Function to create a task.

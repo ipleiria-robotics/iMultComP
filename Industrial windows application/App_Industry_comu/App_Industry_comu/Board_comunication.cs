@@ -85,6 +85,24 @@ namespace App_Industry_comu
             com.Write_Data("emb");
         }
 
+        private void button_ethercat_Click(object sender, EventArgs e)
+        {
+            com.Write_Data("cat");
+        }
 
+        private void button_exit_ethercat_Click(object sender, EventArgs e)
+        {
+            com.Write_Data("ecat");
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            //richTextBox1.Clear(); 
+        }
+
+        private void richTextBox1_DoubleClick(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
     }
 }
