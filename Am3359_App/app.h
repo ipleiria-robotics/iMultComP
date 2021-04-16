@@ -41,6 +41,7 @@
 //#include <Ethercat/Lib/EtherCATSampleLibrary.h>
 #include <Ethercat/Include_ethercat/tiesc_soc.h>
 #include <Ethercat/Include_ethercat/tiescmiscappl.h>
+#include <Ethercat/Include_ethercat/tiesc_fw_cir_buff.h>
 
 
 
@@ -49,6 +50,9 @@ Board_IDInfo boardInfo;
 Mailbox_Handle mailbox_Handle_Ethercat;
 uint8_t _read_word;
 uint32_t _write_word;
+uint32_t addr_len_eth;
+
+
 
 /* Function declaretion */
 void init_peripheral();

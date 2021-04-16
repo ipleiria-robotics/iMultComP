@@ -79,12 +79,19 @@
 #elif CiA402_DEVICE
 #include <CiA402_eeprom.h> // header equivalent of ESI bin file
 #elif TIESC_APPLICATION
+
+
 #ifdef ECAT_LIMITED_DEMO
 //#include <demo_tiesc_eeprom.h> // header equivalent of ESI bin file
-#include <Ethercat/Include_ethercat/tiesc_spi_eeprom.h>
+
+#include <Ethercat/Include_ethercat/demo_tiesc_eeprom.h>
+//#include <Ethercat/Include_ethercat/tiesc_spi_eeprom.h>
+//#include <Ethercat/Include_ethercat/tiesc_eeprom.h>
+
 #else
 #include <tiesc_eeprom.h> // header equivalent of ESI bin file
 #endif
+
 #endif
 #endif
 

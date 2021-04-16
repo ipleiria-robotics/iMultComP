@@ -431,21 +431,25 @@ void Demo_Application(void)
 
     uint8_t LED = (*(pSlaveInterface->pOutput)) & 0xFF;
     Board_getDigInput(rxBuf);
-    _read_word = LED;
 
+    /*************/
+    _read_word = LED;    // read word recebe word lida pelo slave
+    /*************/
 
 
     uint32_t INPUT = (uint32_t)(*rxBuf & 0xFF);
 
     INPUT |=   0xaabbcc00;
-    INPUT = _write_word;
 
+    /*************/
+    INPUT = _write_word;  // Input recebe word a escrecer  pelo slave
+    /*************/
 
 
     *(pSlaveInterface->pInput) = INPUT;
-    if(LED != prevState)
+    if(LED != prevState)          // se for difernete do estado anterior
     {
-        Board_setDigOutput(LED);
+        Board_setDigOutput(LED);  // send info to led_board
     }
 
     prevState = LED;
@@ -454,22 +458,41 @@ void Demo_Application(void)
 
 void Demo_StateTrans(unsigned short state)
 {
+
     uint32_t addr_len;
+
+    /*
+     * The state of the EtherCAT slave is controlled via the EtherCAT State Machine (ESM).
+     * Depending upon the state, different functions are accessible or executable in the EtherCAT slave.
+     * Specific commands must be sent by the EtherCAT master to the device in each state, particularly during the bootup of the slave.
+     *
+     *   A distinction is made between the following states:
+     *
+     *     -  Init
+     *     -  Pre-Operational    ---->   //INIT_2_PREOP
+     *     -  Safe-Operational and  ---> //PREOP_2_SAFEOP
+     *     -  Operational        ----->  //SAFEOP_2_OP
+     *     -  Boot              ------>  //OP_2_SAFEOP
+     *
+     * */
 
     switch(state)
     {
         //INIT_2_PREOP
+        // During the transition between Init and Pre-Op the EtherCAT slave checks whether the mailbox was initialized correctly.
+        // In Pre-Op state mailbox communication is possible, but not process data communication. The EtherCAT master initializes
+        // (sync) / (FMMU) / PDO ....
         case 0x12:
             HW_EscReadDWord(addr_len, ESC_ADDR_SM0_PHYS_ADDR);
-            bsp_set_sm_properties(pruIcss1Handle, MAILBOX_WRITE, (addr_len & 0xFFFF),
-                                  (addr_len >> 16));
+            bsp_set_sm_properties(pruIcss1Handle, MAILBOX_WRITE, (addr_len & 0xFFFF), (addr_len >> 16));
 
             HW_EscReadDWord(addr_len, ESC_ADDR_SM1_PHYS_ADDR);
-            bsp_set_sm_properties(pruIcss1Handle, MAILBOX_READ, (addr_len & 0xFFFF),
-                                  (addr_len >> 16));
+            bsp_set_sm_properties(pruIcss1Handle, MAILBOX_READ, (addr_len & 0xFFFF), (addr_len >> 16));
             break;
 
         //PREOP_2_SAFEOP
+        // During transition between Pre-Op and Safe-Op the EtherCAT slave checks whether the sync manager channels for process
+         //data communication and, if required, the distributed clocks settings are correct
         case 0x24:
             HW_EscReadDWord(addr_len, ESC_ADDR_SM3_PHYS_ADDR);
             bsp_set_sm_properties(pruIcss1Handle, PROCESS_DATA_IN, (addr_len & 0xFFFF),
