@@ -49,7 +49,7 @@
 #ifndef DISABLE_UART_PRINT
 #include <stdio.h>
 #endif
-
+#include <ti/drv/uart/UART_stdio.h>
 #include <Ethercat/Include_ethercat/tieschw.h>
 #include <Ethercat/Include_ethercat/tiescutils.h>
 
@@ -189,12 +189,14 @@ uint8_t HW_Init(void)
     while((u16PdiCtrl != ESC_PDI_INTERFACE_ON_CHIP_BUS)
             && (u16PdiCtrl !=
                 ESC_PDI_INTERFACE_SPI_SLAVE));    //Looking for onchip bus or SPI Slave
+    UART_printf("\nEthercat Slave Control is started \n");
 
     /* Reading ESC Revision and Build */
     uint16_t build, revision;
     HW_EscReadWord(revision, ESC_ADDR_REV_TYPE);
     HW_EscReadWord(build, ESC_ADDR_BUILD);
     display_esc_version(revision, build);
+
 
 #ifndef TIESC_SPI_MASTER_MODE
     bsp_start_esc_isr(pruIcss1Handle);
@@ -281,6 +283,7 @@ uint8_t __HW_EscReadByteIsr(PRUICSS_Handle pruIcssHandle, uint16_t Address)
 #else
     spi_master_bsp_read(Address, &ByteValue, 1);
 #endif
+   // UART_printf("\n Read ByteValue %d \n", ByteValue);
     return ByteValue;
 }
 uint16_t __HW_EscReadWordIsr(PRUICSS_Handle pruIcssHandle, uint16_t Address)
@@ -314,6 +317,7 @@ uint16_t __HW_EscReadWordIsr(PRUICSS_Handle pruIcssHandle, uint16_t Address)
 #else
     spi_master_bsp_read(Address, (uint8_t *) &WordValue, 2);
 #endif
+   // UART_printf("\n Read WordValue %d \n", WordValue);
     return WordValue;
 }
 
@@ -348,6 +352,8 @@ uint32_t __HW_EscReadDWordIsr(PRUICSS_Handle pruIcssHandle, uint16_t Address)
 #else
     spi_master_bsp_read(Address, (uint8_t *) &DWordValue, 4);
 #endif
+  //  UART_printf("\n Read DWordValue %d \n", DWordValue);
+
     return DWordValue;
 }
 void HW_EscReadMbxMem(uint8_t *pData, uint16_t Address, uint16_t Len)
@@ -618,6 +624,7 @@ UInt16 HW_EepromReload()
 {
     uint16_t retval;
     retval = bsp_eeprom_emulation_reload(pruIcss1Handle);
+    UART_printf("\nEerom Reload \n");
     return retval;
 }
 

@@ -47,7 +47,8 @@
 /* Global Variables */
 Board_IDInfo boardInfo;
 Mailbox_Handle mailbox_Handle_Ethercat;
-
+uint8_t _read_word;
+uint32_t _write_word;
 
 /* Function declaretion */
 void init_peripheral();

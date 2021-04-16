@@ -2,6 +2,9 @@
 
 #include "app.h"
 
+
+
+
 /****************************************************************************************
  *               Function init peripheral
  ****************************************************************************************/
@@ -33,8 +36,9 @@ void init_peripheral(){
     setline(0);
     setOrientation(1);
     printstr((int8_t *)"Industry Comunication");
-    setline(1);
+    setline(2);
     printstr((int8_t *)"   IPLeiria   ");
+    scrollDisplayRight();
 
     OSAL_OS_start();
 }
@@ -60,6 +64,9 @@ void task_main(){
     TaskP_sleep(100);
     memset(buff,0,sizeof(buff));
 
+
+
+
     while(1){
         /* Scan input word from user */
          UART_scanFmt("%s", &buff);
@@ -67,8 +74,16 @@ void task_main(){
          if(!strcmp(buff,"exit")) ch_task_init = 1;
          if(!strcmp(buff,"cat")) ch_task_init = 2;
          if(!strcmp(buff,"ecat")) ch_task_init = 3;
-         if(!strcmp(buff,"pnet")) ch_task_init = 4;
-         if(!strcmp(buff,"epnet")) ch_task_init = 5;
+
+         if(!strcmp(buff,"pnet")) ch_task_init = 5;
+         if(!strcmp(buff,"epnet")) ch_task_init = 6;
+
+         if(!strcmp(buff,"rdd")) ch_task_init = 30;
+         if(!strcmp(buff,"wdd")){
+             ch_task_init = 31;
+             memset(buff,0,sizeof(buff));
+         }
+
 
 // ------------------------------------------------------------------------------
          switch(ch_task_init){
@@ -113,6 +128,20 @@ void task_main(){
          case 5:
 
             break;
+  // -----------------------------------------------------------------------------------------------------
+        case 30:
+            UART_printf("%d\n",_read_word);
+            _read_word = 0;   // clear
+           break;
+
+    // -----------------------------------------------------------------------------------------------------
+       case 31:
+           //UART_gets(buff,2);
+           //_write_word = buff[0];
+           UART_scanFmt("%d", &_write_word);
+           UART_printf("ttt: %d\n",_write_word);
+
+       break;
     // -----------------------------------------------------------------------------------------------------
          default:
 

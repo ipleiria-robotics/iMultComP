@@ -38,8 +38,8 @@
 #include <malloc.h> // For memalign
 #endif
 
-
-
+#include "app.h"
+#include <ti/drv/uart/UART_stdio.h>
 #include <Ethercat/Include_ethercat/tiesc_pruss_intc_mapping.h>
 #include <Ethercat/Include_ethercat/tiescutils.h>
 #include <Ethercat/Include_ethercat/tiescbsp.h>
@@ -1540,6 +1540,7 @@ uint32_t bsp_pruss_mdio_phy_link_state(PRUICSS_Handle pruIcssHandle,
 
 PRUICSS_IntcInitData pruss1_intc_initdata = PRU_ICSS1_INTC_INITDATA;
 
+
 void bsp_init(PRUICSS_Handle pruIcssHandle)
 {
     SemaphoreP_Params semParams;
@@ -1559,11 +1560,9 @@ void bsp_init(PRUICSS_Handle pruIcssHandle)
 #endif
 
 #ifndef TIESC_SPI_MASTER_MODE
-    volatile t_host_interface *pHost2PruIntfc = (volatile t_host_interface *)
-            ((((PRUICSS_HwAttrs *)(pruIcssHandle->hwAttrs))->baseAddr) +
+    volatile t_host_interface *pHost2PruIntfc = (volatile t_host_interface *) ((((PRUICSS_HwAttrs *)(pruIcssHandle->hwAttrs))->baseAddr) +
              PRU_ICSS_DATARAM(0));
-    volatile t_register_properties *pRegPerm = (volatile t_register_properties *)
-            ((((PRUICSS_HwAttrs *)(pruIcssHandle->hwAttrs))->baseAddr) +
+    volatile t_register_properties *pRegPerm = (volatile t_register_properties *) ((((PRUICSS_HwAttrs *)(pruIcssHandle->hwAttrs))->baseAddr) +
              PRU_ICSS_DATARAM(1));
 
 #ifdef ENABLE_ONLINE_FIRMWARE_UPGRADE
@@ -2438,6 +2437,7 @@ uint32_t bsp_read_dword(PRUICSS_Handle pruIcssHandle, uint16_t address)
 #else
     spi_master_bsp_read(address, (uint8_t *)&DWordValue, sizeof(uint32_t));
 #endif
+
     return DWordValue;
 }
 
@@ -2485,7 +2485,10 @@ uint16_t bsp_read_word(PRUICSS_Handle pruIcssHandle, uint16_t address)
 #else
     spi_master_bsp_read(address, (uint8_t *)&WordValue, sizeof(uint16_t));
 #endif
+
+
     return WordValue;
+
 }
 
 uint16_t bsp_read_word_isr(PRUICSS_Handle pruIcssHandle, uint16_t address)
@@ -2497,7 +2500,9 @@ uint16_t bsp_read_word_isr(PRUICSS_Handle pruIcssHandle, uint16_t address)
                                             address) >> 1)]);
 #else
     spi_master_bsp_read(address, (uint8_t *)&WordValue, sizeof(uint16_t));
+
 #endif
+
     return WordValue;
 }
 
@@ -2530,6 +2535,7 @@ uint8_t bsp_read_byte(PRUICSS_Handle pruIcssHandle, uint16_t address)
 
 #else
     spi_master_bsp_read(address, &ByteValue, sizeof(uint8_t));
+
 #endif
     return ByteValue;
 }
@@ -2544,6 +2550,8 @@ inline uint8_t bsp_read_byte_isr(PRUICSS_Handle pruIcssHandle, uint16_t address)
 #else
     spi_master_bsp_read(address, &ByteValue, sizeof(uint8_t));
 #endif
+
+   //
     return ByteValue;
 }
 

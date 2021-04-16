@@ -50,6 +50,7 @@ namespace App_Industry_comu.Control_board
             private TransmissionType  _transType; 
             private RxMode rx_Mode;
             private RichTextBox _displayWindow;
+            private TextBox _txtbox; 
             private ProgressBar progress_Bar;
             private TextBox text_information;
             private Label label;
@@ -63,7 +64,7 @@ namespace App_Industry_comu.Control_board
                  Color.Orange,
                  Color.Red,
             };
-            private SerialPort ComPort = new SerialPort();
+            public SerialPort ComPort = new SerialPort();
         #endregion
 
         private bool write = true; 
@@ -104,7 +105,12 @@ namespace App_Industry_comu.Control_board
                 get { return _displayWindow;  }
                 set { _displayWindow = value;  }
             }
-            public RxMode Current_rxMode
+             public TextBox Textbox
+            {
+                get { return _txtbox; }
+                set { _txtbox = value; }
+             }
+        public RxMode Current_rxMode
             {
                 get { return rx_Mode; }
                 set { rx_Mode = value; }
@@ -151,6 +157,7 @@ namespace App_Industry_comu.Control_board
                 _portName = name;
                 _displayWindow = rbt;
                 ComPort.DataReceived += comPort_DataReceived; 
+                
             }
 
             // Constructor to set the properties of our
@@ -177,6 +184,15 @@ namespace App_Industry_comu.Control_board
                 ComPort.DataReceived += comPort_DataReceived;
             }
         #endregion
+
+        public void wwrite_data(string msg)
+        {
+            if (!(ComPort.IsOpen == true))
+            {
+                ComPort.Open();
+            }
+            ComPort.Write(msg);
+        }
 
         #region "Write_Data"
              public void Write_Data(string msg)
@@ -253,9 +269,27 @@ namespace App_Industry_comu.Control_board
                 }
                 catch(Exception ex)
                 {
-
+                    
                 }
             }
+
+             public string Read_comPort()
+             {
+                 
+                if(ComPort.IsOpen == true)
+                {
+                    ComPort.ReadTimeout = 10000;
+                   
+                    return ComPort.ReadLine(); 
+
+             }
+                else
+                {
+                  return "ee";
+                }
+                 
+             }
+
         #endregion
 
 
@@ -274,16 +308,12 @@ namespace App_Industry_comu.Control_board
                 case TransmissionType.TEXT:
                     // user chose string 
                     // read data and waiting in the buffer
-                     string msg_recived = ComPort.ReadExisting();
+                    string msg_recived = ComPort.ReadExisting();
 
                     //MessageBox.Show(msg)
-                    try
-                    {
 
-                    }catch ( Exception Ex)
-                    {
 
-                    }
+
 
                     // display the data to the User 
                     message_type = MessageType.INCOMING;
@@ -323,6 +353,8 @@ namespace App_Industry_comu.Control_board
                     break;                
                 }
            }
+
+      
         #endregion
 
 
@@ -426,6 +458,11 @@ namespace App_Industry_comu.Control_board
             }
              
         }
+
+        
+
+
+
         #endregion
 
         #region "DO_Display"
@@ -433,11 +470,15 @@ namespace App_Industry_comu.Control_board
         private void DoDisplay(object sender, EventArgs e)
             {
                 _displayWindow.SelectedText = string.Empty;
-                _displayWindow.SelectionFont = new Font(_displayWindow.SelectionFont, FontStyle.Bold);
-                _displayWindow.SelectionColor = MessageColor[Convert.ToInt32(message_type)];
+               _displayWindow.SelectionFont = new Font(_displayWindow.SelectionFont, FontStyle.Bold);
+               _displayWindow.SelectionColor = MessageColor[Convert.ToInt32(message_type)];
                 _displayWindow.AppendText(_msg + " ");
                 _displayWindow.ScrollToCaret(); 
             }
+
+       
+
+
         #endregion
 
         #region "BytesToHex"
@@ -508,5 +549,9 @@ namespace App_Industry_comu.Control_board
             }
             return value; 
         }
+
+
+
+
     }
 }

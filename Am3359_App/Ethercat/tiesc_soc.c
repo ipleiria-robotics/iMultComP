@@ -255,13 +255,12 @@ void display_esc_version(uint16_t revision, uint16_t build)
     const char oled_line1[] = OLED_DISPLAY_VERSION_STRING;
     char oled_line2[26];
 
-    sprintf(oled_line2, "Rev %04X | Bld %04X | ", revision, build);
+    sprintf(oled_line2, "Rev %04X | Bld %04X", revision, build);
 #endif
 #ifndef DISABLE_UART_PRINT
-    UART_printf("\n\rRevision/Type : x%04X", revision);
+    UART_printf("\n\rRevision/Type : x%04X ", revision);
     UART_printf(" Build : x%04X", build);
-    UART_printf("\n\rFirmware Version : %d.%d.%d\n\r", (revision >> 8),
-                (build >> 8), (build & 0xFF));
+    UART_printf("\n\rFirmware Version : %d.%d.%d\n\r", (revision >> 8), (build >> 8), (build & 0xFF));
 #endif
 #ifndef iceAMIC11x
     clear();

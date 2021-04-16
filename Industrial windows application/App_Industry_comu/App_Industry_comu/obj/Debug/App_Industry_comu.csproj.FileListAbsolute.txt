@@ -73,4 +73,3 @@ C:\Users\varod\OneDrive\Ambiente de Trabalho\iMultComP\Industrial windows applic
 C:\Users\varod\OneDrive\Ambiente de Trabalho\iMultComP\Industrial windows application\App_Industry_comu\App_Industry_comu\obj\Debug\App_Industry_comu.csproj.CoreCompileInputs.cache
 C:\Users\varod\OneDrive\Ambiente de Trabalho\iMultComP\Industrial windows application\App_Industry_comu\App_Industry_comu\obj\Debug\App_Industry_comu.exe
 C:\Users\varod\OneDrive\Ambiente de Trabalho\iMultComP\Industrial windows application\App_Industry_comu\App_Industry_comu\obj\Debug\App_Industry_comu.pdb
-C:\Users\varod\OneDrive\Ambiente de Trabalho\iMultComP\Industrial windows application\App_Industry_comu\App_Industry_comu\obj\Debug\App_Industry_comu.csprojAssemblyReference.cache

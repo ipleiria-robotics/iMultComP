@@ -34,29 +34,14 @@ namespace App_Industry_comu
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button_open = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_exit_APP = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_exit_ethernetip = new System.Windows.Forms.Button();
-            this.button_ethernetip = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button_exit_canopen = new System.Windows.Forms.Button();
-            this.button_canopen = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button_exit_profibus = new System.Windows.Forms.Button();
-            this.button_profibus = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button_exit_profinet = new System.Windows.Forms.Button();
-            this.button_profinet = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button_exit_ethercat = new System.Windows.Forms.Button();
-            this.button_ethercat = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.modbus_finish_task = new System.Windows.Forms.Button();
-            this.modbus_create_task = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button_finish_cclink = new System.Windows.Forms.Button();
-            this.button_cclink = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txt_rd_ether = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_finnish = new System.Windows.Forms.Button();
+            this.but_task_init = new System.Windows.Forms.Button();
+            this.comboBox_protocol = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txbox_write_ethercat = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +64,7 @@ namespace App_Industry_comu
             "ModbusTCP (Ethernet)",
             "ModbusRTU (Serial)"});
             this.combox_portt.Location = new System.Drawing.Point(133, 34);
-            this.combox_portt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combox_portt.Margin = new System.Windows.Forms.Padding(4);
             this.combox_portt.Name = "combox_portt";
             this.combox_portt.Size = new System.Drawing.Size(167, 24);
             this.combox_portt.TabIndex = 4;
@@ -109,7 +94,6 @@ namespace App_Industry_comu
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button_exit_APP);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button_open);
@@ -120,289 +104,95 @@ namespace App_Industry_comu
             this.panel1.Size = new System.Drawing.Size(631, 494);
             this.panel1.TabIndex = 7;
             // 
-            // button_exit_APP
-            // 
-            this.button_exit_APP.Location = new System.Drawing.Point(477, 27);
-            this.button_exit_APP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_exit_APP.Name = "button_exit_APP";
-            this.button_exit_APP.Size = new System.Drawing.Size(149, 38);
-            this.button_exit_APP.TabIndex = 8;
-            this.button_exit_APP.Text = "Exit App";
-            this.button_exit_APP.UseVisualStyleBackColor = true;
-            this.button_exit_APP.UseWaitCursor = true;
-            this.button_exit_APP.Click += new System.EventHandler(this.button_exit_APP_Click);
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button_exit_ethernetip);
-            this.panel2.Controls.Add(this.button_ethernetip);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.button_exit_canopen);
-            this.panel2.Controls.Add(this.button_canopen);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.button_exit_profibus);
-            this.panel2.Controls.Add(this.button_profibus);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.button_exit_profinet);
-            this.panel2.Controls.Add(this.button_profinet);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.button_exit_ethercat);
-            this.panel2.Controls.Add(this.button_ethercat);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.modbus_finish_task);
-            this.panel2.Controls.Add(this.modbus_create_task);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.button_finish_cclink);
-            this.panel2.Controls.Add(this.button_cclink);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txbox_write_ethercat);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.txt_rd_ether);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btn_finnish);
+            this.panel2.Controls.Add(this.but_task_init);
+            this.panel2.Controls.Add(this.comboBox_protocol);
             this.panel2.Location = new System.Drawing.Point(19, 79);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(595, 390);
             this.panel2.TabIndex = 7;
             // 
-            // button_exit_ethernetip
+            // txt_rd_ether
             // 
-            this.button_exit_ethernetip.Location = new System.Drawing.Point(355, 235);
-            this.button_exit_ethernetip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_exit_ethernetip.Name = "button_exit_ethernetip";
-            this.button_exit_ethernetip.Size = new System.Drawing.Size(149, 35);
-            this.button_exit_ethernetip.TabIndex = 27;
-            this.button_exit_ethernetip.Text = "finish";
-            this.button_exit_ethernetip.UseVisualStyleBackColor = true;
-            this.button_exit_ethernetip.UseWaitCursor = true;
+            this.txt_rd_ether.Location = new System.Drawing.Point(304, 138);
+            this.txt_rd_ether.Name = "txt_rd_ether";
+            this.txt_rd_ether.ReadOnly = true;
+            this.txt_rd_ether.Size = new System.Drawing.Size(188, 22);
+            this.txt_rd_ether.TabIndex = 40;
             // 
-            // button_ethernetip
+            // button1
             // 
-            this.button_ethernetip.Location = new System.Drawing.Point(176, 235);
-            this.button_ethernetip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_ethernetip.Name = "button_ethernetip";
-            this.button_ethernetip.Size = new System.Drawing.Size(149, 35);
-            this.button_ethernetip.TabIndex = 26;
-            this.button_ethernetip.Text = "Create ";
-            this.button_ethernetip.UseVisualStyleBackColor = true;
-            this.button_ethernetip.UseWaitCursor = true;
+            this.button1.Location = new System.Drawing.Point(68, 133);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(227, 33);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Read Byte Ethercat";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label8
+            // btn_finnish
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label8.Location = new System.Drawing.Point(69, 236);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 20);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Ethernet/ip";
+            this.btn_finnish.Location = new System.Drawing.Point(428, 36);
+            this.btn_finnish.Name = "btn_finnish";
+            this.btn_finnish.Size = new System.Drawing.Size(127, 38);
+            this.btn_finnish.TabIndex = 36;
+            this.btn_finnish.Text = "Finish";
+            this.btn_finnish.UseVisualStyleBackColor = true;
+            this.btn_finnish.Click += new System.EventHandler(this.btn_finnish_Click);
             // 
-            // button_exit_canopen
+            // but_task_init
             // 
-            this.button_exit_canopen.Location = new System.Drawing.Point(355, 183);
-            this.button_exit_canopen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_exit_canopen.Name = "button_exit_canopen";
-            this.button_exit_canopen.Size = new System.Drawing.Size(149, 31);
-            this.button_exit_canopen.TabIndex = 24;
-            this.button_exit_canopen.Text = "finish";
-            this.button_exit_canopen.UseVisualStyleBackColor = true;
-            this.button_exit_canopen.UseWaitCursor = true;
+            this.but_task_init.Location = new System.Drawing.Point(290, 36);
+            this.but_task_init.Name = "but_task_init";
+            this.but_task_init.Size = new System.Drawing.Size(132, 38);
+            this.but_task_init.TabIndex = 35;
+            this.but_task_init.Text = "Init";
+            this.but_task_init.UseVisualStyleBackColor = true;
+            this.but_task_init.Click += new System.EventHandler(this.but_task_init_Click);
             // 
-            // button_canopen
+            // comboBox_protocol
             // 
-            this.button_canopen.Location = new System.Drawing.Point(176, 183);
-            this.button_canopen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_canopen.Name = "button_canopen";
-            this.button_canopen.Size = new System.Drawing.Size(149, 31);
-            this.button_canopen.TabIndex = 23;
-            this.button_canopen.Text = "Create ";
-            this.button_canopen.UseVisualStyleBackColor = true;
-            this.button_canopen.UseWaitCursor = true;
+            this.comboBox_protocol.FormattingEnabled = true;
+            this.comboBox_protocol.Items.AddRange(new object[] {
+            "Ethercat",
+            "Profinet",
+            "Profibus",
+            "CC_Link",
+            "Modbus"});
+            this.comboBox_protocol.Location = new System.Drawing.Point(17, 44);
+            this.comboBox_protocol.Name = "comboBox_protocol";
+            this.comboBox_protocol.Size = new System.Drawing.Size(250, 24);
+            this.comboBox_protocol.TabIndex = 34;
             // 
-            // label7
+            // button2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label7.Location = new System.Drawing.Point(79, 187);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 20);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "CanOpen";
+            this.button2.Location = new System.Drawing.Point(68, 190);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(227, 33);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Wrire Byte Ethercat";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button_exit_profibus
+            // txbox_write_ethercat
             // 
-            this.button_exit_profibus.Location = new System.Drawing.Point(355, 133);
-            this.button_exit_profibus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_exit_profibus.Name = "button_exit_profibus";
-            this.button_exit_profibus.Size = new System.Drawing.Size(149, 32);
-            this.button_exit_profibus.TabIndex = 21;
-            this.button_exit_profibus.Text = "finish";
-            this.button_exit_profibus.UseVisualStyleBackColor = true;
-            this.button_exit_profibus.UseWaitCursor = true;
-            // 
-            // button_profibus
-            // 
-            this.button_profibus.Location = new System.Drawing.Point(176, 133);
-            this.button_profibus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_profibus.Name = "button_profibus";
-            this.button_profibus.Size = new System.Drawing.Size(149, 32);
-            this.button_profibus.TabIndex = 20;
-            this.button_profibus.Text = "Create ";
-            this.button_profibus.UseVisualStyleBackColor = true;
-            this.button_profibus.UseWaitCursor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label6.Location = new System.Drawing.Point(79, 137);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 20);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Profibus";
-            // 
-            // button_exit_profinet
-            // 
-            this.button_exit_profinet.Location = new System.Drawing.Point(355, 82);
-            this.button_exit_profinet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_exit_profinet.Name = "button_exit_profinet";
-            this.button_exit_profinet.Size = new System.Drawing.Size(149, 32);
-            this.button_exit_profinet.TabIndex = 18;
-            this.button_exit_profinet.Text = "finish";
-            this.button_exit_profinet.UseVisualStyleBackColor = true;
-            this.button_exit_profinet.UseWaitCursor = true;
-            // 
-            // button_profinet
-            // 
-            this.button_profinet.Location = new System.Drawing.Point(176, 82);
-            this.button_profinet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_profinet.Name = "button_profinet";
-            this.button_profinet.Size = new System.Drawing.Size(149, 32);
-            this.button_profinet.TabIndex = 17;
-            this.button_profinet.Text = "Create ";
-            this.button_profinet.UseVisualStyleBackColor = true;
-            this.button_profinet.UseWaitCursor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label5.Location = new System.Drawing.Point(79, 86);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 20);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Profinet";
-            // 
-            // button_exit_ethercat
-            // 
-            this.button_exit_ethercat.Location = new System.Drawing.Point(355, 33);
-            this.button_exit_ethercat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_exit_ethercat.Name = "button_exit_ethercat";
-            this.button_exit_ethercat.Size = new System.Drawing.Size(149, 34);
-            this.button_exit_ethercat.TabIndex = 15;
-            this.button_exit_ethercat.Text = "finish";
-            this.button_exit_ethercat.UseVisualStyleBackColor = true;
-            this.button_exit_ethercat.UseWaitCursor = true;
-            this.button_exit_ethercat.Click += new System.EventHandler(this.button_exit_ethercat_Click);
-            // 
-            // button_ethercat
-            // 
-            this.button_ethercat.Location = new System.Drawing.Point(176, 33);
-            this.button_ethercat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_ethercat.Name = "button_ethercat";
-            this.button_ethercat.Size = new System.Drawing.Size(149, 34);
-            this.button_ethercat.TabIndex = 14;
-            this.button_ethercat.Text = "Create ";
-            this.button_ethercat.UseVisualStyleBackColor = true;
-            this.button_ethercat.UseWaitCursor = true;
-            this.button_ethercat.Click += new System.EventHandler(this.button_ethercat_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label4.Location = new System.Drawing.Point(79, 37);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Ethercat";
-            // 
-            // modbus_finish_task
-            // 
-            this.modbus_finish_task.Location = new System.Drawing.Point(355, 339);
-            this.modbus_finish_task.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.modbus_finish_task.Name = "modbus_finish_task";
-            this.modbus_finish_task.Size = new System.Drawing.Size(149, 32);
-            this.modbus_finish_task.TabIndex = 12;
-            this.modbus_finish_task.Text = "finish";
-            this.modbus_finish_task.UseVisualStyleBackColor = true;
-            this.modbus_finish_task.UseWaitCursor = true;
-            this.modbus_finish_task.Click += new System.EventHandler(this.modbus_finish_task_Click);
-            // 
-            // modbus_create_task
-            // 
-            this.modbus_create_task.Location = new System.Drawing.Point(176, 339);
-            this.modbus_create_task.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.modbus_create_task.Name = "modbus_create_task";
-            this.modbus_create_task.Size = new System.Drawing.Size(149, 31);
-            this.modbus_create_task.TabIndex = 11;
-            this.modbus_create_task.Text = "Create ";
-            this.modbus_create_task.UseVisualStyleBackColor = true;
-            this.modbus_create_task.UseWaitCursor = true;
-            this.modbus_create_task.Click += new System.EventHandler(this.modbus_create_task_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label3.Location = new System.Drawing.Point(79, 348);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Modbus";
-            // 
-            // button_finish_cclink
-            // 
-            this.button_finish_cclink.Location = new System.Drawing.Point(355, 287);
-            this.button_finish_cclink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_finish_cclink.Name = "button_finish_cclink";
-            this.button_finish_cclink.Size = new System.Drawing.Size(149, 31);
-            this.button_finish_cclink.TabIndex = 9;
-            this.button_finish_cclink.Text = "finish";
-            this.button_finish_cclink.UseVisualStyleBackColor = true;
-            this.button_finish_cclink.UseWaitCursor = true;
-            this.button_finish_cclink.Click += new System.EventHandler(this.button_finish_cclink_Click);
-            // 
-            // button_cclink
-            // 
-            this.button_cclink.Location = new System.Drawing.Point(176, 287);
-            this.button_cclink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_cclink.Name = "button_cclink";
-            this.button_cclink.Size = new System.Drawing.Size(149, 31);
-            this.button_cclink.TabIndex = 8;
-            this.button_cclink.Text = "Create ";
-            this.button_cclink.UseVisualStyleBackColor = true;
-            this.button_cclink.UseWaitCursor = true;
-            this.button_cclink.Click += new System.EventHandler(this.button_cclink_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label2.Location = new System.Drawing.Point(84, 287);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "CC Link";
+            this.txbox_write_ethercat.Location = new System.Drawing.Point(304, 195);
+            this.txbox_write_ethercat.Name = "txbox_write_ethercat";
+            this.txbox_write_ethercat.Size = new System.Drawing.Size(188, 22);
+            this.txbox_write_ethercat.TabIndex = 42;
             // 
             // Board_comunication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1357, 572);
+            this.ClientSize = new System.Drawing.Size(1085, 457);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTextBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -425,27 +215,12 @@ namespace App_Industry_comu
         private System.Windows.Forms.Button button_open;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button_cclink;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button_finish_cclink;
-        private System.Windows.Forms.Button button_exit_APP;
-        private System.Windows.Forms.Button modbus_finish_task;
-        private System.Windows.Forms.Button modbus_create_task;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button_exit_ethernetip;
-        private System.Windows.Forms.Button button_ethernetip;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button_exit_canopen;
-        private System.Windows.Forms.Button button_canopen;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button_exit_profibus;
-        private System.Windows.Forms.Button button_profibus;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button_exit_profinet;
-        private System.Windows.Forms.Button button_profinet;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button_exit_ethercat;
-        private System.Windows.Forms.Button button_ethercat;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button but_task_init;
+        private System.Windows.Forms.ComboBox comboBox_protocol;
+        private System.Windows.Forms.Button btn_finnish;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_rd_ether;
+        private System.Windows.Forms.TextBox txbox_write_ethercat;
+        private System.Windows.Forms.Button button2;
     }
 }

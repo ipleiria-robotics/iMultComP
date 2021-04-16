@@ -130,6 +130,8 @@ pECAT_SLAVE_INTERFACE pSlaveInterface = NULL;
 void task1(uint32_t arg0, uint32_t arg1)
 {
 
+
+
     info_mailbox = 0;                      // Variable to delete task -> read to mailbox
     Bool bRunApplication = TRUE;
     TaskP_Params taskParams;
@@ -200,6 +202,9 @@ void task1(uint32_t arg0, uint32_t arg1)
 
             Ecat_OnTimer();
             TaskP_yield();
+
+
+            // verify mailbox to end Tasks
             Mailbox_pend(mailbox_Handle_Ethercat, &info_mailbox, BIOS_NO_WAIT);
             if(info_mailbox == 3){
                 bRunApplication = FALSE;
@@ -209,6 +214,7 @@ void task1(uint32_t arg0, uint32_t arg1)
                 TaskP_delete(&sync1Task);
                 Ecat_Close();
                 UART_printf("    Terminate Ethercat protocol \n    ");
+
             }
             info_mailbox = 0;
         }while(bRunApplication == TRUE);
@@ -258,6 +264,7 @@ void PDItask(uint32_t arg1, uint32_t arg2)
     {
         // arg1 -> pruIcss1Handle
         PRUICSS_pruWaitEvent((PRUICSS_Handle)arg1, evtOutNum);
+
         /* ISR processing */
         HW_EcatIsr();
     }
@@ -294,13 +301,16 @@ void LEDtask(uint32_t arg0, uint32_t arg1)
     TaskP_sleep(100 * OS_TICKS_IN_MILLI_SEC);
 #endif
 
+
     while(1)
     {
         uint32_t reset_reg_val;
+
         TaskP_sleep(50 * OS_TICKS_IN_MILLI_SEC);
 
         if(bsp_get_eeprom_update_status())
         {
+           // UART_printf("bsp_get_eeprom_update_status\n");
             uint32_t t_cur_time;
             bsp_get_local_sys_time(&t_cur_time, NULL);
             uint32_t t_last_time = bsp_get_eeprom_updated_time();
@@ -316,12 +326,19 @@ void LEDtask(uint32_t arg0, uint32_t arg1)
 
         reset_reg_val = bsp_read_dword(pruIcss1Handle, ESC_ADDR_TI_ESC_RESET);
 
+
+
         if((reset_reg_val == TI_ESC_RST_CMD_U) ||
                 (reset_reg_val == TI_ESC_RST_CMD_L))
         {
             //EtherCAT master has requested S/W RESET
             HW_RestartTarget();
+
         }
+
+
+
+
     }
 
 }
@@ -345,6 +362,7 @@ void Sync0task(uint32_t arg1, uint32_t arg2)
     while(1)
     {
         PRUICSS_pruWaitEvent((PRUICSS_Handle)arg1, evtOutNum);
+        UART_printf("PRUICSS_pruWaitEvent\n");
         //Do sync0 event handling
         DISABLE_ESC_INT();
 #ifdef PROFILE_ECAT_STACK
@@ -413,10 +431,17 @@ void Demo_Application(void)
 
     uint8_t LED = (*(pSlaveInterface->pOutput)) & 0xFF;
     Board_getDigInput(rxBuf);
+    _read_word = LED;
+
+
 
     uint32_t INPUT = (uint32_t)(*rxBuf & 0xFF);
 
     INPUT |=   0xaabbcc00;
+    INPUT = _write_word;
+
+
+
     *(pSlaveInterface->pInput) = INPUT;
     if(LED != prevState)
     {
@@ -424,6 +449,7 @@ void Demo_Application(void)
     }
 
     prevState = LED;
+
 }
 
 void Demo_StateTrans(unsigned short state)
@@ -437,6 +463,7 @@ void Demo_StateTrans(unsigned short state)
             HW_EscReadDWord(addr_len, ESC_ADDR_SM0_PHYS_ADDR);
             bsp_set_sm_properties(pruIcss1Handle, MAILBOX_WRITE, (addr_len & 0xFFFF),
                                   (addr_len >> 16));
+
             HW_EscReadDWord(addr_len, ESC_ADDR_SM1_PHYS_ADDR);
             bsp_set_sm_properties(pruIcss1Handle, MAILBOX_READ, (addr_len & 0xFFFF),
                                   (addr_len >> 16));

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using App_Industry_comu.Control_board;
+using System.Threading;
 
 namespace App_Industry_comu
 {
@@ -20,6 +21,7 @@ namespace App_Industry_comu
         {
             
             InitializeComponent();
+            Thread.Sleep(2000);
         }
         private void Board_comunication_Load(object sender, EventArgs e)
         {
@@ -28,9 +30,8 @@ namespace App_Industry_comu
             com.Baudrate = "115200";
             com.StopBits = "One";
             com.DataBits = "8";
+           
             com.DisplayWindow = richTextBox1;
-
-            
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -59,43 +60,7 @@ namespace App_Industry_comu
             
         }
 
-
-        private void button_cclink_Click(object sender, EventArgs e)
-        {
-            com.Write_Data("cc");
-        }
-
-        private void button_finish_cclink_Click(object sender, EventArgs e)
-        {
-            com.Write_Data("ecc");
-        }
-
-        private void button_exit_APP_Click(object sender, EventArgs e)
-        {
-            com.Write_Data("exit");
-        }
-
-        private void modbus_create_task_Click(object sender, EventArgs e)
-        {
-            com.Write_Data("mb");
-        }
-
-        private void modbus_finish_task_Click(object sender, EventArgs e)
-        {
-            com.Write_Data("emb");
-        }
-
-        private void button_ethercat_Click(object sender, EventArgs e)
-        {
-            com.Write_Data("cat");
-        }
-
-        private void button_exit_ethercat_Click(object sender, EventArgs e)
-        {
-            com.Write_Data("ecat");
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             //richTextBox1.Clear(); 
         }
@@ -103,6 +68,51 @@ namespace App_Industry_comu
         private void richTextBox1_DoubleClick(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+        }
+
+        private void but_task_init_Click(object sender, EventArgs e)
+        {
+            if(comboBox_protocol.SelectedIndex == 0)
+            {
+                com.Write_Data("cat");
+            }else if(comboBox_protocol.SelectedIndex == 2)
+            {
+
+            }
+        }
+
+        private void btn_finnish_Click(object sender, EventArgs e)
+        {
+            if (comboBox_protocol.SelectedIndex == 0)
+            {
+                com.Write_Data("ecat");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            com.wwrite_data("\n");
+            com.wwrite_data("rdd\n");
+          //  com.wwrite_data("\n");
+            
+         //   if(tt == "rdd" ){
+        //        return;
+         //   }
+
+            txt_rd_ether.Text = com.Read_comPort(); ;
+
+
+
+            Thread.Sleep(1000);
+            com.wwrite_data("\n");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            com.wwrite_data("wdd\n");
+            string x = txbox_write_ethercat.Text;
+            com.wwrite_data(x+"\n");
+
         }
     }
 }
