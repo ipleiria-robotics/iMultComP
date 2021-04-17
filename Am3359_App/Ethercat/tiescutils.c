@@ -45,7 +45,7 @@
  * depending on the variation. Different Process Data Interfaces (PDI) for external
  * access from the application controller to the application memory are also available:
  *
- * this example use:~
+ * this example use:
  *  ->  The Serial Peripheral Interface (SPI) is targeted at applications with small amounts of
  *       process data, such as analog I/O devices, encoders, or simple drives.
  *
