@@ -5,7 +5,7 @@ var Main = xdc.useModule('xdc.runtime.Main');
 var Memory = xdc.useModule('xdc.runtime.Memory')
 var SysMin = xdc.useModule('xdc.runtime.SysMin');
 var System = xdc.useModule('xdc.runtime.System');
-var Text = xdc.useModule ('xdc.runtime.Text');
+var Text = xdc.useModule('xdc.runtime.Text');
  
 var BIOS = xdc.useModule('ti.sysbios.BIOS');
 var Clock = xdc.useModule('ti.sysbios.knl.Clock');
@@ -29,13 +29,13 @@ var osType = "tirtos"
 var Osal = xdc.useModule('ti.osal.Settings');
 Osal.osType = osType;
 
-var Uart 			= xdc.loadPackage('ti.drv.uart');
-var I2c 			= xdc.loadPackage('ti.drv.i2c');
-var Pruss 			= xdc.loadPackage('ti.drv.pruss');
-var Gpio 			= xdc.loadPackage('ti.drv.gpio');
+var Uart            = xdc.loadPackage('ti.drv.uart');
+var I2c             = xdc.loadPackage('ti.drv.i2c');
+var Pruss           = xdc.loadPackage('ti.drv.pruss');
+var Gpio            = xdc.loadPackage('ti.drv.gpio');
 
 var deviceType           = "am335x";
-var Csl 		= xdc.loadPackage('ti.csl');
+var Csl         = xdc.loadPackage('ti.csl');
 Csl.Settings.deviceType  = deviceType;
 
 
@@ -51,8 +51,8 @@ Spi.Settings.socType = socType;
 /* 
  * Program.argSize sets the size of the .args section. 
  * The examples don't use command line args so argSize is set to 0.
- */
 Program.argSize = 0x0;
+ */
 
 
 /*
@@ -62,7 +62,6 @@ Program.argSize = 0x0;
  * Disabling Asserts will save code space and improve runtime performance.
 Defaults.common$.diags_ASSERT = Diags.ALWAYS_OFF;
  */
-Defaults.common$.diags_ASSERT = Diags.ALWAYS_OFF;
 
 
 /*
@@ -73,14 +72,13 @@ Defaults.common$.diags_ASSERT = Diags.ALWAYS_OFF;
  * of the actual module name.
 Defaults.common$.namedModule = false;
  */
-Defaults.common$.namedModule = false;
 
 /*
  * Minimize exit handler array in System.  The System module includes
  * an array of functions that are registered with System_atexit() to be
  * called by System_exit().
- */
 System.maxAtexitHandlers = 4;
+ */
 
 /* 
  * Uncomment this line to disable the Error print function.  
@@ -90,7 +88,6 @@ System.maxAtexitHandlers = 4;
  * calls System_printf().
 Error.raiseHook = null;
  */
-Error.raiseHook = null;
 
 /* 
  * Uncomment this line to keep Error, Assert, and Log strings from being
@@ -100,7 +97,7 @@ Error.raiseHook = null;
  * a formatted message.
 Text.isLoaded = false;
  */
-Text.isLoaded = false;
+
 
 /*
  * Uncomment this line to disable the output of characters by SysMin
@@ -121,8 +118,8 @@ Program.stack = 0x4000;
 
 
 Swi.common$.namedInstance = true;
-BIOS.libType = BIOS.LibType_Custom;
-BIOS.assertsEnabled = false;
+BIOS.libType = BIOS.LibType_Debug;
+BIOS.assertsEnabled = true;
 
 
 Clock.tickPeriod = 1000;
@@ -131,16 +128,15 @@ Hwi.dispatcherTaskSupport = true;
 Hwi.dispatcherAutoNestingSupport = true;
 Hwi.initStackFlag = false;
 Hwi.checkStackFlag = false;
-BIOS.logsEnabled = false;
+BIOS.logsEnabled = true;
 BIOS.swiEnabled = true;
-Task.enableIdleTask = false;
+Task.enableIdleTask = true;
 Task.initStackFlag = false;
 Task.checkStackFlag = false;
 BIOS.cpuFreq.lo = 600000000;
 
 /*FIXME: Program.linkTemplate = java.lang.System.getenv("IA_SDK_HOME") + "/protocols/ethercat_slave/ecat_appl/ecat_appl.xdt";*/
 
-/*
 Log = xdc.useModule('xdc.runtime.Log');
 Timestamp = xdc.useModule('xdc.runtime.Timestamp');
 var LoggingSetup = xdc.useModule('ti.uia.sysbios.LoggingSetup');
@@ -148,11 +144,10 @@ LoggingSetup.sysbiosLoggerSize = 65536;
 LoggingSetup.sysbiosSwiLogging = true;
 LoggingSetup.sysbiosHwiLogging = true;
 LoggingSetup.sysbiosSemaphoreLogging = true;
-LoggingSetup.loadTaskLogging = false;
-LoggingSetup.loadSwiLogging = false;
-LoggingSetup.loadHwiLogging = false;
+LoggingSetup.loadTaskLogging = true;
+LoggingSetup.loadSwiLogging = true;
+LoggingSetup.loadHwiLogging = true;
 LoggingSetup.enableTaskProfiler = true;
-*/
 
 Program.sectMap[".c_int00"] = new Program.SectionSpec();
 Program.sectMap[".c_int00"].loadAddress = 0x80000000;
@@ -255,3 +250,11 @@ var peripheralBaseAddr = 0x4A100000;
 Mmu.setFirstLevelDescMeta(peripheralBaseAddr, peripheralBaseAddr, peripheralAttrs);
 
 
+
+
+LoggingSetup.benchmarkLogging = true;
+LoggingSetup.countingAndGraphingLogging = true;
+LoggingSetup.snapshotLogging = false;
+LoggingSetup.loggerType = LoggingSetup.LoggerType_MIN;
+Task.idleTaskStackSize = 4048;
+BIOS.customCCOpts = "-Wunused -Wunknown-pragmas -ffunction-sections -fdata-sections  -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=hard -mabi=aapcs -g   -Dfar= -D__DYNAMIC_REENT__   -mapcs";

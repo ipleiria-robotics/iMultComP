@@ -32,6 +32,24 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ *EtherCAT Slave Controllers (ESC)
+ * -----------------------------------------------------------------------------------------------------------------
+ * The EtherCAT frame contains one or more datagrams. The datagram header indicates what type of access the master device would like to execute:
+ *      -> Read, write, read-write
+ *      -> Access to a specific slave device through direct addressing, or access to multiple slave devices through logical addressing (implicit addressing)
+ *                         ( ................... Demo_StateTrans ..............)
+ *
+ * EtherCAT Slave Controllers are available from multiple manufacturers, with the size of the
+ * internal DPRAM and the number of Fieldbus Memory Management Units (FMMUs)
+ * depending on the variation. Different Process Data Interfaces (PDI) for external
+ * access from the application controller to the application memory are also available:
+ *
+ * this example use:~
+ *  ->  The Serial Peripheral Interface (SPI) is targeted at applications with small amounts of
+ *       process data, such as analog I/O devices, encoders, or simple drives.
+ *
+ *
  **/
 
 
@@ -127,6 +145,7 @@ pECAT_SLAVE_INTERFACE pSlaveInterface = NULL;
  *         ---------------   task1 ---------------
  ****************************************************************************************/
 
+
 void task1(uint32_t arg0, uint32_t arg1)
 {
 
@@ -152,7 +171,12 @@ void task1(uint32_t arg0, uint32_t arg1)
     /* map the array which contains pru firmware instrcutions.
            If the application is built to execute from internal RAM completely,then
            pru instructions are expcted to be stored in SPI flash and this mapping is
-           not required*/
+           not required
+
+           -> frameProc Pointer to a buffer containing HRT PRU firmware (ecat_frame_handler_bin.h)
+           -> hostProc Pointer to a buffer containing SRT PRU firmware (ecat_host_interface_bin.h)
+    */
+
     bsp_set_pru_firmware((uint32_t *)FrameProc, sizeof(FrameProc),
                              (uint32_t *)HostProc, sizeof(HostProc));
 
@@ -171,6 +195,7 @@ void task1(uint32_t arg0, uint32_t arg1)
 
         /* Create tasks */
         /* Create tree tasks that share a resource*/
+        // // -> The local host controller accesses the ESC DPRAM via the PDI (process data interface).
         TaskP_Params_init(&taskParams);
         taskParams.priority = 6;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;

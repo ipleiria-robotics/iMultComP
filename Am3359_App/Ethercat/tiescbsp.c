@@ -2,6 +2,7 @@
  * tiescbsp.c
  *
 */
+
 /*
  * Copyright (c) 2015, Texas Instruments Incorporated
  * All rights reserved.
@@ -32,7 +33,9 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
  **/
+
 #include <string.h> // For memset/memcpy
 #if defined (__aarch64__)
 #include <malloc.h> // For memalign
@@ -856,7 +859,7 @@ void bsp_esc_reg_perm_init(PRUICSS_Handle pruIcssHandle)
     pRegPerm->reg_properties[0x443] = TIESC_PERM_RW; //Watchdog counter PDI
     pRegPerm->reg_properties[0x500] = TIESC_PERM_RW; //EEPROM configuration
     pRegPerm->reg_properties[0x501] =
-        TIESC_PERM_READ_ONLY; //EEPROM PDI access state
+    TIESC_PERM_READ_ONLY; //EEPROM PDI access state
 
     for(i = 0; i < 8; i++)
     {
@@ -2417,8 +2420,7 @@ uint32_t bsp_read_dword(PRUICSS_Handle pruIcssHandle, uint16_t address)
 {
     uint32_t DWordValue;
 #ifndef TIESC_SPI_MASTER_MODE
-    uint32_t end_addr = sm_properties[MAILBOX_WRITE].physical_start_addr +
-                        sm_properties[MAILBOX_WRITE].length;
+    uint32_t end_addr = sm_properties[MAILBOX_WRITE].physical_start_addr + sm_properties[MAILBOX_WRITE].length;
 
     if(0 == bsp_pdi_access_perm_dword(address, PDI_PERM_READ))
     {

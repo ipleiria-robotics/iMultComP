@@ -79,12 +79,16 @@ application)or equivalent 3P stack \n
  * \section ecat_fw_api Firmware APIs
  * These APIs implement the key interface between ESC emulation firmware and EtherCAT stack. They are
  * implemented in following source code files \n
+ *
  * <b>TI h/w access layer to support EtherCAT slave using PRU-ICSS</b> \n
  * protocols\ethercat_slave\ecat_appl\EcatStack\tiescbsp.c \n
  * protocols\ethercat_slave\include\tiescbsp.h \n
+ *
  * <b>Wrapper APIs for SSC</b> \n
+ *
  * protocols\ethercat_slave\ecat_appl\EcatStack\tieschw.c \n
  * protocols\ethercat_slave\include\tieschw.h \n
+ *
  * <b>PRU_ICSS EtherCAT firmware headers</b> \n
  * protocols\ethercat_slave\firmware\v1.0 : (AM335/AMIC110) \n
  * protocols\ethercat_slave\firmware\v2.0 : (AM437/AMIC120) \n
@@ -307,7 +311,7 @@ process path latency improvement can be achieved by disabling below define */
 #endif
 #define TIESC_PORT1_TX_DELAY    TIESC_PORT0_TX_DELAY
 
-#define PDI_ISR_EDIO_NUM    7 //GPMC_CSN(2) -> pr1_edio_data_out7 for ICEv2.J4.Pin21
+#define PDI_ISR_EDIO_NUM    7    //GPMC_CSN(2) -> pr1_edio_data_out7 for ICEv2.J4.Pin21
 
 /* PDI  side register protection using register permission table (4KB) in memory - disable if you care for performance and memory foot print */
 /* #define ENABLE_PDI_REG_PERMISSIONS */
@@ -757,8 +761,7 @@ PROTO void bsp_eeprom_emulation_init(void);
 *  @retval 0: On successful load of registers -1: On CRC error
 *
 */
-PROTO int32_t bsp_eeprom_load_esc_registers(PRUICSS_Handle pruIcssHandle,
-        int32_t reload_flag);
+PROTO int32_t bsp_eeprom_load_esc_registers(PRUICSS_Handle pruIcssHandle, int32_t reload_flag);
 
 /**
 *  @brief Perform reload operation after validating EEPROM CRC
@@ -924,8 +927,7 @@ PROTO void bsp_pdi_mbx_write_complete(PRUICSS_Handle pruIcssHandle);
 *  @retval actual PDI address in memeory
 *
 */
-PROTO uint16_t bsp_get_process_data_address(PRUICSS_Handle pruIcssHandle,
-        uint16_t address, uint16_t len, int16_t *p_sm_index);
+PROTO uint16_t bsp_get_process_data_address(PRUICSS_Handle pruIcssHandle, uint16_t address, uint16_t len, int16_t *p_sm_index);
 /**
 *  @brief  This API is invoked after PDI side completes read/write to PD address returned by bsp_get_process_data_address
 *  to indicate this to firmware for swapping buffers etc
