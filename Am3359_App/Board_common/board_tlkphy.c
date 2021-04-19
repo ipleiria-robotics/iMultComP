@@ -49,7 +49,8 @@
 #include <ti/drv/icss_emac/src/phy.h>
 
 #ifdef INCLUDE_TLK_WORKAROUND
-#include <examples/osal/TaskP.h>
+
+#include <osal/TaskP.h>
 
 /**Task Handle for the TLK thread which swaps MDI/MDI-X bits for link*/
 void *tlkTask;

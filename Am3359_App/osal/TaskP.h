@@ -165,6 +165,15 @@ extern TaskP_Handle TaskP_selfmacro(void);
  */
 extern void TaskP_yield(void);
 
+
+/*!
+ *  @brief  Function disables all other Tasks from running
+ *
+ *  @param key for use with restore.
+ */
+extern uint32_t TaskP_disable(void);
+
+
 /*!
  *  @brief  Check if task is terminated.
  *

@@ -31,6 +31,10 @@
 			<value>file:/C:/ti/PRU-ICSS-EtherCAT_Slave_01.00.08.01</value>
 		</variable>
 		<variable>
+			<name>IA_SDK_HOME_PROFINET</name>
+			<value>file:/C:/ti/PRU-ICSS-Profinet_Slave_01.00.03.04</value>
+		</variable>
+		<variable>
 			<name>PDK_INSTALL_PATH</name>
 			<value>file:/C:/ti/pdk_am335x_1_0_17/packages</value>
 		</variable>
