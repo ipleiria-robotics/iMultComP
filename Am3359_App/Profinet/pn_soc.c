@@ -12,12 +12,13 @@
 */
 
 #include "pn_soc.h"
-#include <Include/Board_am335x/board_spi.h>
+#include <examples/board/include/board_spi.h>
+#include <protocols/profinet_slave/include/PN_Handle.h>
+#include <protocols/profinet_slave/include/PN_HandleDef.h>
+#include <third_party/protocols/profinet_slave/include/os.h>
+#include <protocols/profinet_slave/include/iPNLegacy.h>
 
-#include <Profinet/include/protocol_slave/PN_Handle.h>
-#include <Profinet/include/protocol_slave/PN_HandleDef.h>
-#include <Profinet/include/protocols_party/os.h>
-#include <Profinet/include/protocol_slave/iPNLegacy.h>
+
 
 #include <ti/drv/gpio/GPIO.h>
 #include <ti/drv/gpio/soc/GPIO_v1.h>
@@ -26,14 +27,14 @@
 #include <ti/board/board.h>
 #include <ti/starterware/include/prcm.h>
 
-#include <Include/Board_am335x/oled_drv.h>
-#include <Include/Board_am335x/board_tlkphy.h>
-#include <Include/Board_am335x/board_i2cLed.h>
-#include <Include/Board_am335x/board_phy.h>
 
-#include <Profinet/include/protocol_slave/RT_MRP/pnDrvConfig.h>
 
-#include <Profinet/firmware/v1.0/firmware_version.h>
+#include <examples/board/include/oled_drv.h>
+#include <examples/board/include/board_tlkphy.h>
+#include <examples/board/include/board_i2cLed.h>
+#include <examples/board/include/board_phy.h>
+#include "pnDrvConfig.h"
+#include "firmware_version.h"
 #include <ti/drv/pruss/soc/pruicss_v1.h>
 
 #define SEMP_BLOCK_SIZE (80 * OSAL_TIRTOS_SEMAPHOREP_SIZE_BYTES)

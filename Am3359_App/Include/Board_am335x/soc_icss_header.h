@@ -123,7 +123,7 @@
 #define CSL_ICSSINTC_SRSR0              CSL_ICSSM_INTC_SRSR0
 
 /**CFG macros*/
-#define CSL_ICSSCFG_IEPCLK              CSL_ICSSM_CFG_IEPCLK
+//#define CSL_ICSSCFG_IEPCLK              CSL_ICSSM_CFG_IEPCLK
 #endif
 
 #endif /* _SOC_ICSS_HEADER_H_ */

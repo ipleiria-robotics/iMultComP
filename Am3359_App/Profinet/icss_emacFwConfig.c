@@ -45,7 +45,8 @@
 
 #include <stdint.h>
 
-#include <Profinet/firmware/icss_emacFwConfig.h>
+
+#include <protocols/profinet_slave/firmware/icss_emacFwConfig.h>
 
 
 ICSS_EmacFwStaticMmap icss_emacFwStaticCfg[2] = {

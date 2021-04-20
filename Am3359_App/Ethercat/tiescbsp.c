@@ -40,7 +40,7 @@
 #if defined (__aarch64__)
 #include <malloc.h> // For memalign
 #endif
-
+#define CSL_ICSSCFG_IEPCLK                                      (0x30U)
 #include "app.h"
 #include <ti/drv/uart/UART_stdio.h>
 #include <Ethercat/Include_ethercat/tiesc_pruss_intc_mapping.h>

@@ -58,6 +58,12 @@
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MFLOAT_ABI.41979336" name="Use floating point hardware (-mfloat-abi)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MFLOAT_ABI" value="hard" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH.1426077976" name="Include paths (-I)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="${COM_TI_BIOS_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME_PROFINET}/examples/profinet_slave"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME_PROFINET}/protocols/profinet_slave/include/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME_PROFINET}/third_party/protocols/profinet_slave/include/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME_PROFINET}/third_party/protocols/profinet_slave/include"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME_PROFINET}/protocols/profinet_slave/firmware/v1.0"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME_PROFINET}/third_party/protocols/snmp/source"/>
 									<listOptionValue builtIn="false" value="${IA_SDK_HOME_ETH}"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include/am335x"/>
@@ -67,6 +73,7 @@
 									<listOptionValue builtIn="false" value="${COM_TI_UIA_INCLUDE_PATH}"/>
 									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME_PROFINET}"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.1829132196" name="Optimization Level" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.OPT_FOR_DEBUG" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEBUG.693898785" name="Generate debug information (-g)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEBUG" value="true" valueType="boolean"/>

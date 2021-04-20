@@ -82,20 +82,12 @@ gnu_ReentSupport.o: \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\_types.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\machine\_types.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\lock.h \
+ C:/ti/bios_6_76_03_01/packages/ti/posix/gcc/sys/types.h \
+ C:/ti/bios_6_76_03_01/packages/ti/posix/gcc/sys/_internal.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\types.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\machine\endian.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\machine\_endian.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\select.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\_sigset.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\_timeval.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\timespec.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\_timespec.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\_pthreadtypes.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\sched.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\machine\types.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\stdio.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\reent.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\string.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\xlocale.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\strings.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\string.h

@@ -22,8 +22,6 @@ a8_Mmu.o: C:/ti/bios_6_76_03_01/packages/ti/sysbios/family/arm/a8/Mmu.c \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\machine\_types.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\lock.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\cdefs.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\xlocale.h \
- c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\strings.h \
  c:\ti\bios_6_76_03_01\packages\gnu\targets\arm\libs\install-native\arm-none-eabi\include\sys\string.h \
  C:/ti/xdctools_3_55_02_22_core/packages/xdc/runtime/Assert.h \
  C:/ti/xdctools_3_55_02_22_core/packages/xdc/runtime/xdc.h \
