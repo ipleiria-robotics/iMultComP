@@ -197,27 +197,27 @@ void task1(uint32_t arg0, uint32_t arg1)
         /* Create tree tasks that share a resource*/
         // // -> The local host controller accesses the ESC DPRAM via the PDI (process data interface).
         TaskP_Params_init(&taskParams);
-        taskParams.priority = 6;
+        taskParams.priority = 11;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;
         taskParams.arg0 = (void *)pruIcss1Handle;
         pdiTask = TaskP_create(PDItask, &taskParams);
 
         /* Create led Task */
         TaskP_Params_init(&taskParams);
-        taskParams.priority = 4;
+        taskParams.priority = 11;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;
         ledTaskHndl = TaskP_create(LEDtask, &taskParams);
 
         // SYNC1 IRQ handler in the EtherCAT slave stack
         TaskP_Params_init(&taskParams);
-        taskParams.priority = 8;
+        taskParams.priority = 13;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;
         taskParams.arg0 = (void *)pruIcss1Handle;
         sync0Task = TaskP_create(Sync0task, &taskParams);
 
         // SYNC1 IRQ handler in the EtherCAT slave stack
         TaskP_Params_init(&taskParams);
-        taskParams.priority = 8;
+        taskParams.priority = 13;
         taskParams.stacksize = 1512*TIESC_TASK_STACK_SIZE_MUL;
         taskParams.arg0 = (void *)pruIcss1Handle;
         sync1Task = TaskP_create(Sync1task, &taskParams);
@@ -232,6 +232,7 @@ void task1(uint32_t arg0, uint32_t arg1)
             // verify mailbox to end Tasks
             Mailbox_pend(mailbox_Handle_Ethercat, &info_mailbox, BIOS_NO_WAIT);
             if(info_mailbox == 3){
+                Board_setDigOutput(0);  // send info to led_board
                 bRunApplication = FALSE;
                 TaskP_delete(&pdiTask);
                 TaskP_delete(&ledTaskHndl);
@@ -241,10 +242,11 @@ void task1(uint32_t arg0, uint32_t arg1)
                 UART_printf("    Terminate Ethercat protocol \n    ");
 
             }
+
             info_mailbox = 0;
         }while(bRunApplication == TRUE);
 
-        }
+     }
 
 
 
@@ -289,7 +291,6 @@ void PDItask(uint32_t arg1, uint32_t arg2)
     {
         // arg1 -> pruIcss1Handle
         PRUICSS_pruWaitEvent((PRUICSS_Handle)arg1, evtOutNum);
-
         /* ISR processing */
         HW_EcatIsr();
     }

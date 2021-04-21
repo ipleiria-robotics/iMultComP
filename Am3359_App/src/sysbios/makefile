@@ -12,9 +12,9 @@ vpath %.c C:/ti/bios_6_76_03_01/packages/
 
 XOPTS = -I"C:/ti/xdctools_3_55_02_22_core/packages/" -Dxdc_target_types__=C:/ti/bios_6_76_03_01/packages/gnu/targets/arm/std.h -Dxdc_target_name__=A8F
 
-BIOS_DEFS =  -Dti_sysbios_BIOS_swiEnabled__D=TRUE -Dti_sysbios_BIOS_taskEnabled__D=TRUE -Dti_sysbios_BIOS_clockEnabled__D=TRUE -Dti_sysbios_BIOS_runtimeCreatesEnabled__D=TRUE -Dti_sysbios_knl_Task_moduleStateCheckFlag__D=FALSE -Dti_sysbios_knl_Task_objectCheckFlag__D=FALSE -Dti_sysbios_hal_Hwi_DISABLE_ALL_HOOKS -Dti_sysbios_knl_Swi_DISABLE_ALL_HOOKS -Dti_sysbios_BIOS_smpEnabled__D=FALSE -Dti_sysbios_BIOS_mpeEnabled__D=FALSE -Dti_sysbios_Build_useHwiMacros -Dti_sysbios_knl_Swi_numPriorities__D=16 -Dti_sysbios_knl_Task_deleteTerminatedTasks__D=TRUE -Dti_sysbios_knl_Task_numPriorities__D=16 -Dti_sysbios_knl_Task_checkStackFlag__D=FALSE -Dti_sysbios_knl_Task_initStackFlag__D=FALSE -Dti_sysbios_knl_Clock_TICK_SOURCE=ti_sysbios_knl_Clock_TickSource_TIMER -Dti_sysbios_knl_Clock_TICK_MODE=ti_sysbios_knl_Clock_TickMode_PERIODIC -Dti_sysbios_hal_Core_delegate_getId=ti_sysbios_hal_CoreNull_getId__E -Dti_sysbios_hal_Core_delegate_interruptCore=ti_sysbios_hal_CoreNull_interruptCore__E -Dti_sysbios_hal_Core_delegate_lock=ti_sysbios_hal_CoreNull_lock__E -Dti_sysbios_hal_Core_delegate_unlock=ti_sysbios_hal_CoreNull_unlock__E -Dti_sysbios_hal_Core_numCores__D=1 -Dti_sysbios_hal_CoreNull_numCores__D=1 -Dti_sysbios_utils_Load_taskEnabled__D=TRUE -Dti_sysbios_utils_Load_swiEnabled__D=FALSE -Dti_sysbios_utils_Load_hwiEnabled__D=FALSE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherSwiSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherTaskSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherAutoNestingSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherIrpTrackingSupport__D=TRUE -Dti_sysbios_knl_Semaphore_supportsEvents__D=FALSE -Dti_sysbios_knl_Semaphore_supportsPriority__D=TRUE -Dxdc_runtime_Assert_DISABLE_ALL -Dxdc_runtime_Log_DISABLE_ALL 
+BIOS_DEFS =  -Dti_sysbios_BIOS_swiEnabled__D=TRUE -Dti_sysbios_BIOS_taskEnabled__D=TRUE -Dti_sysbios_BIOS_clockEnabled__D=TRUE -Dti_sysbios_BIOS_runtimeCreatesEnabled__D=TRUE -Dti_sysbios_knl_Task_moduleStateCheckFlag__D=FALSE -Dti_sysbios_knl_Task_objectCheckFlag__D=FALSE -Dti_sysbios_BIOS_smpEnabled__D=FALSE -Dti_sysbios_BIOS_mpeEnabled__D=FALSE -Dti_sysbios_Build_useHwiMacros -Dti_sysbios_knl_Swi_numPriorities__D=16 -Dti_sysbios_knl_Task_deleteTerminatedTasks__D=TRUE -Dti_sysbios_knl_Task_numPriorities__D=16 -Dti_sysbios_knl_Task_checkStackFlag__D=TRUE -Dti_sysbios_knl_Task_initStackFlag__D=TRUE -Dti_sysbios_knl_Clock_TICK_SOURCE=ti_sysbios_knl_Clock_TickSource_TIMER -Dti_sysbios_knl_Clock_TICK_MODE=ti_sysbios_knl_Clock_TickMode_PERIODIC -Dti_sysbios_hal_Core_delegate_getId=ti_sysbios_hal_CoreNull_getId__E -Dti_sysbios_hal_Core_delegate_interruptCore=ti_sysbios_hal_CoreNull_interruptCore__E -Dti_sysbios_hal_Core_delegate_lock=ti_sysbios_hal_CoreNull_lock__E -Dti_sysbios_hal_Core_delegate_unlock=ti_sysbios_hal_CoreNull_unlock__E -Dti_sysbios_hal_Core_numCores__D=1 -Dti_sysbios_hal_CoreNull_numCores__D=1 -Dti_sysbios_utils_Load_taskEnabled__D=TRUE -Dti_sysbios_utils_Load_swiEnabled__D=TRUE -Dti_sysbios_utils_Load_hwiEnabled__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherSwiSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherTaskSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherAutoNestingSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherIrpTrackingSupport__D=TRUE -Dti_sysbios_knl_Semaphore_supportsEvents__D=FALSE -Dti_sysbios_knl_Semaphore_supportsPriority__D=TRUE -Dxdc_runtime_Assert_DISABLE_ALL -Dxdc_runtime_Log_DISABLE_ALL 
 
-CCOPTS = -Wunused -Wunknown-pragmas -ffunction-sections -fdata-sections  -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=hard -mabi=aapcs -g  -O3 -Dfar= -D__DYNAMIC_REENT__   -Dti_sysbios_family_arm_exc_Exception_enableDecode__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_enableAsidTagging__D=FALSE -Dti_sysbios_rts_gnu_ReentSupport_enableReentSupport__D=TRUE -Dti_posix_tirtos_Settings_debug__D=FALSE -std=c99 -Dti_sysbios_knl_Clock_stopCheckNext__D=FALSE -Dti_sysbios_hal_Core_numCores__D=1 -Dti_sysbios_knl_Task_minimizeLatency__D=FALSE
+CCOPTS = -Wunused -Wunknown-pragmas -ffunction-sections -fdata-sections  -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=hard -mabi=aapcs -g  -O3 -Dfar= -D__DYNAMIC_REENT__   -Dti_sysbios_family_arm_exc_Exception_enableDecode__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_enableAsidTagging__D=FALSE -Dti_sysbios_rts_gnu_ReentSupport_enableReentSupport__D=TRUE -Dti_posix_tirtos_Settings_debug__D=FALSE -std=c99 -Dti_sysbios_knl_Clock_stopCheckNext__D=FALSE -Dti_sysbios_hal_Core_numCores__D=1 -Dti_sysbios_knl_Task_ENABLE_SWITCH_HOOKS -Dti_sysbios_knl_Task_minimizeLatency__D=FALSE
 
 BIOS_INC = -I"C:/ti/bios_6_76_03_01/packages/"
 ANNEX_INCS =  -IC:/ti/bios_6_76_03_01/packages/ti/posix/gcc
@@ -143,6 +143,9 @@ hal_Timer.o: hal/Timer.c makefile
 heaps_HeapMem.o: heaps/HeapMem.c makefile
 	@-$(call RM, heaps_HeapMem.o)
 	$(COMPILE) -o heaps_HeapMem.o
+heaps_HeapTrack.o: heaps/HeapTrack.c makefile
+	@-$(call RM, heaps_HeapTrack.o)
+	$(COMPILE) -o heaps_HeapTrack.o
 a8_Cache.o: family/arm/a8/Cache.c makefile
 	@-$(call RM, a8_Cache.o)
 	$(COMPILE) -o a8_Cache.o
@@ -152,6 +155,12 @@ a8_Mmu.o: family/arm/a8/Mmu.c makefile
 a8_TimestampProvider.o: family/arm/a8/TimestampProvider.c makefile
 	@-$(call RM, a8_TimestampProvider.o)
 	$(COMPILE) -o a8_TimestampProvider.o
+utils_Load.o: utils/Load.c makefile
+	@-$(call RM, utils_Load.o)
+	$(COMPILE) -o utils_Load.o
+utils_Load_CPU.o: utils/Load_CPU.c makefile
+	@-$(call RM, utils_Load_CPU.o)
+	$(COMPILE) -o utils_Load_CPU.o
 gnu_ReentSupport.o: rts/gnu/ReentSupport.c makefile
 	@-$(call RM, gnu_ReentSupport.o)
 	$(COMPILE) -o gnu_ReentSupport.o
@@ -216,7 +225,7 @@ tirtos_timer.o: ti/posix/tirtos/timer.c makefile
 	@-$(call RM, tirtos_timer.o)
 	$(COMPILE) -o tirtos_timer.o
 
-sysbios.aa8fg: arm_IntrinsicsSupport_asm_gnu.o arm_TaskSupport_asm_gnu.o a8_Cache_asm_gnu.o a8_Mmu_asm_gnu.o a8_TimestampProvider_asm_gnu.o dmtimer_Timer_asm_gnu.o intcps_Hwi_asm_gnu.o exc_Exception_asm_gnu.o _BIOS.o arm_IntrinsicsSupport.o arm_TaskSupport.o knl_Clock.o knl_Idle.o knl_Intrinsics.o knl_Event.o knl_Mailbox.o knl_Queue.o knl_Semaphore.o knl_Swi.o knl_Task.o hal_Cache.o hal_Core.o hal_CoreNull.o hal_Hwi.o hal_Hwi_stack.o hal_Hwi_startup.o hal_Seconds.o hal_SecondsClock.o hal_Timer.o heaps_HeapMem.o a8_Cache.o a8_Mmu.o a8_TimestampProvider.o gnu_ReentSupport.o gnu_SemiHostSupport.o dmtimer_Timer.o ti81xx_TimerSupport.o intcps_Hwi.o exc_Exception.o gates_GateHwi.o gates_GateMutex.o tirtos_clock.o tirtos_mqueue.o tirtos_pthread.o tirtos_pthread_barrier.o tirtos_pthread_cond.o tirtos_pthread_key.o tirtos_pthread_mutex.o tirtos_pthread_rwlock.o tirtos_pthread_util.o tirtos_sched.o tirtos_semaphore.o tirtos_sleep.o tirtos_timer.o
+sysbios.aa8fg: arm_IntrinsicsSupport_asm_gnu.o arm_TaskSupport_asm_gnu.o a8_Cache_asm_gnu.o a8_Mmu_asm_gnu.o a8_TimestampProvider_asm_gnu.o dmtimer_Timer_asm_gnu.o intcps_Hwi_asm_gnu.o exc_Exception_asm_gnu.o _BIOS.o arm_IntrinsicsSupport.o arm_TaskSupport.o knl_Clock.o knl_Idle.o knl_Intrinsics.o knl_Event.o knl_Mailbox.o knl_Queue.o knl_Semaphore.o knl_Swi.o knl_Task.o hal_Cache.o hal_Core.o hal_CoreNull.o hal_Hwi.o hal_Hwi_stack.o hal_Hwi_startup.o hal_Seconds.o hal_SecondsClock.o hal_Timer.o heaps_HeapMem.o heaps_HeapTrack.o a8_Cache.o a8_Mmu.o a8_TimestampProvider.o utils_Load.o utils_Load_CPU.o gnu_ReentSupport.o gnu_SemiHostSupport.o dmtimer_Timer.o ti81xx_TimerSupport.o intcps_Hwi.o exc_Exception.o gates_GateHwi.o gates_GateMutex.o tirtos_clock.o tirtos_mqueue.o tirtos_pthread.o tirtos_pthread_barrier.o tirtos_pthread_cond.o tirtos_pthread_key.o tirtos_pthread_mutex.o tirtos_pthread_rwlock.o tirtos_pthread_util.o tirtos_sched.o tirtos_semaphore.o tirtos_sleep.o tirtos_timer.o
 	@-$(call RM, $@)
 	@echo ara8fg $^ ...
 	@$(AR) $@ $^

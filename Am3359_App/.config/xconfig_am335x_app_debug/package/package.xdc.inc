@@ -1,0 +1,12 @@
+package.xdc
+package.xs
+package/xconfig_am335x_app_debug.sch
+package/.vers_g200
+package/.vers_r200
+package/.vers_b200
+package/.xdc-G16
+package/xconfig_am335x_app_debug.java
+package/xconfig_am335x_app_debug.class
+package/package_xconfig_am335x_app_debug.c
+package/package.defs.h
+package/xconfig_am335x_app_debug.ccs

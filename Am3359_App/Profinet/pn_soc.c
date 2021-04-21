@@ -66,6 +66,7 @@ void PN_socinitIRTHandle(PN_Handle pnHandle)
     (pnHandle->pnIntConfig)->dhtIntConfig->coreIntNum = 23;
     (pnHandle->pnIntConfig)->dhtIntConfig->socEvId = 23;
     (pnHandle->pnIntConfig)->dhtIntConfig->intPrio = 19;
+
 #ifdef PTCP_SUPPORT
     (pnHandle->pnIntConfig)->ptcpIntConfig->pruIntNum = 24;
     (pnHandle->pnIntConfig)->ptcpIntConfig->coreIntNum = 24;

@@ -102,12 +102,15 @@
 #include <examples/profinet_slave/tiswitch_pruss_intc_mapping.h>
 #include <protocols/profinet_slave/firmware/icss_emacFwConfig.h>
 
+
 // -------------------------------------------------------------------- END profinet ------------------------------------------------
 
 
 /*             Global Variables                   */
 Board_IDInfo boardInfo;
 Mailbox_Handle mailbox_Handle_Ethercat;
+Mailbox_Handle mailbox_Handle_profinet;
+
 uint8_t _read_word;
 uint32_t _write_word;
 uint32_t addr_len_eth;
@@ -120,6 +123,7 @@ void task_main();
 void task_ethercat_main();
 
 void task_main_profinet();
+void init_peripheral_profinet();
 
 
 /*  Params And handles     */
@@ -129,6 +133,11 @@ TaskP_Handle tasK_m;
 /* Params and handles ethercar */
 TaskP_Params task_params_ethercat;
 TaskP_Handle task_handle_ethercat;
+
+/* Params and Handles profinet */
+TaskP_Params task_params_profinet;
+TaskP_Handle task_handle_profinet;
+
 
 
 

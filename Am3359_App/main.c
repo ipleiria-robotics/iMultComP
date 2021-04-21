@@ -35,9 +35,11 @@
  *
  *
  */
-
 int main(){
     init_peripheral();
+    init_peripheral_profinet();
+
+    OSAL_OS_start();
     return(0);
 }
 
