@@ -1,0 +1,209 @@
+/**
+* @file pn_soc.c
+*
+* @brief Basic example for a PROFINET slave device running on AM335x/AM437x/AM57xx devices.
+* Requires a full ICSS system (both PRUs) and two external phys connected to
+* ICSS MII/MDIO interfaces
+*
+* \par
+* Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/
+* \par
+*
+*/
+
+#include "app.h"
+
+#define SEMP_BLOCK_SIZE (80 * OSAL_TIRTOS_SEMAPHOREP_SIZE_BYTES)
+#define MCSPI_INSTANCE         (3U)
+
+extern ICSS_EmacHandle appEmacHandle;
+extern PRUICSS_Handle prusshandle;
+extern Board_IDInfo boardInfo;
+extern void gpioLedPinmuxConfig();
+
+tlkMDIXTaskParam_t tlkTaskparam;
+Board_flashHandle flashHandle;
+SPI_Handle handle;
+
+uint8_t semPMemBlock[SEMP_BLOCK_SIZE];
+
+void PN_socinitIRTHandle(PN_Handle pnHandle)
+{
+    /* Interrupt configuration */
+    (pnHandle->pnIntConfig)->ppmIntConfig->pruIntNum = 21;
+    (pnHandle->pnIntConfig)->ppmIntConfig->coreIntNum = 21;
+    (pnHandle->pnIntConfig)->ppmIntConfig->socEvId = 21;
+    (pnHandle->pnIntConfig)->ppmIntConfig->intPrio = 21;
+    (pnHandle->pnIntConfig)->cpmIntConfig->pruIntNum = 22;
+    (pnHandle->pnIntConfig)->cpmIntConfig->coreIntNum = 22;
+    (pnHandle->pnIntConfig)->cpmIntConfig->socEvId = 22;
+    (pnHandle->pnIntConfig)->cpmIntConfig->intPrio = 22;
+    (pnHandle->pnIntConfig)->dhtIntConfig->pruIntNum = 23;
+    (pnHandle->pnIntConfig)->dhtIntConfig->coreIntNum = 23;
+    (pnHandle->pnIntConfig)->dhtIntConfig->socEvId = 23;
+    (pnHandle->pnIntConfig)->dhtIntConfig->intPrio = 19;
+#ifdef PTCP_SUPPORT
+    (pnHandle->pnIntConfig)->ptcpIntConfig->pruIntNum = 24;
+    (pnHandle->pnIntConfig)->ptcpIntConfig->coreIntNum = 24;
+    (pnHandle->pnIntConfig)->ptcpIntConfig->socEvId = 24;
+    (pnHandle->pnIntConfig)->ptcpIntConfig->intPrio = 24; /* don't care */
+    
+    (pnHandle->pnPtcpConfig)->ptcpEnableSlowCompensation = 0;
+    (pnHandle->pnPtcpConfig)->ptcpTimer->ptcpTimerID = PN_PTCP_TIMERID;  /*DMTIMER 5. SYSBIOS Timer Id is 3*/
+#endif
+
+    ((pnHandle->pnIsoMConfig)->isoMIntConfig)->pruIntNum = 27;
+    ((pnHandle->pnIsoMConfig)->isoMIntConfig)->coreIntNum = 27;
+    ((pnHandle->pnIsoMConfig)->isoMIntConfig)->socEvId = 27;
+    ((pnHandle->pnIsoMConfig)->isoMIntConfig)->intPrio = 27;
+
+}
+
+
+void PN_initICSSmode()
+{
+    GPIOModuleEnable(SOC_GPIO_0_REGS);
+    GPIOModuleEnable(SOC_GPIO_3_REGS);
+    GPIODirModeSet(SOC_GPIO_3_REGS, 10, GPIO_DIR_OUTPUT);
+    GPIODirModeSet(SOC_GPIO_3_REGS, 4, GPIO_DIR_OUTPUT);
+    GPIODirModeSet(SOC_GPIO_0_REGS, 7, GPIO_DIR_OUTPUT);
+    GPIOPinWrite(SOC_GPIO_3_REGS, 4, 1);
+    GPIOPinWrite(SOC_GPIO_3_REGS, 10, 0);
+    GPIOPinWrite(SOC_GPIO_0_REGS, 7, 0);
+}
+
+void PN_socHwinit(uint8_t instance)
+{
+    uint32_t  ctrlBitMap;
+    Osal_HwAttrs      hwAttrs;
+    int32_t           osal_ret;
+
+
+    PRCMModuleEnable(CHIPDB_MOD_ID_PWMSS, 0, 0);
+
+
+    /* Clock source selection */
+    SOCCtrlTimerClkSrcSelect(PN_TIMER_ID + 2, SOC_CTRL_DMTIMER_CLK_SRC_M_OSC_24M);
+   PRCMModuleEnable(CHIPDB_MOD_ID_DMTIMER, PN_TIMER_ID + 2, FALSE);
+
+    /*Pinmux to configure UART1_CTSn pin in Latch0 Mode. AM335x ICE REV2.1*/
+   // HWREG(0x44E10978) = 0x0000002E;
+
+    PN_initICSSmode();
+
+#ifndef iceAMIC11x
+    Board_phyReset(2);
+#endif
+
+
+    /*Code to set number of Semaphore supported. By default PDK supports only 20 for AM335x.*/
+    ctrlBitMap = OSAL_HWATTR_SET_SEMP_EXT_BASE;
+    osal_ret = Osal_getHwAttrs(&hwAttrs);
+    if (osal_ret != osal_OK)
+    {
+        return;
+    }
+    hwAttrs.extSemaphorePBlock.base = (uintptr_t) &semPMemBlock[0];
+    hwAttrs.extSemaphorePBlock.size = SEMP_BLOCK_SIZE;
+
+    osal_ret = Osal_setHwAttrs(ctrlBitMap, &hwAttrs);
+    if (osal_ret != osal_OK)
+    {
+        return;
+    }
+}
+
+
+void PN_socInit()
+{
+    
+    /* Always call Flash Init for AM335x after HVS Init as HVS init resets the SPI settings */
+    /* Flash Init */
+    flashHandle = Board_flashOpen(0, 0, NULL);
+
+    tlkTaskparam.mdioBaseAddress=((ICSS_EmacHwAttrs*)appEmacHandle->hwAttrs)->emacBaseAddrCfg->prussMiiMdioRegs;
+    tlkTaskparam.numPorts = 2;
+    tlkTaskparam.phyAddress[0] = ((ICSS_EmacObject*)appEmacHandle->object)->emacInitcfg->phyAddr[0];
+    tlkTaskparam.phyAddress[1]= ((ICSS_EmacObject*)appEmacHandle->object)->emacInitcfg->phyAddr[1];
+    Board_phyMDIXFixInit(&tlkTaskparam);
+
+}
+
+
+void PN_socgetMACAddress(uint8_t index, uint8_t *lclMac)
+{
+    uint8_t lclEndMac[6] = {0};
+    /*Get the first mac from registers*/
+    SOCCtrlGetPortMacAddr(1, lclMac);
+    /*Get the last/third mac from registers*/
+    SOCCtrlGetPortMacAddr(2, lclEndMac);
+    /*The below logic is used to identify non continuous MAC address saved in the registers. In this case
+     * the first and last macaddress need to be compared and proper value should be used*/
+    if((lclMac[5]+2) == lclEndMac[5])
+    {
+        switch(index)
+        {
+            case INTERFACE_MAC:
+                break;
+            case PORT1_MAC:
+                lclMac[5] += 1;
+                break;
+            case PORT2_MAC:
+                lclMac[5] += 2;
+                break;
+            default:
+                break;
+        }
+    }
+    else
+    {
+        if((lclMac[5] & 0xF) == 0xF)
+        {
+            switch(index)
+            {
+                case INTERFACE_MAC:
+                    break;
+                case PORT1_MAC:
+                    memcpy(lclMac,lclEndMac,6);
+                    lclMac[5] -= 1;
+                    break;
+                case PORT2_MAC:
+                    memcpy(lclMac,lclEndMac,6);
+                    break;
+                default:
+                   break;
+            }
+        }
+        else if ((lclMac[5] & 0xF) == 0xE)
+        {
+            switch(index)
+            {
+                case INTERFACE_MAC:
+                    break;
+                case PORT1_MAC:
+                    lclMac[5] += 1;
+                    break;
+                case PORT2_MAC:
+                    memcpy(lclMac,lclEndMac,6);
+                    break;
+                default:
+                   break;
+            }
+        }
+
+    }
+}
+
+void PN_configurePHYLeds()
+{
+#ifndef iceAMIC11x
+    Board_phyLedConfig((((PRUICSS_HwAttrs *)(
+            prusshandle->hwAttrs))->prussMiiMdioRegBase),
+                       ((ICSS_EmacObject *)appEmacHandle->object)->emacInitcfg->phyAddr[0],
+                       LED_CFG_MODE2);
+    Board_phyLedConfig((((PRUICSS_HwAttrs *)(
+            prusshandle->hwAttrs))->prussMiiMdioRegBase),
+                       ((ICSS_EmacObject *)appEmacHandle->object)->emacInitcfg->phyAddr[1],
+                       LED_CFG_MODE2);
+#endif
+}

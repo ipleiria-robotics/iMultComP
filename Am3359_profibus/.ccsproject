@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="10.2.0"/>
+	<deviceVariant value="Cortex A.AM3359"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="GNU_7.2.1:Linaro"/>
+	<isElfFormat value="true"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<defaultConfiguration value="AM335x_release"/>
+	<filesToOpen value=""/>
+	<isTargetManual value="false"/>
+</projectOptions>
