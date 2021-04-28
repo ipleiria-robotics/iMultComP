@@ -1,8 +1,8 @@
 knl_Intrinsics.o: \
  C:/ti/bios_6_76_03_01/packages/ti/sysbios/knl/Intrinsics.c \
  C:/ti/xdctools_3_55_02_22_core/packages/xdc/std.h \
- c:\ti\ccs1020\ccs\tools\compiler\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdarg.h \
- c:\ti\ccs1020\ccs\tools\compiler\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stddef.h \
+ c:\ti\ccs1030\ccs\tools\compiler\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdarg.h \
+ c:\ti\ccs1030\ccs\tools\compiler\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stddef.h \
  C:/ti/bios_6_76_03_01/packages/gnu/targets/arm/std.h \
  C:/ti/bios_6_76_03_01/packages/gnu/targets/arm/A8F.h \
  C:/ti/bios_6_76_03_01/packages/gnu/targets/std.h \

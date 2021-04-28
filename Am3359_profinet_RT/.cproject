@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule configRelations="2" moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1704676302">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1704676302" moduleId="org.eclipse.cdt.core.settings" name="AM335x_debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.rtsc.xdctools.parsers.ErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" errorParsers="org.eclipse.rtsc.xdctools.parsers.ErrorParser;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1704676302" name="AM335x_debug" parent="com.ti.ccstudio.buildDefinitions.TMS470.Default">
+					<folderInfo id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1704676302." name="/" resourcePath="">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.DebugToolchain.1812705243" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.linkerDebug.199054945">
+							<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.578247299" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=Cortex A.AM3359.ICE_AM3359"/>
+								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
+								<listOptionValue builtIn="false" value="OUTPUT_FORMAT=ELF"/>
+								<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
+								<listOptionValue builtIn="false" value="XDC_VERSION=3.55.2.22_core"/>
+								<listOptionValue builtIn="false" value="INACTIVE_REPOS="/>
+								<listOptionValue builtIn="false" value="EXPANDED_REPOS="/>
+								<listOptionValue builtIn="false" value="CCS_MBS_VERSION=6.1.3"/>
+								<listOptionValue builtIn="false" value="PRODUCTS=com.ti.rtsc.SYSBIOS:6.76.3.01;com.ti.pdk.am335x:1.0.17;com.ti.sdo.edma3:2.12.5;com.ti.rtsc.NDK:3.61.1.01;com.ti.uia:2.30.1.02;"/>
+								<listOptionValue builtIn="false" value="PRODUCT_MACRO_IMPORTS={&quot;com.ti.uia&quot;:[&quot;${COM_TI_UIA_INCLUDE_PATH}&quot;,&quot;${COM_TI_UIA_LIBRARY_PATH}&quot;,&quot;${COM_TI_UIA_LIBRARIES}&quot;,&quot;${COM_TI_UIA_SYMBOLS}&quot;,&quot;${COM_TI_UIA_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.rtsc.SYSBIOS&quot;:[&quot;${COM_TI_BIOS_INCLUDE_PATH}&quot;,&quot;${COM_TI_BIOS_LIBRARY_PATH}&quot;,&quot;${COM_TI_BIOS_LIBRARIES}&quot;,&quot;${COM_TI_BIOS_SYMBOLS}&quot;,&quot;${COM_TI_BIOS_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.pdk.am335x&quot;:[&quot;${COM_TI_PDK_INCLUDE_PATH}&quot;,&quot;${COM_TI_PDK_LIBRARY_PATH}&quot;,&quot;${COM_TI_PDK_LIBRARIES}&quot;,&quot;${COM_TI_PDK_SYMBOLS}&quot;,&quot;${COM_TI_PDK_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.sdo.edma3&quot;:[&quot;${COM_TI_EDMA3_LLD_INCLUDE_PATH}&quot;,&quot;${COM_TI_EDMA3_LLD_LIBRARY_PATH}&quot;,&quot;${COM_TI_EDMA3_LLD_LIBRARIES}&quot;,&quot;${COM_TI_EDMA3_LLD_SYMBOLS}&quot;,&quot;${COM_TI_EDMA3_LLD_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.rtsc.NDK&quot;:[&quot;${COM_TI_NDK_INCLUDE_PATH}&quot;,&quot;${COM_TI_NDK_LIBRARY_PATH}&quot;,&quot;${COM_TI_NDK_LIBRARIES}&quot;,&quot;${COM_TI_NDK_SYMBOLS}&quot;,&quot;${COM_TI_NDK_SYSCONFIG_MANIFEST}&quot;]}"/>
+								<listOptionValue builtIn="false" value="RTSC_MBS_VERSION=7.0.0"/>
+								<listOptionValue builtIn="false" value="OUTPUT_TYPE=rtscApplication:executable"/>
+							</option>
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1997636248" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="GNU_7.2.1:Linaro" valueType="string"/>
+							<targetPlatform id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.targetPlatformDebug.1938909339" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.targetPlatformDebug"/>
+							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.builderDebug.154648454" name="GNU Make.AM335x_debug" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.builderDebug"/>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.compilerDebug.1089169420" name="GNU Compiler" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.compilerDebug">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEFINE.1446774621" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEFINE" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="am3359"/>
+									<listOptionValue builtIn="false" value="SOC_AM335x"/>
+									<listOptionValue builtIn="false" value="icev2AM335x"/>
+									<listOptionValue builtIn="false" value="core0"/>
+									<listOptionValue builtIn="false" value="INCLUDE_TLK_WORKAROUND"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MCPU.530386863" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MCPU" value="cortex-a8" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MTUNE.1745848231" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MTUNE" value="cortex-a8" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MARCH.1825619607" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MARCH" value="armv7-a" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.CODE_STATE.286117282" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.CODE_STATE" value="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.CODE_STATE.ARM" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MFLOAT_ABI.144521451" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MFLOAT_ABI" value="hard" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH.609143314" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH" valueType="includePath">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
+									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}"/>
+									<listOptionValue builtIn="false" value="${NDK_INSTALL_DIR}"/>
+									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include"/>
+									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include/am335x"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/examples/profinet_slave"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/include/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/firmware/v1.0"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/source"/>
+									<listOptionValue builtIn="false" value="${CG_TOOL_INCLUDE_PATH}"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.808423460" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.0" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.FUNCTION_SECTIONS.1829797396" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.FUNCTION_SECTIONS" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DATA_SECTIONS.825013124" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DATA_SECTIONS" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEBUG.1251549630" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEBUG" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DWARF_VERSION.1415440170" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DWARF_VERSION" value="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DWARF_VERSION.2" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.STRICT_DWARF.1773946760" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.STRICT_DWARF" value="true" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.ASM_SPECIFIC_FLAGS.1522990929" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.ASM_SPECIFIC_FLAGS" valueType="stringList">
+									<listOptionValue builtIn="false" value="[asm: -xassembler-with-cpp]"/>
+								</option>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__C_SRCS.310790186" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__C_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__CPP_SRCS.565393319" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__CPP_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM_SRCS.1377489398" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM2_SRCS.1111120813" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM2_SRCS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.linkerDebug.199054945" name="GNU Linker" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.linkerDebug">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.DEFSYM.1381358095" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.DEFSYM" valueType="stringList">
+									<listOptionValue builtIn="false" value="STACKSIZE=0x1C000"/>
+									<listOptionValue builtIn="false" value="HEAPSIZE=0x400"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OUTPUT_FILE.1649146758" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OUTPUT_FILE" value="${ProjName}.out" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.MAP_FILE.2087305963" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.MAP_FILE" value="${ProjName}.map" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NOSTARTFILES.1793285767" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NOSTARTFILES" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NODEFAULTLIBS.1753890682" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NODEFAULTLIBS" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.STATIC.882777510" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.STATIC" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.GC_SECTIONS.1723992892" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.GC_SECTIONS" value="true" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.LIBRARY.40773516" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.LIBRARY" valueType="libs">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="rdimon"/>
+									<listOptionValue builtIn="false" value="gcc"/>
+									<listOptionValue builtIn="false" value="profinet_slave_stack_RT_MRP_AM335x_arm"/>
+									<listOptionValue builtIn="false" value="snmp_core_stack_AM335x_arm"/>
+									<listOptionValue builtIn="false" value="c"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH.704024434" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/stack_lib/am335x/a8/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/stack_lib/am335x/a8"/>
+									<listOptionValue builtIn="false" value="${BIOS_CG_ROOT}/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/hard"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OTHER_FLAGS.126616022" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OTHER_FLAGS" valueType="stringList">
+									<listOptionValue builtIn="false" value="-Wl,--start-group"/>
+									<listOptionValue builtIn="false" value="--specs=nano.specs"/>
+								</option>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD_SRCS.191171933" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD2_SRCS.441930806" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD2_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__GEN_CMDS.773213687" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__GEN_CMDS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.hex.1424188457" name="GNU Objcopy Utility" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.hex"/>
+							<tool id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.709937740" name="XDCtools" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH.74853780" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH" valueType="stringList">
+									<listOptionValue builtIn="false" value="${BIOS_CG_ROOT}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_INSTALL_DIR}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_INSTALL_DIR}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_INSTALL_DIR}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_INSTALL_DIR}/packages"/>
+								</option>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET.1514391527" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET" value="gnu.targets.arm.A8F" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM.144535168" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM" value="ti.platforms.evmAM3359" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW.788285471" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW" value="ti.platforms.evmAM3359" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE.664164459" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE" value="debug" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR.168405613" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR" value="${CG_TOOL_ROOT}" valueType="string"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1476728063">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1476728063" moduleId="org.eclipse.cdt.core.settings" name="AM335x_release">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.rtsc.xdctools.parsers.ErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" errorParsers="org.eclipse.rtsc.xdctools.parsers.ErrorParser;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1476728063" name="AM335x_release" parent="com.ti.ccstudio.buildDefinitions.TMS470.Default">
+					<folderInfo id="com.ti.ccstudio.buildDefinitions.TMS470.Default.1476728063." name="/" resourcePath="">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.DebugToolchain.909971378" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.linkerDebug.1426206588">
+							<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1714448915" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=Cortex A.AM3359.ICE_AM3359"/>
+								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
+								<listOptionValue builtIn="false" value="OUTPUT_FORMAT=ELF"/>
+								<listOptionValue builtIn="false" value="CCS_MBS_VERSION=6.1.3"/>
+								<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
+								<listOptionValue builtIn="false" value="RTSC_MBS_VERSION=7.0.0"/>
+								<listOptionValue builtIn="false" value="XDC_VERSION=3.55.2.22_core"/>
+								<listOptionValue builtIn="false" value="OUTPUT_TYPE=rtscApplication:executable"/>
+								<listOptionValue builtIn="false" value="PRODUCTS=com.ti.rtsc.SYSBIOS:6.76.2.02;com.ti.pdk.am335x:1.0.12;com.ti.sdo.edma3:2.12.5.30E;com.ti.rtsc.NDK:3.61.1.01-eng;com.ti.uia:2.30.1.02;"/>
+								<listOptionValue builtIn="false" value="PRODUCT_MACRO_IMPORTS={&quot;com.ti.rtsc.SYSBIOS&quot;:[&quot;${COM_TI_BIOS_INCLUDE_PATH}&quot;,&quot;${COM_TI_BIOS_LIBRARY_PATH}&quot;,&quot;${COM_TI_BIOS_LIBRARIES}&quot;,&quot;${COM_TI_BIOS_SYMBOLS}&quot;,&quot;${COM_TI_BIOS_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.pdk.am335x&quot;:[&quot;${COM_TI_PDK_INCLUDE_PATH}&quot;,&quot;${COM_TI_PDK_LIBRARY_PATH}&quot;,&quot;${COM_TI_PDK_LIBRARIES}&quot;,&quot;${COM_TI_PDK_SYMBOLS}&quot;,&quot;${COM_TI_PDK_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.sdo.edma3&quot;:[&quot;${COM_TI_EDMA3_LLD_INCLUDE_PATH}&quot;,&quot;${COM_TI_EDMA3_LLD_LIBRARY_PATH}&quot;,&quot;${COM_TI_EDMA3_LLD_LIBRARIES}&quot;,&quot;${COM_TI_EDMA3_LLD_SYMBOLS}&quot;,&quot;${COM_TI_EDMA3_LLD_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.rtsc.NDK&quot;:[&quot;${COM_TI_NDK_INCLUDE_PATH}&quot;,&quot;${COM_TI_NDK_LIBRARY_PATH}&quot;,&quot;${COM_TI_NDK_LIBRARIES}&quot;,&quot;${COM_TI_NDK_SYMBOLS}&quot;,&quot;${COM_TI_NDK_SYSCONFIG_MANIFEST}&quot;],&quot;com.ti.uia&quot;:[&quot;${COM_TI_UIA_INCLUDE_PATH}&quot;,&quot;${COM_TI_UIA_LIBRARY_PATH}&quot;,&quot;${COM_TI_UIA_LIBRARIES}&quot;,&quot;${COM_TI_UIA_SYMBOLS}&quot;,&quot;${COM_TI_UIA_SYSCONFIG_MANIFEST}&quot;]}"/>
+							</option>
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1692019537" name="Compiler version" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="GNU_7.2.1:Linaro" valueType="string"/>
+							<targetPlatform id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.targetPlatformDebug.2080955438" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.targetPlatformDebug"/>
+							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.builderDebug.1957777372" keepEnvironmentInBuildfile="false" name="GNU Make" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.builderDebug"/>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.compilerDebug.830445054" name="GNU Compiler" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.compilerDebug">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEFINE.1772089324" name="Define symbols (-D)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEFINE" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="am3359"/>
+									<listOptionValue builtIn="false" value="SOC_AM335x"/>
+									<listOptionValue builtIn="false" value="icev2AM335x"/>
+									<listOptionValue builtIn="false" value="core0"/>
+									<listOptionValue builtIn="false" value="INCLUDE_TLK_WORKAROUND"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MCPU.1751746586" name="Target CPU (-mcpu)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MCPU" useByScannerDiscovery="false" value="cortex-a8" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MTUNE.687908432" name="Tune code for the given processor (-mtune)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MTUNE" useByScannerDiscovery="false" value="cortex-a8" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MARCH.1835033901" name="Target architecture (-march)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MARCH" useByScannerDiscovery="false" value="armv7-a" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.CODE_STATE.1240202544" name="Code state" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.CODE_STATE" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.CODE_STATE.ARM" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH.1514638870" name="Include paths (-I)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH" valueType="includePath">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_INCLUDE_PATH}"/>
+									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
+									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}"/>
+									<listOptionValue builtIn="false" value="${NDK_INSTALL_DIR}"/>
+									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include"/>
+									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include/am335x"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/examples/profinet_slave"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/include/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/firmware/v1.0"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/source"/>
+									<listOptionValue builtIn="false" value="${CG_TOOL_INCLUDE_PATH}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.ASM_SPECIFIC_FLAGS.100051981" name="Miscellaneous assembly source specific flags" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.ASM_SPECIFIC_FLAGS" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="[asm: -xassembler-with-cpp]"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MFLOAT_ABI.990185336" name="Use floating point hardware (-mfloat-abi)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.MFLOAT_ABI" useByScannerDiscovery="false" value="hard" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.1346623554" name="Optimization Level" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.FUNCTION_SECTIONS.802821898" name="Place each function into its own section (-ffunction-sections)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.FUNCTION_SECTIONS" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DATA_SECTIONS.1608366748" name="Place data items into their own section (-fdata-sections)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DATA_SECTIONS" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__C_SRCS.920040861" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__C_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__CPP_SRCS.984718594" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__CPP_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM_SRCS.308276751" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM2_SRCS.1292292569" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compiler.inputType__ASM2_SRCS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.linkerDebug.1426206588" name="GNU Linker" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.linkerDebug">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.DEFSYM.936711337" name="Define a symbol (--defsym)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.DEFSYM" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="STACKSIZE=0x1C000"/>
+									<listOptionValue builtIn="false" value="HEAPSIZE=0x400"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OUTPUT_FILE.1186594422" name="Output file (-o)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OUTPUT_FILE" useByScannerDiscovery="false" value="${ProjName}.out" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.MAP_FILE.1910725312" name="Write a map file (-Map)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.MAP_FILE" useByScannerDiscovery="false" value="${ProjName}.map" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.LIBRARY.224635772" name="Libraries (-l, --library)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.LIBRARY" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="rdimon"/>
+									<listOptionValue builtIn="false" value="gcc"/>
+									<listOptionValue builtIn="false" value="profinet_slave_stack_RT_MRP_AM335x_arm"/>
+									<listOptionValue builtIn="false" value="snmp_core_stack_AM335x_arm"/>
+									<listOptionValue builtIn="false" value="c"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH.772867825" name="Library search path (-L, --library-path)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${COM_TI_BIOS_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/stack_lib/am335x/a8/RT_MRP"/>
+									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/stack_lib/am335x/a8"/>
+									<listOptionValue builtIn="false" value="${BIOS_CG_ROOT}/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/hard"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NOSTARTFILES.1967165897" name="Do not use the standard system startup files when linking (-nostartfiles)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NOSTARTFILES" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NODEFAULTLIBS.1163615837" name="Do not use the standard system libraries when linking (-nodefaultlibs)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NODEFAULTLIBS" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.STATIC.166208510" name="Do not link with the shared libraries (-static)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.STATIC" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.GC_SECTIONS.588829306" name="Remove unused sections (--gc-sections)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.GC_SECTIONS" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OTHER_FLAGS.1544238424" name="Miscellaneous flags" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OTHER_FLAGS" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="-Wl,--start-group"/>
+									<listOptionValue builtIn="false" value="--specs=nano.specs"/>
+								</option>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD_SRCS.1355495776" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD2_SRCS.812337926" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__CMD2_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__GEN_CMDS.288157839" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exeLinker.inputType__GEN_CMDS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.hex.1654327138" name="GNU Objcopy Utility" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.hex"/>
+							<tool id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.2125643346" name="XDCtools" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool">
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR.2024366042" name="Compiler tools directory (-c)" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR" value="${CG_TOOL_ROOT}" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET.1712494325" name="Target (-t)" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET" value="gnu.targets.arm.A8F" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM.1426730175" name="Platform (-p)" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM" value="ti.platforms.evmAM3359" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW.1110148901" name="Platform (-p)" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW" value="ti.platforms.evmAM3359" valueType="string"/>
+								<option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE.118740717" name="Build-profile (-r)" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE" value="debug" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH.1265707977" name="XDCpath package repositories (--xdcpath)" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH" valueType="stringList">
+									<listOptionValue builtIn="false" value="${BIOS_CG_ROOT}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_PDK_INSTALL_DIR}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_INSTALL_DIR}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_NDK_INSTALL_DIR}/packages"/>
+									<listOptionValue builtIn="false" value="${COM_TI_UIA_INSTALL_DIR}/packages"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="profinet_slave_RT_MRP_AM335x_arm.com.ti.ccstudio.buildDefinitions.TMS470.ProjectType.2055539559" name="TMS470" projectType="com.ti.ccstudio.buildDefinitions.TMS470.ProjectType"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+</cproject>
