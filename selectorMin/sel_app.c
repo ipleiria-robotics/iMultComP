@@ -148,6 +148,7 @@ int main()
 	        UTILsResetPhys();
 	    }
 
+
 	irq_create(PRU_IRQ, (void *)UsrIntHandle);
 
     Error_init(&eb);
@@ -230,6 +231,7 @@ void UsrIntHandle(void)
 	}
 	LOCK_RTC_SS();
  }
+
 
 void irq_create(int irqNum, void * isrFunc)
 {
