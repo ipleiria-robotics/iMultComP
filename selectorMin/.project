@@ -28,7 +28,7 @@
 	<variableList>
 		<variable>
 			<name>IA_SDK_HOME_SRC</name>
-			<value>file:/C:/TI/am335x_sysbios_ind_sdk_1.1.0.5/sdk</value>
+			<value>file:/home/valentim/ti/am335x_sysbios_ind_sdk_1.1.0.5/sdk</value>
 		</variable>
 	</variableList>
 </projectDescription>

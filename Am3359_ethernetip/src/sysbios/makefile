@@ -6,26 +6,26 @@
 #  template: ti.sysbios/makefile_gccArmLto.xdt
 #  target: gnu.targets.arm.A8F
 
-vpath % C:/ti/bios_6_76_03_01/packages/ti/sysbios/
-vpath %.c C:/ti/xdctools_3_55_02_22_core/packages/
-vpath %.c C:/ti/bios_6_76_03_01/packages/
+vpath % /home/valentim/ti/bios_6_76_03_01/packages/ti/sysbios/
+vpath %.c /home/valentim/ti/xdctools_3_55_02_22_core/packages/
+vpath %.c /home/valentim/ti/bios_6_76_03_01/packages/
 
-XOPTS = -I"C:/ti/xdctools_3_55_02_22_core/packages/" -Dxdc_target_types__=C:/ti/bios_6_76_03_01/packages/gnu/targets/arm/std.h -Dxdc_target_name__=A8F
+XOPTS = -I"/home/valentim/ti/xdctools_3_55_02_22_core/packages/" -Dxdc_target_types__=/home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm/std.h -Dxdc_target_name__=A8F
 
 BIOS_DEFS =  -Dti_sysbios_BIOS_swiEnabled__D=TRUE -Dti_sysbios_BIOS_taskEnabled__D=TRUE -Dti_sysbios_BIOS_clockEnabled__D=TRUE -Dti_sysbios_BIOS_runtimeCreatesEnabled__D=TRUE -Dti_sysbios_knl_Task_moduleStateCheckFlag__D=FALSE -Dti_sysbios_knl_Task_objectCheckFlag__D=FALSE -Dti_sysbios_hal_Hwi_DISABLE_ALL_HOOKS -Dti_sysbios_knl_Swi_DISABLE_ALL_HOOKS -Dti_sysbios_BIOS_smpEnabled__D=FALSE -Dti_sysbios_BIOS_mpeEnabled__D=FALSE -Dti_sysbios_Build_useHwiMacros -Dti_sysbios_knl_Swi_numPriorities__D=16 -Dti_sysbios_knl_Task_deleteTerminatedTasks__D=TRUE -Dti_sysbios_knl_Task_numPriorities__D=16 -Dti_sysbios_knl_Task_checkStackFlag__D=TRUE -Dti_sysbios_knl_Task_initStackFlag__D=TRUE -Dti_sysbios_knl_Clock_TICK_SOURCE=ti_sysbios_knl_Clock_TickSource_TIMER -Dti_sysbios_knl_Clock_TICK_MODE=ti_sysbios_knl_Clock_TickMode_PERIODIC -Dti_sysbios_hal_Core_delegate_getId=ti_sysbios_hal_CoreNull_getId__E -Dti_sysbios_hal_Core_delegate_interruptCore=ti_sysbios_hal_CoreNull_interruptCore__E -Dti_sysbios_hal_Core_delegate_lock=ti_sysbios_hal_CoreNull_lock__E -Dti_sysbios_hal_Core_delegate_unlock=ti_sysbios_hal_CoreNull_unlock__E -Dti_sysbios_hal_Core_numCores__D=1 -Dti_sysbios_hal_CoreNull_numCores__D=1 -Dti_sysbios_utils_Load_taskEnabled__D=TRUE -Dti_sysbios_utils_Load_swiEnabled__D=FALSE -Dti_sysbios_utils_Load_hwiEnabled__D=FALSE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherSwiSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherTaskSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherAutoNestingSupport__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_dispatcherIrpTrackingSupport__D=TRUE -Dti_sysbios_knl_Semaphore_supportsEvents__D=FALSE -Dti_sysbios_knl_Semaphore_supportsPriority__D=TRUE 
 
 CCOPTS = -Wunused -Wunknown-pragmas -ffunction-sections -fdata-sections  -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=hard -mabi=aapcs -g   -Dfar= -D__DYNAMIC_REENT__   -mapcs  -Dti_sysbios_family_arm_exc_Exception_enableDecode__D=TRUE -Dti_sysbios_family_arm_a8_intcps_Hwi_enableAsidTagging__D=FALSE -Dti_sysbios_rts_gnu_ReentSupport_enableReentSupport__D=TRUE -Dti_posix_tirtos_Settings_debug__D=FALSE -std=c99 -Dti_sysbios_knl_Clock_stopCheckNext__D=FALSE -Dti_sysbios_hal_Core_numCores__D=1 -Dti_sysbios_knl_Task_minimizeLatency__D=FALSE
 
-BIOS_INC = -I"C:/ti/bios_6_76_03_01/packages/"
-ANNEX_INCS =  -IC:/ti/bios_6_76_03_01/packages/ti/posix/gcc
-INCS = $(BIOS_INC) $(ANNEX_INCS) -I"C:/ti/bios_6_76_03_01/packages/" -I"C:/ti/pdk_am335x_1_0_17/packages/" -I"C:/ti/edma3_lld_2_12_05_30E/packages/" -I"C:/ti/ndk_3_61_01_01/packages/" -I"C:/ti/uia_2_30_01_02/packages/" -I"C:/ti/PRU-ICSS-EthernetIP_Adapter_01.00.03.04/examples/ethernetip_adapter/" -I"C:/ti/xdctools_3_55_02_22_core/packages/" -I"../" -I"/packages//"  -IC:/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/newlib-nano -IC:/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+BIOS_INC = -I"/home/valentim/ti/bios_6_76_03_01/packages/"
+ANNEX_INCS =  -I/home/valentim/ti/bios_6_76_03_01/packages/ti/posix/gcc
+INCS = $(BIOS_INC) $(ANNEX_INCS) -I"/home/valentim/ti/bios_6_76_03_01/packages/" -I"/home/valentim/ti/pdk_am335x_1_0_17/packages/" -I"/home/valentim/ti/edma3_lld_2_12_05_30E/packages/" -I"/home/valentim/ti/ndk_3_61_01_01/packages/" -I"/home/valentim/ti/uia_2_30_01_02/packages/" -I"/home/valentim/ti/PRU-ICSS-EthernetIP_Adapter_01.00.03.04/examples/ethernetip_adapter/" -I"/home/valentim/ti/xdctools_3_55_02_22_core/packages/" -I"../" -I"/packages//"  -I/home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/newlib-nano -I/home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
 
-CC = C:/ti/ccs1020/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32/bin/arm-none-eabi-gcc -c -MD -MF $@.dep $(CCOPTS)
-ASM = C:/ti/ccs1020/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32/bin/arm-none-eabi-gcc -c -x assembler-with-cpp $(CCOPTS)
-AR = C:/ti/ccs1020/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32/bin/arm-none-eabi-ar cr
+CC = /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gcc -c -MD -MF $@.dep $(CCOPTS)
+ASM = /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gcc -c -x assembler-with-cpp $(CCOPTS)
+AR = /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-ar cr
 
-DEL = C:/ti/xdctools_3_55_02_22_core/packages/../bin/rm -f
-CP = C:/ti/xdctools_3_55_02_22_core/packages/../bin/cp -f
+DEL = rm -f
+CP = cp -f
 
 define RM
 	$(if $(wildcard $1),$(DEL) $1,:)
@@ -223,5 +223,5 @@ sysbios.aa8fg: arm_IntrinsicsSupport_asm_gnu.o arm_TaskSupport_asm_gnu.o dmtimer
 
 
 clean:
-	@$(DEL) ..\makefile.libs
+	@$(DEL) ../makefile.libs
 	@-$(call RM, *)

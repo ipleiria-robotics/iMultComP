@@ -10,6 +10,7 @@
 	<rts value="libc.a"/>
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=ethernetip_adapter_AM335x_arm.projectspec.ethernetip_adapter_AM335x_arm,type=rtsc,xdcToolsVersion=3.55.02.22,buildProfile=debug,products=com.ti.rtsc.SYSBIOS:6.76.02.02;com.ti.pdk.am335x:1.0.12;com.ti.sdo.edma3:2.12.05.30E;com.ti.rtsc.NDK:3.61.01.01-eng;com.ti.uia:2.30.01.02,platform=ti.platforms.evmAM3359,target=gnu.targets.arm.A8F,configuroOptions=-Dconfig.importPath=${IA_SDK_HOME}/examples/ethernetip_adapter "/>
-	<origin value="C:/sitara/ethernetip_adapter_AM335x_arm"/>
+	<origin value="/home/valentim/Desktop/iMultComP/Am3359_ethernetip"/>
 	<filesToOpen value=""/>
+	<isTargetManual value="false"/>
 </projectOptions>

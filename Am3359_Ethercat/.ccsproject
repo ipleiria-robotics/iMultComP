@@ -10,7 +10,7 @@
 	<rts value=""/>
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=rtos_template_app_am335x_a8_evmAM335X.projectspec.rtos_template_app_am335x_a8,xdcToolsVersion=3_55_02_22_core,products=com.ti.rtsc.SYSBIOS:6.76.03.01;com.ti.pdk.am335x:1.0.17,type=rtsc,target=gnu.targets.arm.A8F,platform=ti.platforms.evmAM3359,buildProfile=release,isHybrid=true"/>
-	<origin value="C:/Users/varod/OneDrive/Ambiente de Trabalho/iMultComP/Am3359_App"/>
+	<origin value="/home/valentim/Desktop/iMultComP/Am3359_Ethercat"/>
 	<filesToOpen value=""/>
 	<isTargetManual value="false"/>
 </projectOptions>

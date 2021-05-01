@@ -12,4 +12,5 @@
 	<defaultConfiguration value="AM335x_release"/>
 	<filesToOpen value=""/>
 	<isTargetManual value="false"/>
+	<origin value="/home/valentim/Desktop/iMultComP/Am3359_profibus"/>
 </projectOptions>

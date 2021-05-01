@@ -12,5 +12,5 @@
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=com.ti.common.project.core.emptyProjectTemplate"/>
 	<filesToOpen value=""/>
-	<origin value="C:/Users/varod/OneDrive/Ambiente de Trabalho/tidcaf4/detection_firmware"/>
+	<origin value="/home/valentim/Desktop/iMultComP/detection_firmware"/>
 </projectOptions>
