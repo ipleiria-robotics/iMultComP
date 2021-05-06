@@ -19,11 +19,11 @@ uint8_t ptpMAC[6] = {0x1, 0x0, 0x5e, 0x0, 0x1, 0x81};
 /**DLR MAC ID for comparison*/
 uint8_t dlrMAC[6] = {0x1, 0x21, 0x6c, 0x0, 0x0, 0x2};
 
-/**Product Description for CIP Sync. Reads Texas Instruments:AM3359 in unicode*/
+/** Product Description for CIP Sync. Reads Texas Instruments:AM3359 in unicode */
 uint8_t productDesc[] = {84, 101, 120, 97, 115, 32, 73, 110, 115, 116, 114, 117, 109, 101,   \
                          110, 116, 115, 59, 65, 77, 51, 51, 53, 57
                         };
-/**Product Revision Description for CIP Sync*/
+/**Product Revision Description for CIP Sync */
 uint8_t revDesc[] = {49, 59, 49, 59, 49};
 
 /**Used to initialize Port Profile identity*/
