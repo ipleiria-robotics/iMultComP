@@ -1,6 +1,6 @@
 #
 # This file was generated based on the configuration script:
-#     /home/valentim/works_IPL/Am3359_ethernetip/am335x_app.cfg
+#     /home/valentim/Desktop/iMultComP/Am3359_ethernetip/am335x_app.cfg
 #
 # This makefile may be included in other makefiles that need to build
 # the libraries containing the compiled source files generated as
@@ -14,7 +14,7 @@
 #
 # The absolute path to the generated source directory (at the time the
 # sources were generated) is:
-#    /home/valentim/works_IPL/Am3359_ethernetip/src
+#    /home/valentim/Desktop/iMultComP/Am3359_ethernetip/src
 #
 GEN_SRC_DIR ?= ../src
 

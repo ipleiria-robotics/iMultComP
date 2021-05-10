@@ -35,7 +35,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
 #include <string.h>
-#include "bsp.h"                /* this modules interface            */
+#include "bsp.h"                                         /* this modules interface            */
 #include <ti/starterware/include/hw/soc_am335x.h>
 #include <ti/starterware/include/hw/hw_control_am335x.h>
 #include <ti/starterware/include/edma.h>
@@ -43,11 +43,15 @@
 #include <ti/csl/src/ip/icss/V0/cslr_icssm_intc.h>
 #include <ti/drv/gpio/GPIO.h>
 #include <ti/drv/gpio/soc/GPIO_v1.h>
+
 #include <ti/csl/src/ip/gpio/V1/gpio_v2.h>
-#include <profi_soc.h>
-#include <profi_misc.h>
+
+#include "profi_soc.h"
+#include "profi_misc.h"
 #include <profi_edma.h>
-#include <examples/board/include/board_i2cLed.h>
+
+#include <AM335x/Board/board_i2cLed.h>
+
 #include <ti/drv/pruss/soc/pruicss_v1.h>
 
 extern PRUICSS_Handle pruIcssHandle;
@@ -118,7 +122,7 @@ void profi_soc_set_digoutput(uint8_t outData)
  *                in ARM INTC
  ******************************************************************************************/
 void profi_soc_register_interrupts(void * irqHandler)
-{
+{                                              // 2
     PRUICSS_registerIrqHandler(pruIcssHandle, PRU_EVTOUT0, 20,
                                1, 1, (PRUICSSDRV_IRQ_HANDLER)irqHandler);
 }

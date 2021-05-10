@@ -37,9 +37,9 @@
 
 #include "bsp.h"                /* this modules interface            */
 #include "basictyp.h"
-#include <L2.h>
+#include "L2.h"
 #include "profi_pruss_driver.h"
-#include <profi_soc.h>
+#include "profi_soc.h"
 
 #include <string.h> /* memset prototype */
 extern void user_error(byte error_code);
