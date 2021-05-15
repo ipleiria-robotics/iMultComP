@@ -12,7 +12,11 @@
 - Open CCStudio and then click on the Project tab -> Import CCS project. The next window will appear. 
 <img src="../Image/import_project_ccs.png" width="500" >
 
-- 
+- The next step is to click on "browser" and point to the folder where the cloned project. Choose which project to import and click import. Then the project will appear in the left bar of CCStudio
+<img src="../Image/view_project_1.png" width="500" >
+
+
+
 
 
 
