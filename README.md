@@ -9,9 +9,17 @@ Industrial Multi Communication Protocol
 - In order to have an embedded system running an operating system (LINUX or RTOS) but able to communicate with industrial networks, Texas has developed an AM335x processor that has two PRU-ICSS modules (Programmable Real-time Unit and Industrial Communication SubSystem).
 -So, for example, the PRU module is responsible for receiving packets from an industrial network, storing the data in buffers to supply the data to the ARM processor. 
 
-## BeagleBone Black Development Board
-- The beaglebone black has an AM335x processor. The goal is to develop a low-cost solution for debugging industrial networks.
-## PRU-ICSS Industrial Software for Sitara Processors AM335X
+## Board TMDSICE3359 AM3359 Industrial Communications Engine 
+
+- The AM3359 Industrial Communications Engine (ICE) is a development platform targeted for systems that specifically focus on the industrial communications capabilities of the Sitara AM335x Arm® Cortex ™ -A8 processors.
+The AM335x Arm Cortex-A8 processors integrate the Programmable Real-time Unit (PRU) that has been architected to implement the real-time communication technologies used in a broad range of industrial automation equipment. It enables low foot print designs with minimal external components and with best in class low power performance.
+
+<img src="/Image/board.png" width="300" >
+
+- [Sitara ICEAM3359](https://www.ti.com/tool/TMDSICE3359)
+
+
+## PRU-ICSS Industrial Software for Sitara Processors SITARA AM3359 
 
 - The Programmable Real-time Unit and Industrial Communication SubSystem (PRU-ICSS) consists of dual 32-bit RISC architecture cores, shared data, instruction memories, internal peripheral modules, and an interrupt controller (INTC). 
 - The programmable of the PRU, along with its access to pins, events and all system-on-chip (SoC) resources, provides flexibility in implementing fast real-time responses. 
