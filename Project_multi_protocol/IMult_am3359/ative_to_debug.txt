@@ -1,0 +1,5 @@
+
+1 -> ativar idle task 
+2 -> em task Enable Idle task, init stack, check for task stack overflow, 
+
+3 -> em bios ativar o debug 

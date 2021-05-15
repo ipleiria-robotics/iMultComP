@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_cfg_debug_aux" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/cfg_debug_aux_pa8fg.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="C:/Users/varod/OneDrive/Ambiente de Trabalho/iMultComP/Am3359_App/cfg_debug_aux.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/cfg_debug_aux_pa8fg.mak" src="package.bld"/>
+        <srcFile name="package/cfg/cfg_debug_aux_pa8fg.oa8fg.dep" src="package/cfg/cfg_debug_aux_pa8fg.c"/>
+        <srcFile name="package/cfg/cfg_debug_aux_pa8fg.dep" src="package/cfg/cfg_debug_aux_pa8fg.cfg"/>
+        <srcFile name="package/cfg/cfg_debug_aux.xa8fg.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_cfg_debug_aux.tar.dep" src="package/rel/xconfig_cfg_debug_aux.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.A8F"
+            version="gnu.targets.arm.A8F{1,0,7.2,1"
+            rawVersion="7.2.1"
+            platform="ti.platforms.evmAM3359"
+            isa="v7A"
+            suffix="a8fg"
+            rootDir="C:/ti/ccs1020/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="cfg_debug_aux"
+        pname="cfg_debug_aux.pa8fg"
+        target="gnu.targets.arm.A8F"
+        platform="ti.platforms.evmAM3359"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/cfg_debug_aux_pa8fg.cfg"
+        xCfgPrefix="package/cfg/cfg_debug_aux_pa8fg"
+        cfgScript="C:/Users/varod/OneDrive/Ambiente de Trabalho/iMultComP/Am3359_App/cfg_debug_aux.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="cfg_debug_aux"
+        pname="cfg_debug_aux.xa8fg"
+        target="gnu.targets.arm.A8F"
+        platform="ti.platforms.evmAM3359"
+        profile="release"
+        xCfgScript="package/cfg/cfg_debug_aux_pa8fg.cfg"
+        xCfgPrefix="package/cfg/cfg_debug_aux_pa8fg"
+        cfgScript="C:/Users/varod/OneDrive/Ambiente de Trabalho/iMultComP/Am3359_App/cfg_debug_aux.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="cfg_debug_aux.xa8fg"
+        args=""
+        groupName="cfg_debug_aux.xa8fg"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_cfg_debug_aux"
+        pname="xconfig_cfg_debug_aux.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

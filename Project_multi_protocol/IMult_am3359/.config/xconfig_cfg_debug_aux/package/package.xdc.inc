@@ -1,0 +1,12 @@
+package.xdc
+package.xs
+package/xconfig_cfg_debug_aux.sch
+package/.vers_g200
+package/.vers_r200
+package/.vers_b200
+package/.xdc-G16
+package/xconfig_cfg_debug_aux.java
+package/xconfig_cfg_debug_aux.class
+package/package_xconfig_cfg_debug_aux.c
+package/package.defs.h
+package/xconfig_cfg_debug_aux.ccs

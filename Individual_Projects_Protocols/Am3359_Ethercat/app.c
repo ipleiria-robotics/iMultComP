@@ -2,7 +2,7 @@
 
 #include "app.h"
 
-
+void info_comand();
 
 
 /****************************************************************************************
@@ -48,6 +48,8 @@ void init_peripheral(){
  ****************************************************************************************/
 void task_main(){
 
+    info_comand();
+
     // create Task ethercat
      // create params task
      TaskP_Params_init(&task_params_ethercat);
@@ -57,9 +59,8 @@ void task_main(){
       task_handle_ethercat = TaskP_create(task1, &task_params_ethercat);
 
 
-    char buff[6];
+    char buff[10];
     uint16_t ch_task_init = 0;
-    uint8_t task_ethercat_create = 0;
 
 
     /* Create mailbox ethercat */
@@ -79,13 +80,15 @@ void task_main(){
 
     while(1){
 
+            TaskP_sleep(500);
+            info_comand();
 
             /* Scan input word from user */
              UART_scanFmt("%s", &buff);
 
 
-             if(!strcmp(buff,"rdd")) ch_task_init = 30;
-             if(!strcmp(buff,"wdd")){
+             if(!strcmp(buff,"ethread")) ch_task_init = 30;
+             if(!strcmp(buff,"ethwrite")){
                  ch_task_init = 31;
                  memset(buff,0,sizeof(buff));
              }
@@ -104,16 +107,12 @@ void task_main(){
                 // read info ethercat
                 UART_printf("%d\n",_read_word);
                 _read_word = 0;   // clear
-                UART_printf("%d\n",addr_len_eth);
-                addr_len_eth = 0;   // clear
             break;
 
         // -----------------------------------------------------------------------------------------------------
            case 31:
                // write info ethercat
                UART_scanFmt("%d", &_write_word);
-               UART_printf("ttt: %d\n",_write_word);
-
            break;
 
 
@@ -129,6 +128,11 @@ void task_main(){
     }
 }
 
+
+void info_comand(){
+    UART_printf("\nInsert ethread to read the PLC \n");
+    UART_printf("Insert ethwrite to write to the PLC\n");
+}
 
 
 

@@ -77,6 +77,8 @@ char byOsBuff[500] = {0};
 
 extern void Board_initSPI(void);
 
+void info_comand();
+
 void PN_initDefaultIRTHandle(PN_Handle pnHandle, ICSS_EmacHandle emacHandle);
 
 extern PRUICSS_Config pruss_config[2 + 1];
@@ -376,6 +378,10 @@ void task_console_log(){
     memset(buff,0,sizeof(buff));
 
     while(1){
+
+            TaskP_sleep(500);
+            // info comands line interactive profinet
+             info_comand();
 
             /* Scan input word from user */
              UART_scanFmt("%s", &buff);
@@ -740,9 +746,17 @@ void _main_profinet_(){
     initTesting(appEmacHandle, appPnHandle);
 #endif /* FACTORY_TESTING*/
 
+    // info comands line interactive profinet
+    info_comand();
+
   //  OSAL_OS_start();
 }
 
+
+void info_comand(){
+    UART_printf("\nInsert pnread to read the PLC word \n");
+    UART_printf("Insert pnwrite tto write to the PLC byte \n");
+}
 
 
 
