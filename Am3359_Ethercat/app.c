@@ -11,7 +11,7 @@
 
 void init_peripheral(){
 
-    Board_init(BOARD_INIT_PINMUX_CONFIG | BOARD_INIT_MODULE_CLOCK | BOARD_INIT_ICSS_PINMUX | BOARD_INIT_UART_STDIO);
+    Board_init(BOARD_INIT_PINMUX_CONFIG | BOARD_INIT_MODULE_CLOCK | BOARD_INIT_ICSS_PINMUX | BOARD_INIT_UART_STDIO |  BOARD_INIT_ICSS_ETH_PHY);
 
     TaskP_Params_init(&taskParams);
     taskParams.priority = 15;

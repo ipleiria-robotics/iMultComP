@@ -40,11 +40,14 @@
 
 
 /* Stack header files */
-#include "L2.h"
+
+#include <AM335x/L2.h>
+
 #include <ti/sdo/edma3/drv/edma3_drv.h>
 #include <ti/sdo/edma3/drv/sample/bios6_edma3_drv_sample.h>
-#include "profi_edma.h"
-#include "profi_soc.h"
+
+#include <AM335x/profi_edma.h>
+#include <AM335x/profi_soc.h>
 
 /****************************************************************************
  *                      Defines
@@ -80,10 +83,9 @@ uint32_t tcc1 = 0;
 /****************************************************************************
  *                      FUNCTION PROTOTYPES
  ****************************************************************************/
-void callback1(uint32_t tcc, EDMA3_RM_TccStatus status,
-               void *appData);
-int32_t setParamAndCopy(uint32_t srcBuffer, uint32_t destbuffer,
-                        uint32_t length);
+void callback1(uint32_t tcc, EDMA3_RM_TccStatus status, void *appData);
+
+int32_t setParamAndCopy(uint32_t srcBuffer, uint32_t destbuffer, uint32_t length);
 
 /****************************************************************************
  *                      FUNCTION DEFINITIONS
@@ -138,10 +140,8 @@ int edma_memcpy(int channel, unsigned int dst, unsigned int src,
 }
 
 
-int32_t setParamAndCopy(uint32_t srcBuffer, uint32_t destbuffer,
-                        uint32_t length)
+int32_t setParamAndCopy(uint32_t srcBuffer, uint32_t destbuffer, uint32_t length)
 {
-
 
     int result = -1;
     EDMA3_DRV_PaRAMRegs paramSet   = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};

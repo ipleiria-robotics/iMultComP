@@ -35,7 +35,10 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
 #include <string.h>
-#include "bsp.h"                                         /* this modules interface            */
+
+
+#include <AM335x/bsp.h>/* this modules interface            */
+
 #include <ti/starterware/include/hw/soc_am335x.h>
 #include <ti/starterware/include/hw/hw_control_am335x.h>
 #include <ti/starterware/include/edma.h>
@@ -46,9 +49,9 @@
 
 #include <ti/csl/src/ip/gpio/V1/gpio_v2.h>
 
-#include "profi_soc.h"
-#include "profi_misc.h"
-#include <profi_edma.h>
+#include <AM335x/profi_soc.h>
+#include <AM335x/profi_misc.h>
+#include <AM335x/profi_edma.h>
 
 #include <AM335x/Board/board_i2cLed.h>
 
@@ -63,9 +66,7 @@ extern PRUICSS_Handle pruIcssHandle;
  ******************************************************************************************/
 void profi_soc_bsp_init()
 {
-    g_pL2GlobVar = (TL2GlobVar *)(((PRUICSS_HwAttrs *)(
-                                           pruIcssHandle->hwAttrs))->baseAddr +
-                                      PRU_ICSS_SHARED_RAM);       /* Pointing g_pL2GlobVarto Shared RAM */
+    g_pL2GlobVar = (TL2GlobVar *)(((PRUICSS_HwAttrs *)(pruIcssHandle->hwAttrs))->baseAddr + PRU_ICSS_SHARED_RAM);       /* Pointing g_pL2GlobVarto Shared RAM */
 
     memset(g_pL2GlobVar, 0, sizeof(TL2GlobVar));
     

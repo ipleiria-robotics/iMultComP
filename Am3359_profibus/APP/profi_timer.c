@@ -37,10 +37,12 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
 /* Application header files */
-#include "profi_timer.h"
+#include <AM335x/profi_timer.h>
+
 
 /* Stack header files */
-#include "profibus_timer.h"
+#include <AM335x/profibus_timer.h>
+
 
 /* SysBios header files */
 #include <ti/sysbios/knl/Clock.h>
@@ -77,8 +79,8 @@ void profi_timer_isr(void)
  *  @param   ms    Timer count value in ms
  *  @param   timerfn    Timer ISR function
  */
-void profi_timer_register_call_back(unsigned int ms,
-                                    profibus_hwutils_function_handler timerfn)
+
+void profi_timer_register_call_back(unsigned int ms,profibus_hwutils_function_handler timerfn)
 {
     callback_timerfn = timerfn;
 }

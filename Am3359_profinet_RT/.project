@@ -32,19 +32,9 @@
 			<locationURI>IA_SDK_HOME/examples/profinet_slave/am335x_app_arm.cfg</locationURI>
 		</link>
 		<link>
-			<name>icss_emacFwConfig.c</name>
-			<type>1</type>
-			<locationURI>IA_SDK_HOME/protocols/profinet_slave/firmware/icss_emacFwConfig.c</locationURI>
-		</link>
-		<link>
 			<name>main.c</name>
 			<type>1</type>
 			<locationURI>IA_SDK_HOME/examples/profinet_slave/main.c</locationURI>
-		</link>
-		<link>
-			<name>pn_soc.c</name>
-			<type>1</type>
-			<locationURI>IA_SDK_HOME/examples/profinet_slave/AM335x/pn_soc.c</locationURI>
 		</link>
 		<link>
 			<name>board_am335x/board_gpioLed.c</name>
@@ -177,6 +167,16 @@
 			<locationURI>IA_SDK_HOME/protocols/profinet_slave/drivers/iRtcDrv2.c</locationURI>
 		</link>
 		<link>
+			<name>profinet_device_driver/icss_emacFwConfig.c</name>
+			<type>1</type>
+			<locationURI>IA_SDK_HOME/protocols/profinet_slave/firmware/icss_emacFwConfig.c</locationURI>
+		</link>
+		<link>
+			<name>profinet_device_driver/pn_soc.c</name>
+			<type>1</type>
+			<locationURI>IA_SDK_HOME/examples/profinet_slave/AM335x/pn_soc.c</locationURI>
+		</link>
+		<link>
 			<name>profinet_device_snmp/mib_impl.c</name>
 			<type>1</type>
 			<locationURI>IA_SDK_HOME/examples/profinet_slave/snmp/mib_impl.c</locationURI>
@@ -276,6 +276,10 @@
 		<variable>
 			<name>IA_SDK_HOME</name>
 			<value>$%7BTI_PRODUCTS_DIR__TIREX%7D/PRU-ICSS-Profinet_Slave_01.00.03.04</value>
+		</variable>
+		<variable>
+			<name>IA_SDK_HOME_ETH</name>
+			<value>file:/home/valentim/ti/PRU-ICSS-EtherCAT_Slave_01.00.08.01</value>
 		</variable>
 		<variable>
 			<name>ICSS_EMAC_INSTALL_PATH</name>

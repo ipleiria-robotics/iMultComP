@@ -32,7 +32,7 @@
 		</variable>
 		<variable>
 			<name>PDK_INSTALL_PATH</name>
-			<value>file:/home/valentim/ti/pdk_am335x_1_0_17</value>
+			<value>file:/home/valentim/ti/pdk_am335x_1_0_17/packages</value>
 		</variable>
 	</variableList>
 </projectDescription>

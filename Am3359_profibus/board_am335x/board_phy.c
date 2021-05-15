@@ -39,15 +39,16 @@
  *
  */
 #include <xdc/std.h>
-#include <examples/board/include/board_phy.h>
+#include <AM335x/Board/board_phy.h>
 #include <ti/starterware/include/hw/soc_am335x.h>
 #include <ti/csl/soc.h>
 #include <ti/csl/src/ip/icss/V1/cslr_icss_cfg.h>
 #include <ti/csl/csl_gpio.h>
 
 #include <ti/drv/gpio/soc/GPIO_soc.h>
-#include <examples/board/include/board_misc.h>
-#include <examples/board/include/delay_us.h>
+#include <AM335x/Board/board_misc.h>
+#include <AM335x/Board/delay_us.h>
+
 
 #define AM335X_ICSS1_PORT1_PHY_ADDR 1
 #ifndef iceAMIC11x

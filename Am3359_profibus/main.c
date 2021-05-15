@@ -52,24 +52,28 @@
 #include <setjmp.h>
 
 /* Stack header files */
-#include "basictyp.h"
-#include "L2.h"
-#include "user.h"
+#include <AM335x/basictyp.h>
+#include <AM335x/L2.h>
+#include <AM335x/user.h>
 
-#include "dpe.h"
-#include "dpc1.h"
-#include "profibus_timer.h"
-#include "iandm.h"
-#include "targetdefs.h"
-#include "fdl.h"
+#include <AM335x/dpe.h>
+#include <AM335x/dpc1.h>
+#include <AM335x/profibus_timer.h>
+#include <AM335x/iandm.h>
+#include <AM335x/targetdefs.h>
+#include <AM335x/fdl.h>
+
 #include <ti/drv/pruss/pruicss.h>
 #include <ti/drv/uart/UART_stdio.h>
 #include <ti/board/board.h>
-#include <profi_hw_utils.h>
-#include <profi_misc.h>
-#include <profi_soc.h>
-#include "version.h"
-#include <examples/board/include/board_i2cLed.h>
+#include <AM335x/profi_hw_utils.h>
+#include <AM335x/profi_misc.h>
+#include <AM335x/profi_soc.h>
+
+
+#include <Pru_Firmware/version.h>
+#include <AM335x/Board/board_i2cLed.h>
+
 /****************************************************************************
  *                      FUNCTION PROTOTYPES
  ****************************************************************************/

@@ -38,15 +38,20 @@
 /* SysBios header files */
 
 /* Stack header files */
-#include "pruss_intc_mapping.h"
+
+#include <AM335x/pruss_intc_mapping.h>
+
 
 #include <ti/drv/pruss/pruicss.h>
-#include <profibus_pru0_main_bin.h>
-#include <profibus_pru1_main_bin.h>
+
+#include <Pru_Firmware/profibus_pru0_main_bin.h>
+#include <Pru_Firmware/profibus_pru1_main_bin.h>
+
 #include <ti/drv/uart/UART_stdio.h>
-#include "profi_edma.h"
-#include "profi_soc.h"
-#include "profi_hw_utils.h"
+#include <AM335x/profi_edma.h>
+#include <AM335x/profi_soc.h>
+#include <AM335x/profi_hw_utils.h>
+
 
 
 extern PRUICSS_Handle pruIcssHandle;

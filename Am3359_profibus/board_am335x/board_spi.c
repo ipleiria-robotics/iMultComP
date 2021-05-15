@@ -38,18 +38,22 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
+
 #include <stdbool.h>
 #include <ti/csl/soc.h>
 #include <ti/drv/gpio/GPIO.h>
-#include <examples/board/include/board_spi.h>
+#include <AM335x/Board/board_spi.h>
+
 #include <ti/drv/spi/soc/QSPI_v1.h>
 #include <ti/starterware/include/board.h>
 #include <ti/starterware/include/device.h>
 /* Flash header file */
-#include <examples/board/include/board_mcspi.h>
-#include <examples/board/include/board_platform.h>
-#include <examples/board/include/delay_us.h>
-#include <examples/board/include/board_gpioLed.h>
+
+#include <AM335x/Board/board_mcspi.h>
+#include <AM335x/Board/board_platform.h>
+#include <AM335x/Board/delay_us.h>
+#include <AM335x/Board/board_gpioLed.h>
+
 
 Board_flashHandle boardFlashHandle;
 

@@ -36,8 +36,9 @@
 /* ========================================================================== */
 /*                             Include Files                                  */
 /* ========================================================================== */
-#include <examples/board/include/board_mcspi.h>
-#include <examples/board/include/board_gpioLed.h>
+
+#include <AM335x/Board/board_mcspi.h>
+#include <AM335x/Board/board_gpioLed.h>
 #include <ti/drv/gpio/GPIO.h>
 #include <ti/drv/gpio/soc/GPIO_v1.h>
 #include <ti/csl/csl_gpio.h>
@@ -47,8 +48,9 @@
 #include <ti/csl/src/ip/mcspi/V0/hw_mcspi.h>
 #include <ti/starterware/include/board.h>
 #include <ti/starterware/include/device.h>
-#include <examples/board/include/board_spi.h>
-#include <examples/board/include/board_platform.h>
+#include <AM335x/Board/board_spi.h>
+#include <AM335x/Board/board_platform.h>
+
 /* ========================================================================== */
 /*                           Macros & Typedefs                                */
 /* ========================================================================== */

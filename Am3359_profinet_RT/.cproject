@@ -37,6 +37,7 @@
 							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.compilerDebug.1089169420" name="GNU Compiler" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.exe.compilerDebug">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEFINE.1446774621" name="Define symbols (-D)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.DEFINE" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="${COM_TI_BIOS_SYMBOLS}"/>
+									<listOptionValue builtIn="false" value="ECAT_LIMITED_DEMO"/>
 									<listOptionValue builtIn="false" value="${COM_TI_PDK_SYMBOLS}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_SYMBOLS}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_NDK_SYMBOLS}"/>
@@ -111,12 +112,11 @@
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH.704024434" name="Library search path (-L, --library-path)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${COM_TI_BIOS_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${PROJECT_ROOT}/stack"/>
 									<listOptionValue builtIn="false" value="${COM_TI_PDK_LIBRARY_PATH}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_LIBRARY_PATH}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARY_PATH}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_UIA_LIBRARY_PATH}"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/stack_lib/am335x/a8/RT_MRP"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/stack_lib/am335x/a8"/>
 									<listOptionValue builtIn="false" value="${BIOS_CG_ROOT}/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/hard"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OTHER_FLAGS.126616022" name="Miscellaneous flags" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.OTHER_FLAGS" valueType="stringList">
@@ -144,6 +144,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="app_profinet.h|app.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

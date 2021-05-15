@@ -35,15 +35,23 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
 
-#include "bsp.h"                /* this modules interface            */
-#include "basictyp.h"
-#include "L2.h"
-#include "profi_pruss_driver.h"
-#include "profi_soc.h"
+                /* this modules interface            */
+#include <AM335x/bsp.h>
+#include <AM335x/basictyp.h>
+#include <AM335x/L2.h>
+
+#include <AM335x/profi_pruss_driver.h>
+#include <AM335x/profi_soc.h>
+
 
 #include <string.h> /* memset prototype */
+
+
 extern void user_error(byte error_code);
+
+
 TL2GlobVar XDATA *g_pL2GlobVar = NULL;
+
 unsigned int offset;
 extern int slave_addr;
 extern int uartnum;

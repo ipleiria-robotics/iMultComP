@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_am335x_app" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/am335x_app_pa8fg.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="/home/valentim/Desktop/iMultComP/Am3359_profibus/am335x_app.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/am335x_app_pa8fg.mak" src="package.bld"/>
+        <srcFile name="package/cfg/am335x_app_pa8fg.oa8fg.dep" src="package/cfg/am335x_app_pa8fg.c"/>
+        <srcFile name="package/cfg/am335x_app_pa8fg.dep" src="package/cfg/am335x_app_pa8fg.cfg"/>
+        <srcFile name="package/cfg/am335x_app.xa8fg.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_am335x_app.tar.dep" src="package/rel/xconfig_am335x_app.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.A8F"
+            version="gnu.targets.arm.A8F{1,0,7.2,1"
+            rawVersion="7.2.1"
+            platform="ti.platforms.evmAM3359"
+            isa="v7A"
+            suffix="a8fg"
+            rootDir="/home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="am335x_app"
+        pname="am335x_app.pa8fg"
+        target="gnu.targets.arm.A8F"
+        platform="ti.platforms.evmAM3359"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/am335x_app_pa8fg.cfg"
+        xCfgPrefix="package/cfg/am335x_app_pa8fg"
+        cfgScript="/home/valentim/Desktop/iMultComP/Am3359_profibus/am335x_app.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="am335x_app"
+        pname="am335x_app.xa8fg"
+        target="gnu.targets.arm.A8F"
+        platform="ti.platforms.evmAM3359"
+        profile="release"
+        xCfgScript="package/cfg/am335x_app_pa8fg.cfg"
+        xCfgPrefix="package/cfg/am335x_app_pa8fg"
+        cfgScript="/home/valentim/Desktop/iMultComP/Am3359_profibus/am335x_app.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="am335x_app.xa8fg"
+        args=""
+        groupName="am335x_app.xa8fg"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_am335x_app"
+        pname="xconfig_am335x_app.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

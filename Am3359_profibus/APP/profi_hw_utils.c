@@ -39,13 +39,15 @@
 #include <ti/sysbios/knl/Task.h>
 
 /* Application header files */
-#include "profi_hw_utils.h"
-#include "profi_timer.h"
+#include <AM335x/profi_hw_utils.h>
+#include <AM335x/profi_timer.h>
+
 #include <ti/drv/pruss/pruicss.h>
 #include <ti/csl/src/ip/icss/V0/cslr_icssm_ecap.h>
 #include <ti/csl/src/ip/icss/V1/cslr_icss_uart.h>
 #include <ti/drv/i2c/I2C.h>
-#include "basictyp.h"
+#include <AM335x/basictyp.h>
+
 
 /****************************************************************************/
 /*                      GLOBAL VARIABLES                                    */
