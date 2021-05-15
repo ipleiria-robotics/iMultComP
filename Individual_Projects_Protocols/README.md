@@ -10,7 +10,7 @@
 - Clone this repository to your computer
 
 - Open CCStudio and then click on the Project tab -> Import CCS project. The next window will appear. 
-<img src="../Image/import_project_ccs.png" width="100" >
+<img src="../Image/import_project_ccs.png" width="500" >
 
 - 
 
