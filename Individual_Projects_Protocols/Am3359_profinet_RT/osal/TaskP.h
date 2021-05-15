@@ -85,12 +85,10 @@ typedef  void *TaskP_Handle;
 typedef struct TaskP_Params_s
 {
     uint8_t *name;           /*!< Name of the task instance.                  */
-    void *pErrBlk; /*!< Pointer to the error block for task Create */
     int8_t priority;     /*!< The priority of the task                    */
     uint32_t stacksize;   /*!< The stack size of the task                  */
     void *arg0;           /*!< arg0                                        */
     void *arg1;           /*!< arg1                                        */
-    void *stack;       /*!< pointer to stack memory, if NULL OS will allocate internally */
 } TaskP_Params;
 
 
@@ -103,8 +101,7 @@ typedef struct TaskP_Params_s
  *
  *  @return A TaskP_Handle on success or a NULL on an error
  */
-extern TaskP_Handle TaskP_create(void *taskfxn,
-                                 const TaskP_Params *params);
+extern TaskP_Handle TaskP_create(void *taskfxn, const TaskP_Params *params);
 
 /*!
  *  @brief  Function to delete a task.

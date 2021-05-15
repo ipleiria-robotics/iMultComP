@@ -61,16 +61,9 @@
 									<listOptionValue builtIn="false" value="${COM_TI_UIA_INCLUDE_PATH}"/>
 									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}"/>
 									<listOptionValue builtIn="false" value="${NDK_INSTALL_DIR}"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include/am335x"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/examples/profinet_slave"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/include/RT_MRP"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include/RT_MRP"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/firmware/v1.0"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/source"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_INCLUDE_PATH}"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.808423460" name="Optimization Level" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.OPT_LEVEL.0" valueType="enumerated"/>
@@ -145,7 +138,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="app_profinet.h|app.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src|app_profinet.h|app.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -289,6 +282,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

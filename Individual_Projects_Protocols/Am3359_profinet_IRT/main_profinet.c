@@ -1,29 +1,26 @@
 
 
-#include "app.h"
+#include <app.h>
+#include <include/pn_soc.h>
+#include <include/firmware/firmware_version.h>
+#include <include/snmp_ndk_interface.h>
 
-//################################################################################
-/**Application header files*/
+#define IND_PKG_VERSION "Profinet Slave 01.00.03.04"
 
-#include "pn_soc.h"
-#include "firmware_version.h"
-#include <protocols/snmp/include/snmp_ndk_interface.h>
-#include <protocols/profinet_slave/version.h>
+#include <include/PN_Handle.h>
+#include <include/PN_HandleDef.h>
+#include <include/iPnOs.h>
+#include <include/iPNDrv.h>
+#include <include/iRtcDrv2.h>
+#include <include/iPNLegacy.h>
+#include <include/iPNIsoMDrv.h>
 
-#include <protocols/profinet_slave/include/PN_Handle.h>
-#include <protocols/profinet_slave/include/PN_HandleDef.h>
-#include <protocols/profinet_slave/include/iPnOs.h>
-#include <protocols/profinet_slave/include/iPNDrv.h>
-#include <protocols/profinet_slave/include/iRtcDrv2.h>
-#include <protocols/profinet_slave/include/iPNLegacy.h>
-#include <protocols/profinet_slave/include/iPNIsoMDrv.h>
-
-#include <third_party/protocols/profinet_slave/include/os.h>
-#include <third_party/protocols/profinet_slave/include/types_pn.h>
-#include <third_party/protocols/profinet_slave/include/system.h>
-#include <platform_pn.h>
-#include <examples/profinet_slave/tiswitch_pruss_intc_mapping.h>
-#include <protocols/profinet_slave/firmware/icss_emacFwConfig.h>
+#include <include/os.h>
+#include <include/types_pn.h>
+#include <include/system.h>
+#include <include/platform_pn.h>
+#include <include/tiswitch_pruss_intc_mapping.h>
+#include <include/icss_emacFwConfig.h>
 
 /*
  *  global data declaration
@@ -363,7 +360,7 @@ void PN_writeFirmwareFeature()
 
 void task_console_log(){
 
-    UART_printf("Protocol Profinet RT IPLeiria \n ");
+    UART_printf("\n Protocol Profinet RT IPLeiria \n ");
     char buff[6];
     uint8_t pn_write = 0;
     uint16_t ch_task_init = 0;
@@ -390,7 +387,8 @@ void task_console_log(){
                  // extra subslot - option
                  UART_printf("Modular_1 -> subslot In/Out: %d\n", read_value_2);
                  break;
-              case 3:
+
+             case 3:
                  pn_write = 0;
                  UART_printf("Write modular_1: ");
                  UART_scanFmt("%d", &pn_write);
@@ -677,6 +675,7 @@ void _main_profinet_(){
 
     /*Workaround:To write firmware feature set and version to DRAM. Required as ICSS EMAC APIs check for
      * the data. Need to move to firmware data section and load via firmware load API*/
+
     PN_writeFirmwareFeature();
 
     PN_initDefaultIRTHandle(appPnHandle, appEmacHandle);

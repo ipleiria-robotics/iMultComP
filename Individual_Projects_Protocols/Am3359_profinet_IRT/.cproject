@@ -59,16 +59,9 @@
 									<listOptionValue builtIn="false" value="${COM_TI_SITARA_PRUICSS_INCLUDE_PATH}"/>
 									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}"/>
 									<listOptionValue builtIn="false" value="${NDK_INSTALL_DIR}"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/starterware/include/am335x"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/examples/profinet_slave"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/include/IRT"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include/IRT"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/include"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/protocols/profinet_slave/firmware/v1.0"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/source"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_INCLUDE_PATH}"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.ASM_SPECIFIC_FLAGS.108940051" name="Miscellaneous assembly source specific flags" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.ASM_SPECIFIC_FLAGS" useByScannerDiscovery="false" valueType="stringList">
@@ -113,9 +106,8 @@
 									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARY_PATH}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_UIA_LIBRARY_PATH}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_SITARA_PRUICSS_LIBRARY_PATH}"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profinet_slave/stack_lib/am335x/a8/IRT"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/snmp/stack_lib/am335x/a8"/>
 									<listOptionValue builtIn="false" value="${BIOS_CG_ROOT}/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/hard"/>
+									<listOptionValue builtIn="false" value="${PROJECT_ROOT}/stack"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NOSTARTFILES.944856296" name="Do not use the standard system startup files when linking (-nostartfiles)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NOSTARTFILES" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NODEFAULTLIBS.662028288" name="Do not use the standard system libraries when linking (-nodefaultlibs)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.NODEFAULTLIBS" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -146,6 +138,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="app.h|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -292,6 +287,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

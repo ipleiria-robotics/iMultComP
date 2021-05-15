@@ -322,13 +322,9 @@ void EIPAPP_taskPruss(UArg a0, UArg a1)
     PRUICSS_pruDisable(prusshandle, ICSS_EMAC_PORT_1 - 1);
     PRUICSS_pruDisable(prusshandle, ICSS_EMAC_PORT_2 - 1);
 
-    if(PRUICSS_pruWriteMemory(prusshandle, PRU_ICSS_IRAM(0) , 0,
-                              (uint32_t *) PRU0_FIRMWARE_NAME,
-                              sizeof(PRU0_FIRMWARE_NAME)))
+    if(PRUICSS_pruWriteMemory(prusshandle, PRU_ICSS_IRAM(0) , 0, (uint32_t *) PRU0_FIRMWARE_NAME, sizeof(PRU0_FIRMWARE_NAME)))
     {
-        if(PRUICSS_pruWriteMemory(prusshandle, PRU_ICSS_IRAM(1) , 0,
-                                  (uint32_t *) PRU1_FIRMWARE_NAME,
-                                  sizeof(PRU1_FIRMWARE_NAME)))
+        if(PRUICSS_pruWriteMemory(prusshandle, PRU_ICSS_IRAM(1) , 0, (uint32_t *) PRU1_FIRMWARE_NAME, sizeof(PRU1_FIRMWARE_NAME)))
         {
             firmwareLoad_done = TRUE;
         }
@@ -493,8 +489,7 @@ int main()
     taskParams.instance->name = (char *)"LinkTask";
     taskParams.arg0 = (UArg)emachandle;
 
-    ((ICSS_EmacObject *)emachandle->object)->linkTaskHandle = Task_create(
-                (Task_FuncPtr)ICSS_EMacOsLinkTaskFnc, &taskParams, NULL);
+    ((ICSS_EmacObject *)emachandle->object)->linkTaskHandle = Task_create((Task_FuncPtr)ICSS_EMacOsLinkTaskFnc, &taskParams, NULL);
 
     PRUICSS_pinMuxConfig(prusshandle, 0x0); // PRUSS pinmuxing
 
@@ -563,25 +558,20 @@ int8_t EIPAPP_initICSSPtpHandle(TimeSync_ParamsHandle_t timeSyncHandle,
      * used for queues*/
     timeSyncHandle->edmaConfig->iep_config_adj_offset = IEP_CONFIG_ADJ_OFFSET;
     timeSyncHandle->edmaConfig->iep_ecap_config_offset = ECAP_CLR_CONFIG_OFFSET;
-
-    timeSyncHandle->tsSyntInfo = (timeSync_SyntInfo_t *)malloc(sizeof(
-                                     timeSync_SyntInfo_t));
-
+    timeSyncHandle->tsSyntInfo = (timeSync_SyntInfo_t *)malloc(sizeof(timeSync_SyntInfo_t));
     if(timeSyncHandle->tsSyntInfo == NULL)
     {
         return TIME_SYNC_UNABLE_TO_ALLOC_MEM;
     }
 
-    timeSyncHandle->tsNrrInfo[0] = (timeSync_NrrInfo_t *)malloc(sizeof(
-                                       timeSync_NrrInfo_t));
+    timeSyncHandle->tsNrrInfo[0] = (timeSync_NrrInfo_t *)malloc(sizeof(timeSync_NrrInfo_t));
 
     if(timeSyncHandle->tsNrrInfo[0] == NULL)
     {
         return TIME_SYNC_UNABLE_TO_ALLOC_MEM;
     }
 
-    timeSyncHandle->tsNrrInfo[1] = (timeSync_NrrInfo_t *)malloc(sizeof(
-                                       timeSync_NrrInfo_t));
+    timeSyncHandle->tsNrrInfo[1] = (timeSync_NrrInfo_t *)malloc(sizeof(timeSync_NrrInfo_t));
 
     if(timeSyncHandle->tsNrrInfo[1] == NULL)
     {
@@ -672,22 +662,15 @@ int8_t EIPAPP_initICSSPtpHandle(TimeSync_ParamsHandle_t timeSyncHandle,
     timeSyncHandle->timeSyncConfig.isMaster = 0;
     timeSyncHandle->timeSyncConfig.masterParams.priority1 = TIMESYNC_DEFAULT_PRIO_1;
     timeSyncHandle->timeSyncConfig.masterParams.priority2 = TIMESYNC_DEFAULT_PRIO_2;
-    timeSyncHandle->timeSyncConfig.masterParams.clockAccuracy =
-        TIMESYNC_DEFAULT_CLOCK_ACCURACY; /*greater than 10s */
-    timeSyncHandle->timeSyncConfig.masterParams.clockClass =
-        TIMESYNC_DEFAULT_CLOCK_CLASS;
-    timeSyncHandle->timeSyncConfig.masterParams.clockVariance =
-        TIMESYNC_DEFAULT_CLOCK_VARIANCE;
-    timeSyncHandle->timeSyncConfig.masterParams.stepRemoved =
-        TIMESYNC_DEFAULT_STEPS_REMOVED;
+    timeSyncHandle->timeSyncConfig.masterParams.clockAccuracy = TIMESYNC_DEFAULT_CLOCK_ACCURACY; /*greater than 10s */
+    timeSyncHandle->timeSyncConfig.masterParams.clockClass = TIMESYNC_DEFAULT_CLOCK_CLASS;
+    timeSyncHandle->timeSyncConfig.masterParams.clockVariance = TIMESYNC_DEFAULT_CLOCK_VARIANCE;
+    timeSyncHandle->timeSyncConfig.masterParams.stepRemoved = TIMESYNC_DEFAULT_STEPS_REMOVED;
     timeSyncHandle->timeSyncConfig.masterParams.UTCOffset = TIMESYNC_UTC_OFFSET;
-    timeSyncHandle->timeSyncConfig.masterParams.timeSource =
-        TIMESYNC_DEFAULT_TIME_SOURCE; /*Internal oscillator*/
+    timeSyncHandle->timeSyncConfig.masterParams.timeSource = TIMESYNC_DEFAULT_TIME_SOURCE; /*Internal oscillator*/
 
-    timeSyncHandle->timeSyncConfig.masterParams.ptp_flags[TS_PTP_TIMESCALE_INDEX] =
-        1;
-    timeSyncHandle->timeSyncConfig.masterParams.ptp_flags[TS_PTP_TWO_STEP_INDEX] =
-        1;
+    timeSyncHandle->timeSyncConfig.masterParams.ptp_flags[TS_PTP_TIMESCALE_INDEX] = 1;
+    timeSyncHandle->timeSyncConfig.masterParams.ptp_flags[TS_PTP_TWO_STEP_INDEX] = 1;
 
     return TIME_SYNC_OK;
 

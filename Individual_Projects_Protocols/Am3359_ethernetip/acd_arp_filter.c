@@ -52,7 +52,7 @@ extern unsigned int acdARPFlag;
 /*                          Function Definitions                              */
 /* ========================================================================== */
 /**
- *  @brief  Function checks whether the ARP which Tx by the driver is Gratituous ARP or not
+ *  @brief  Function checks whether the ARP  ( Address Resolution Protocol) which Tx by the driver is Gratituous ARP or not
  *
  *          Used in ACD mode to implement the workaroumd where NDK the Gratitous ARP send by NDK stack
  *          can be blocked

@@ -1,12 +1,12 @@
 /*
  * app.h
  *
- *  Created on: 14/05/2021
+ *  Created on: 12/05/2021
  *      Author: valentim
  */
 
-#ifndef APP_H_
-#define APP_H_
+#ifndef APP_C_
+#define APP_C_
 
 
 #include <stdio.h>
@@ -48,17 +48,21 @@
 #include <ti/transport/ndk/nimu_icss/example/src/osdrv_ndkdeviceconfig.h>
 #include <ti/transport/ndk/nimu_icss/nimu_icssEth.h>
 
-#include <examples/osal/TaskP.h>
-#include <examples/osal/OSP.h>
-#include <examples/board/include/board_gpioLed.h>
-#include <examples/board/include/board_spi.h>
-#include <examples/board/include/board_phy.h>
-#include <examples/board/include/board_misc.h>
-#include <examples/board/include/board_tlkphy.h>
-#include <examples/board/include/board_i2cLed.h>
-#include <examples/board/include/soc_icss_header.h>
-#include <examples/board/include/oled_drv.h>
-#include <examples/board/include/board_oled.h>
+#include <osal/TaskP.h>
+#include <osal/OSP.h>
+
+#include <board_am335x/include/board_gpioLed.h>
+#include <board_am335x/include/board_spi.h>
+#include <board_am335x/include/board_phy.h>
+#include <board_am335x/include/board_misc.h>
+#include <board_am335x/include/board_tlkphy.h>
+#include <board_am335x/include/board_i2cLed.h>
+#include <board_am335x/include/soc_icss_header.h>
+#include <board_am335x/include/oled_drv.h>
+#include <board_am335x/include/board_oled.h>
+
+
+
 
 
 /**
@@ -69,4 +73,8 @@ void _main_profinet_();
 
 
 
-#endif /* APP_H_ */
+
+
+
+
+#endif /* APP_C_ */
