@@ -24,12 +24,12 @@
 - To be able to compile, it is necessary to install previously downloaded packages in CCStudio. Click on the CCStudio Window tab and select the Preferences option. A window will appear as in the following figure.
 - Select the Code Composer Studio tab and click on Products, as the following figure shows.
 
-<img src="../Image/install_porduc_CCS.png" width="400" >
+<img src="../Image/install_porduc_CCS.png" width="500" >
 
 - Then click Refresh and then Install. When you clicked Refresh and the packages previously added in the `ti` folder do not appear, it means that you have installed the packages in the wrong folder. After the previous steps have been successfully completed, click Apply and Close and restart CCStudio.
 
 - Now it is necessary to go to the project properties and ensure that the packages are selected with the correct version. In the project, click the right mouse button and select properties. In the options tree, click on General as shown in the following figure.
-<img src="../Image/general_option_project.png" width="400" >
+<img src="../Image/general_option_project.png" width="500" >
 
 - As you can see, the products (XDCtools, NDK, SYSY / BIOS) are selected with the correct version. If in your example they have other versions, double-click on the selected product and choose the same version as the previous figure. Click on apply and the project will be ready to be compiled. 
 
@@ -40,7 +40,7 @@
 
 - To check if the protocol is being detected, Load the project to the board through CCStudio and add breakPoint in the UsrIntHandle () function, as shown in the following figure.
 
-<img src="../Image/break_point_1.png" width="400" >  
+<img src="../Image/break_point_1.png" width="500" >  
 
 - Then start the project and connect the RJ45 cable and check the break point reached.
 
