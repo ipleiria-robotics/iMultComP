@@ -19,7 +19,7 @@ int main(){
 
     Board_init(BOARD_INIT_PINMUX_CONFIG | BOARD_INIT_MODULE_CLOCK | BOARD_INIT_ICSS_PINMUX | BOARD_INIT_UART_STDIO |  BOARD_INIT_ICSS_ETH_PHY);
     UART_init();
-
+    delay_us(1000);
     /* Scan input word from user */
     memset(buff,0,sizeof(buff));
     delay_us(1000);
