@@ -46,5 +46,3 @@
 
 ### work to be continued 
 - Develop a bootloader project capable of loading the binary into RAM depending on the registry value RTC_SCRATCH0_REG. 
-
-

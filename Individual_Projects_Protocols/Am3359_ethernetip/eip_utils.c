@@ -192,7 +192,6 @@ void EIPUTILS_displayApplicationDetails()
         UART_printf("\n\rACD Bit Enabled in SPIFlash. Starting the Application in ACD Mode");
         UART_printf("\n\rIP Address will be taken once Link is up");
     }
-
     else
     {
         UART_printf("\n\rACD Bit Disabled in SPIFlash.Starting the Application in Normal Mode");
@@ -203,7 +202,6 @@ void EIPUTILS_displayApplicationDetails()
         UART_printf("\n\rWaiting for IP Address to be assigned by DHCP Server");
         UART_printf("\n\rPress N to assign IP Manually");
     }
-
     else
     {
         UART_printf("\n\rIP Address obtained from SPI Flash");

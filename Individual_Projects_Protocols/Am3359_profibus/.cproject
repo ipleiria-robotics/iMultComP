@@ -235,6 +235,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.MAP_FILE.306039251" name="Write a map file (-Map)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.MAP_FILE" useByScannerDiscovery="false" value="${ProjName}.map" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.LIBRARY.1198126625" name="Libraries (-l, --library)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.LIBRARY" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="${COM_TI_BIOS_LIBRARIES}"/>
+									<listOptionValue builtIn="false" value="dal"/>
 									<listOptionValue builtIn="false" value="${COM_TI_PDK_LIBRARIES}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARIES}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_LIBRARIES}"/>
@@ -245,15 +246,14 @@
 									<listOptionValue builtIn="false" value="gcc"/>
 									<listOptionValue builtIn="false" value="nosys"/>
 									<listOptionValue builtIn="false" value="stdc++"/>
-									<listOptionValue builtIn="false" value="dal"/>
 									<listOptionValue builtIn="false" value="c"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH.1286781927" name="Library search path (-L, --library-path)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.linkerID.SEARCH_PATH" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${COM_TI_BIOS_LIBRARY_PATH}"/>
+									<listOptionValue builtIn="false" value="${PROJECT_ROOT}/stack"/>
 									<listOptionValue builtIn="false" value="${COM_TI_PDK_LIBRARY_PATH}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_NDK_LIBRARY_PATH}"/>
 									<listOptionValue builtIn="false" value="${COM_TI_EDMA3_LLD_LIBRARY_PATH}"/>
-									<listOptionValue builtIn="false" value="${IA_SDK_HOME}/third_party/protocols/profibus_slave/stack_lib/am335x/a8"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/drv/uart/lib/am335x/a8/release"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/drv/pruss/lib/am335x/a8/release"/>
 									<listOptionValue builtIn="false" value="${PDK_INSTALL_PATH}/ti/osal/lib/tirtos/am335x/a8/release"/>

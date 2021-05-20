@@ -314,4 +314,5 @@
 		<project id="ethernetip_adapter_AM335x_arm.com.ti.ccstudio.buildDefinitions.TMS470.ProjectType.109842308" name="TMS470" projectType="com.ti.ccstudio.buildDefinitions.TMS470.ProjectType"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

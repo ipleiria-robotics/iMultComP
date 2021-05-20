@@ -48,6 +48,7 @@
 *   MC_FLTR_DIS                         0x0
 *   MC_FLTR_ENA                         0x1
 */
+
 void eip_multicast_filter_config(ICSSEMAC_Handle icssEmacHandle,
                                  uint8_t command)
 {
