@@ -36,9 +36,11 @@
 /* ========================================================================== */
 /*                             Include Files                                  */
 /* ========================================================================== */
-#include"eip_main.h"
-#include <examples/board/include/board_gpioLed.h>
-#include <examples/board/include/board_spi.h>
+
+#include <Include/protocol/eip_main.h>
+#include <Include/board/board_gpioLed.h>
+#include <Include/board/board_spi.h>
+
 #include <ti/drv/spi/SPIver.h>
 #include <ti/drv/spi/test/qspi_flash/src/Flash_S25FL/S25FL.h>
 #include <ti/drv/uart/UART_stdio.h>

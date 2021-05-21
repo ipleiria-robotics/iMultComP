@@ -49,7 +49,9 @@
 #include <ti/ndk/inc/netctrl/netctrl.h>
 #include <ti/sysbios/knl/Task.h>
 
-#include "app_restart.h"
+
+#include <Include/protocol/app_restart.h>
+
 
 #if defined(SOC_AM572x) || defined(SOC_AM571x)
 extern uint8_t  __iodelaydata_start__;

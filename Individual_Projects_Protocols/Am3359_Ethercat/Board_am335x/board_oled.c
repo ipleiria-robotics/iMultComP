@@ -39,7 +39,7 @@
  *
  ******************************************************************************/
 
-#include <examples/board/include/oled_drv.h>
+#include <Include/Board_am335x/oled_drv.h>
 
 OLED_RET Board_oledGPIOInit(void)
 {

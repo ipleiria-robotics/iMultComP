@@ -15,7 +15,8 @@
 #include <ti/drv/gpio/soc/GPIO_soc.h>
 #include <ti/starterware/include/hw/soc_am335x.h>
 
-#include <examples/board/include/board_gpioLed.h>
+#include <Include/board/board_gpioLed.h>
+
 
 /***********************************************************************/
 /* Macros                                        */

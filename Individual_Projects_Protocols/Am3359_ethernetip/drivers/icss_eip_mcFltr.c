@@ -34,11 +34,10 @@
 #include <ti/drv/icss_emac/icss_emacCommon.h>
 #include <ti/drv/icss_emac/icss_emac_ver.h>
 #include <ti/drv/icss_emac/src/icss_emacLoc.h>
+#include <Include/protocol/icss_eip_mcFltr.h>
+#include <Include/protocol/icss_eip_firmware.h>
+#include <Include/protocol/debugtrace.h>
 
-#include "icss_eip_mcFltr.h"
-#include "icss_eip_firmware.h"
-
-#include <protocols/common/include/debugtrace.h>
 
 /* ========================================================================== */
 /*                          Function Definitions                              */

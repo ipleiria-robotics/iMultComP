@@ -37,7 +37,8 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
 
-#include <examples/board/include/board_misc.h>
+
+#include <Include/board/board_misc.h>
 #ifdef SOC_AM571x
 #include <ti/csl/soc/am571x/src/cslr_interrupt.h>
 #include <ti/csl/soc/am571x/src/cslr_control_intr_dma.h>
@@ -45,10 +46,12 @@
 #include <ti/csl/soc/am571x/src/cslr_soc_mpu_baseaddress.h>
 #include <ti/csl/soc/am571x/src/cslr_control_core.h>
 #endif
+
 #include <ti/drv/i2c/I2C.h>
 #include <ti/drv/spi/SPI.h>
-#include <examples/board/include/board_spi.h>
-#include <examples/board/include/board_rotary_switch.h>
+#include <Include/board/board_spi.h>
+#include <Include/board/board_rotary_switch.h>
+
 #ifdef SOC_AM572x
 #include <ti/csl/soc/am572x/src/cslr_control_intr_dma.h>
 #include <ti/csl/soc/am572x/src/cslr_l4per_cm_core_component.h>
@@ -56,7 +59,7 @@
 #endif
 #include <ti/csl/hw_types.h>
 #ifdef SOC_AM335x
-#include <examples/board/include/board_mcspi.h>
+#include <Include/board/board_mcspi.h>
 #endif
 #ifdef SOC_AM65XX
 #include <protocols/common/include/debugtrace.h>

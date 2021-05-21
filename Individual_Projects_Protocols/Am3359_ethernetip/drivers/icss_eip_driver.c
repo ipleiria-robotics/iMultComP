@@ -7,12 +7,13 @@
 * Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/
 *\par
 */
+#include <Include/protocol/icss_dlr.h>
+#include <Include/protocol/icss_eip_driver.h>
+#include <Include/protocol/timeSync/icss_timeSync_init.h>
 
-#include <protocols/ethernetip_adapter/include/icss_dlr.h>
-#include <protocols/ethernetip_adapter/include/icss_eip_driver.h>
-#include <protocols/timeSync/include/icss_timeSync_init.h>
 #include <ti/drv/icss_emac/icss_emacStormControl.h>
-#include "icss_eip_mcFltr.h"
+#include <Include/protocol/icss_eip_mcFltr.h>
+
 
 /**PTP MAC ID for comparison*/
 uint8_t ptpMAC[6] = {0x1, 0x0, 0x5e, 0x0, 0x1, 0x81};

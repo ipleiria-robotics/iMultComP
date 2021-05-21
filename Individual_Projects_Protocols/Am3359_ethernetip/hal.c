@@ -37,14 +37,16 @@
 /*                             Include Files                                  */
 /* ========================================================================== */
 #include <ti/ndk/inc/stkmain.h>
-#include "eip_main.h"
-#include <third_party/protocols/ethernetip_adapter/include/hal.h>
+#include <Include/protocol/eip_main.h>
+#include <Include/protocol/hal.h>
+
 #include <ti/drv/spi/SPIver.h>
 #include <ti/drv/spi/test/qspi_flash/src/Flash_S25FL/S25FL.h>
-#include <examples/board/include/board_tlkphy.h>
-#include <examples/board/include/board_spi.h>
-#include <examples/board/include/mdio_drv.h>
-#include <examples/ethernetip_adapter/eip_soc.h>
+
+#include <Include/board/board_tlkphy.h>
+#include <Include/board/board_spi.h>
+#include <Include/board/mdio_drv.h>
+#include <Include/protocol/eip_soc.h>
 
 
 /* ========================================================================== */

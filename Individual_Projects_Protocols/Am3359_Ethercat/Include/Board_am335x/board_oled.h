@@ -44,7 +44,7 @@
 /************************
  * Include Files
  ************************/
-#include <examples/board/include/oled_drv.h>
+#include <Include/Board_am335x/oled_drv.h>
 #if defined(SOC_K2G)
 #include <ti/board/src/iceK2G/include/board_cfg.h>
 #elif defined(SOC_AM335x)

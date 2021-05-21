@@ -39,11 +39,10 @@
 /* ========================================================================== */
 
 #include <stdio.h>
-#include "eip_main.h"
-#include <examples/board/include/board_i2cLed.h>
-#include <third_party/protocols/ethernetip_adapter/include/eip_device.h>
-#include <third_party/protocols/ethernetip_adapter/include/opt_api.h>
-#include <protocols/ethernetip_adapter/include/icss_dlr.h>
+#include <Include/protocol/eip_main.h>
+#include <Include/board/board_i2cLed.h>
+#include <Include/protocol/opt_api.h>
+#include <Include/protocol/icss_dlr.h>
 #include <ti/drv/uart/UART_stdio.h>
 
 /* ========================================================================== */

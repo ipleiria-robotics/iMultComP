@@ -1,8 +1,8 @@
 tirtos_timer.o: \
  /home/valentim/ti/bios_6_76_03_01/packages/ti/posix/tirtos/timer.c \
  /home/valentim/ti/xdctools_3_55_02_22_core/packages/xdc/std.h \
- /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stdarg.h \
- /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stddef.h \
+ /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stdarg.h \
+ /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stddef.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm/std.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm/A8F.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/std.h \
@@ -67,7 +67,7 @@ tirtos_timer.o: \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/../include/sys/types.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/_ansi.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/newlib-nano/newlib.h \
- /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/arm-none-eabi/include/sys/config.h \
+ /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/arm-none-eabi/include/sys/config.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine/ieeefp.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys/cdefs.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine/_types.h \

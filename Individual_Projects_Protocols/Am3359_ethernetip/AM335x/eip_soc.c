@@ -8,22 +8,23 @@
 * \par
 *
 */
-#include "eip_soc.h"
-#include <examples/board/include/board_spi.h>
+#include <Include/protocol/eip_soc.h>
+
+#include <Include/board/board_spi.h>
 
 #include <ti/drv/gpio/GPIO.h>
 #include <ti/drv/gpio/soc/GPIO_v1.h>
 #include <ti/csl/src/ip/gpio/V1/gpio_v2.h>
 #include <ti/drv/spi/SPI.h>
 #include <ti/board/board.h>
-#include <examples/board/include/oled_drv.h>
-#include <examples/board/include/board_tlkphy.h>
+#include <Include/board/oled_drv.h>
+#include <Include/board/board_tlkphy.h>
 #include <ti/drv/pruss/soc/pruicss_v1.h>
 #include <ti/drv/icss_emac/icss_emacDrv.h>
 #include "ti/starterware/include/soc_control.h"
 #include "ti/starterware/include/chipdb.h"
 #include "ti/starterware/include/prcm.h"
-#include <examples/board/include/board_i2cLed.h>
+#include <Include/board/board_i2cLed.h>
 
 extern ICSS_EmacHandle emachandle;
 extern PRUICSS_Handle prusshandle;

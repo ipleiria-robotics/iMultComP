@@ -54,7 +54,8 @@
 #include <ti/csl/src/ip/mdio/V2/csl_mdioAux.h>
 #endif
 
-#include <examples/board/include/mdio_drv.h>
+#include <Include/board/mdio_drv.h>
+
 
 /* ========================================================================== */
 /*                           Macros & Typedefs                                */

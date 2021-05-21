@@ -49,16 +49,17 @@
 #include <ti/ndk/inc/stack/inc/listlib.h>
 #include <ti/ndk/inc/stack/inc/nimuif.h>
 #include <ti/ndk/inc/stack/inc/lliif.h>
-#include <protocols/ethernetip_adapter/include/icss_dlr.h>
-#include <third_party/protocols/ptp/ptpd/dep/icss_ptpd_driver.h>
+#include <Include/protocol/icss_dlr.h>
+#include <Include/protocol/icss_ptpd_driver.h>
 #include <ti/drv/icss_emac/icss_emacFwInit.h>
 #include <ti/drv/icss_emac/icss_emacCommon.h>
 #include <ti/drv/spi/SPIver.h>
 #include <ti/drv/spi/test/qspi_flash/src/Flash_S25FL/S25FL.h>
 
-#include <examples/ethernetip_adapter/eip_main.h>
-#include <examples/board/include/board_spi.h>
-#include "user_acd_ndk.h"
+#include <Include/protocol/eip_main.h>
+#include <Include/board/board_spi.h>
+#include <Include/protocol/user_acd_ndk.h>
+
 
 #define BUFSIZE (ARPHDR_SIZE + ETHHDR_SIZE)
 #define ARPBUFSIZE (BUFSIZE * 32)

@@ -41,15 +41,16 @@
 #include <stdbool.h>
 #include <ti/csl/soc.h>
 #include <ti/drv/gpio/GPIO.h>
-#include <examples/board/include/board_spi.h>
+#include <Include/board/board_spi.h>
 #include <ti/drv/spi/soc/QSPI_v1.h>
 #include <ti/starterware/include/board.h>
 #include <ti/starterware/include/device.h>
 /* Flash header file */
-#include <examples/board/include/board_mcspi.h>
-#include <examples/board/include/board_platform.h>
-#include <examples/board/include/delay_us.h>
-#include <examples/board/include/board_gpioLed.h>
+#include <Include/board/board_mcspi.h>
+#include <Include/board/board_platform.h>
+#include <Include/board/delay_us.h>
+#include <Include/board/board_gpioLed.h>
+
 
 Board_flashHandle boardFlashHandle;
 

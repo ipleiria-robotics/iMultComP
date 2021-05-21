@@ -95,36 +95,32 @@
 /* Flash header file */
 #include <ti/drv/spi/SPIver.h>
 #include <ti/drv/spi/test/qspi_flash/src/Flash_S25FL/S25FL.h>
-#include <examples/board/include/board_i2cLed.h>
-#include <examples/board/include/board_gpioLed.h>
-#include <examples/board/include/board_misc.h>
-#include <examples/board/include/board_phy.h>
-#include <examples/board/include/board_spi.h>
-#include <examples/board/include/board_eeprom.h>
-#if defined(SOC_AM335x) || defined(SOC_AM437x)
+#include <Include/board/board_i2cLed.h>
+#include <Include/board/board_gpioLed.h>
+
+#include <Include/board/board_misc.h>
+#include <Include/board/board_phy.h>
+#include <Include/board/board_spi.h>
+#include <Include/board/board_eeprom.h>
+
 #include <ti/starterware/include/chipdb.h>
 #include <ti/starterware/include/soc_control.h>
-#endif
 
-#if defined(SOC_AM335x) || defined(SOC_AM437x) || defined(SOC_AMIC110)
-#include <protocols/ethernetip_adapter/firmware/v1.0/ethernetip_adapter_pru0_bin.h>
-#include <protocols/ethernetip_adapter/firmware/v1.0/ethernetip_adapter_pru1_bin.h>
-#else
-#include <protocols/ethernetip_adapter/firmware/v2.1/ethernetip_adapter_pru0_bin.h>
-#include <protocols/ethernetip_adapter/firmware/v2.1/ethernetip_adapter_pru1_bin.h>
-#endif
+#include <Include/firmware/ethernetip_adapter_pru0_bin.h>
+#include <Include/firmware/ethernetip_adapter_pru1_bin.h>
+#include <Include/protocol/timeSync/icss_timeSyncApi.h>
+#include <Include/protocol/timeSync/icss_timeSync.h>
+#include <Include/protocol/timeSync/icss_timeSync_init.h>
 
-#include <protocols/timeSync/include/icss_timeSyncApi.h>
-#include <protocols/timeSync/include/icss_timeSync.h>
-#include <protocols/timeSync/include/icss_timeSync_init.h>
-#include <third_party/protocols/ptp/ptpd/dep/icss_ptpd_driver.h>
-#include <protocols/ethernetip_adapter/version.h>
-#include <examples/ethernetip_adapter/eip_main.h>
-#include <protocols/ethernetip_adapter/include/icss_dlr.h>
-#include <examples/ethernetip_adapter/app_restart.h>
-#include <examples/ethernetip_adapter/tiswitch_pruss_intc_mapping.h>
+#include <Include/protocol/icss_ptpd_driver.h>
 
-#include <examples/ethernetip_adapter/eip_soc.h>
+#include <Include/firmware/version.h>
+#include <Include/protocol/eip_main.h>
+#include <Include/protocol/icss_dlr.h>
+#include <Include/protocol/app_restart.h>
+#include <Include/firmware/tiswitch_pruss_intc_mapping.h>
+#include <Include/protocol/eip_soc.h>
+
 
 #ifdef SOC_K2G
 #define CSL_ICSSCFG_GPCFG0_PRU0_GP_MUX_SEL_MASK                 (0x3C000000U)

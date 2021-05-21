@@ -19,8 +19,9 @@
 #include <xdc/runtime/Error.h>
 #include <assert.h>
 
-#include <protocols/ethernetip_adapter/include/icss_dlr.h>
-#include <protocols/ethernetip_adapter/include/icss_eip_driver.h>
+#include <Include/protocol/icss_dlr.h>
+#include <Include/protocol/icss_eip_driver.h>
+
 
 
 #include <ti/drv/icss_emac/icss_emacFwInit.h>
@@ -33,8 +34,10 @@
 
 
 #include <ti/csl/src/ip/icss/V1/cslr_icss_intc.h>
-#include "eip_main.h"
-#include "eip_tools.h"
+
+#include <Include/protocol/eip_main.h>
+#include <Include/protocol/eip_tools.h>
+
 
 /* ========================================================================== */
 /*                            Global Variables                                */

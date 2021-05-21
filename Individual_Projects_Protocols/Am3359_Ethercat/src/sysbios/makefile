@@ -19,9 +19,9 @@ BIOS_INC = -I"/home/valentim/ti/bios_6_76_03_01/packages/"
 ANNEX_INCS = 
 INCS = $(BIOS_INC) $(ANNEX_INCS) -I"/home/valentim/ti/bios_6_76_03_01/packages/" -I"/home/valentim/ti/pdk_am335x_1_0_17/packages/" -I"/home/valentim/ti/edma3_lld_2_12_05_30E/packages/" -I"/home/valentim/ti/ndk_3_61_01_01/packages/" -I"/home/valentim/ti/uia_2_30_01_02/packages/" -I"/home/valentim/ti/xdctools_3_55_02_22_core/packages/" -I"../" -I"/packages//"  -I/home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/newlib-nano -I/home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
 
-CC = /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gcc -c -MD -MF $@.dep $(CCOPTS)
-ASM = /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gcc -c -x assembler-with-cpp $(CCOPTS)
-AR = /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-ar cr
+CC = /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gcc -c -MD -MF $@.dep $(CCOPTS)
+ASM = /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gcc -c -x assembler-with-cpp $(CCOPTS)
+AR = /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-ar cr
 
 DEL = rm -f
 CP = cp -f

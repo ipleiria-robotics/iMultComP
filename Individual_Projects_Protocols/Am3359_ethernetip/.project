@@ -67,10 +67,6 @@
 			<value>$%7BCOM_TI_PDK_INSTALL_DIR%7D/packages</value>
 		</variable>
 		<variable>
-			<name>IA_SDK_HOME</name>
-			<value>$%7BTI_PRODUCTS_DIR__TIREX%7D/PRU-ICSS-EthernetIP_Adapter_01.00.03.04</value>
-		</variable>
-		<variable>
 			<name>ICSS_EMAC_INSTALL_PATH</name>
 			<value>$%7BCOM_TI_PDK_INSTALL_DIR%7D/packages</value>
 		</variable>

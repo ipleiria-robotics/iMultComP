@@ -43,7 +43,7 @@
 #include <ti/starterware/include/board.h>
 #include <ti/starterware/include/prcm.h>
 #include <ti/starterware/include/error.h>
-#include <examples/board/include/board_platform.h>
+#include <Include/board/board_platform.h>
 #include <ti/starterware/include/device.h>
 
 /* ========================================================================== */

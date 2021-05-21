@@ -37,7 +37,8 @@
 /* ========================================================================== */
 /*                             Include Files                                  */
 /* ========================================================================== */
-#include <examples/board/include/board_tlkphy.h>
+
+#include <Include/board/board_tlkphy.h>
 #include <ti/csl/src/ip/mdio/V2/cslr_mdio.h>
 #include <ti/csl/src/ip/mdio/V2/csl_mdio.h>
 #include <ti/csl/src/ip/mdio/V2/csl_mdioAux.h>

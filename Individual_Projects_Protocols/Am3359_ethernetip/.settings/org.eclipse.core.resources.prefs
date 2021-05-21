@@ -16,5 +16,7 @@ encoding//AM335x_debug/soc_am335x/subdir_vars.mk=UTF-8
 encoding//AM335x_debug/source/subdir_rules.mk=UTF-8
 encoding//AM335x_debug/source/subdir_vars.mk=UTF-8
 encoding//AM335x_debug/sources.mk=UTF-8
+encoding//AM335x_debug/stack/subdir_rules.mk=UTF-8
+encoding//AM335x_debug/stack/subdir_vars.mk=UTF-8
 encoding//AM335x_debug/subdir_rules.mk=UTF-8
 encoding//AM335x_debug/subdir_vars.mk=UTF-8

@@ -36,8 +36,9 @@
 #include <ti/sysbios/knl/Clock.h>
 #include <ti/sysbios/knl/Task.h>
 #include <ti/ndk/inc/netmain.h>
-#include "eip_main.h"
-#include "user_acd_ndk.h"
+#include <Include/protocol/eip_main.h>
+#include <Include/protocol/user_acd.h>
+
 
 static void * hCfg;
 static void * cfgHostname;
@@ -98,7 +99,7 @@ void EIPNDK_dHCPReset(uint IfIdx, uint fOwnTask)
         TaskSleep(500);
     }
 
-    /* Find DHCP on the supplied interface*/
+    /* Find DHCP on the supplied interface */
     for(idx = 1; ; idx++)
     {
         /* Find a DHCP entry*/
@@ -210,7 +211,6 @@ static void EIPNDK_serviceReport(uint Item, uint Status, uint Report, void * h)
     Report&0xFF;
     StatusStr[Status];
 
-
      Example of adding to the DHCP configuration space
 
      When using the DHCP client, the client has full control over access
@@ -223,7 +223,9 @@ static void EIPNDK_serviceReport(uint Item, uint Status, uint Report, void * h)
 
      Here, we want to manually add a DNS server to the configuration, but
      we can only do it once DHCP has finished its programming.
+
     */
+
     if(Item == CFGITEM_SERVICE_DHCPCLIENT &&
             Status == CIS_SRV_STATUS_ENABLED &&
             (Report == (NETTOOLS_STAT_RUNNING | DHCPCODE_IPADD) ||
@@ -246,8 +248,7 @@ static void EIPNDK_serviceReport(uint Item, uint Status, uint Report, void * h)
     }
 
     /* Reset DHCP client service on failure*/
-    if(Item == CFGITEM_SERVICE_DHCPCLIENT
-            && (Report & ~0xFF) == NETTOOLS_STAT_FAULT)
+    if(Item == CFGITEM_SERVICE_DHCPCLIENT && (Report & ~0xFF) == NETTOOLS_STAT_FAULT)
     {
         CI_SERVICE_DHCPC dhcpc;
         int tmp;

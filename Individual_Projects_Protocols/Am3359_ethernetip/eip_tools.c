@@ -11,7 +11,8 @@
 /* ========================================================================== */
 /*                             Include Files                                  */
 /* ========================================================================== */
-#include "eip_tools.h"
+
+#include <Include/protocol/eip_tools.h>
 #include <ti/drv/icss_emac/icss_emac_ver.h>
 #include "string.h"
 

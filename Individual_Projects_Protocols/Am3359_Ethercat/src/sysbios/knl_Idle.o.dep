@@ -1,8 +1,8 @@
 knl_Idle.o: \
  /home/valentim/ti/bios_6_76_03_01/packages/ti/sysbios/knl/Idle.c \
  /home/valentim/ti/xdctools_3_55_02_22_core/packages/xdc/std.h \
- /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stdarg.h \
- /home/valentim/ti/ccs1030/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stddef.h \
+ /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stdarg.h \
+ /home/valentim/ti/ccs1031/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include/stddef.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm/std.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/arm/A8F.h \
  /home/valentim/ti/bios_6_76_03_01/packages/gnu/targets/std.h \

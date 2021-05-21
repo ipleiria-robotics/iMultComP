@@ -37,32 +37,39 @@
 /*                             Include Files                                  */
 /* ========================================================================== */
 
-#include <examples/ethernetip_adapter/eip_main.h>
-#include <third_party/protocols/ethernetip_adapter/include/user_api.h>
-#include <third_party/protocols/ethernetip_adapter/include/eip_device.h>
-#include <third_party/protocols/ethernetip_adapter/include/hal.h>
-#include <third_party/protocols/ethernetip_adapter/include/EipConfData.H>
-#include <third_party/protocols/ethernetip_adapter/include/eip_api.h>
-#include <third_party/protocols/ptp/ptpd/dep/icss_ptpd_driver.h>
 #include <ti/drv/uart/UART_stdio.h>
-#include <examples/board/include/board_spi.h>
-#include <examples/board/include/board_tlkphy.h>
-#include <examples/ethernetip_adapter/app_restart.h>
-#include <protocols/ethernetip_adapter/include/icss_eip_firmware.h>
-#include <protocols/ethernetip_adapter/include/icss_dlr.h>
-#include <protocols/ethernetip_adapter/include/icss_eip_mcFltr.h>
-#include <protocols/ethernetip_adapter/include/icss_eip_driver.h>
-#include <protocols/timeSync/include/icss_timeSync.h>
-#include <protocols/common/include/debugtrace.h>
 
-#include <examples/ethernetip_adapter/eip_utils.h>
-#include <examples/ethernetip_adapter/user_acd_ndk.h>
+#include <Include/protocol/eip_main.h>
+#include <Include/protocol/user_api.h>
+#include <Include/protocol/eip_device.h>
+#include <Include/protocol/hal.h>
+#include <Include/protocol/EipConfData.H>
+#include <Include/protocol/eip_api.h>
+#include <Include/protocol/icss_ptpd_driver.h>
+#include <Include/board/board_spi.h>
+#include <Include/board/board_tlkphy.h>
+#include <Include/protocol/app_restart.h>
+
+#include <Include/protocol/icss_eip_firmware.h>
+#include <Include/protocol/icss_dlr.h>
+#include <Include/protocol/icss_eip_mcFltr.h>
+#include <Include/protocol/icss_eip_driver.h>
+#include <Include/protocol/timeSync/icss_timeSync.h>
+#include <Include/protocol/debugtrace.h>
+
+#include <Include/protocol/eip_utils.h>
+#include <Include/protocol/user_acd_ndk.h>_>
+
+
+
 
 #include <ti/drv/icss_emac/icss_emacDrv.h>
 #include <ti/drv/spi/SPIver.h>
 #include <ti/drv/spi/test/qspi_flash/src/Flash_S25FL/S25FL.h>
 
-#include <examples/ethernetip_adapter/eip_soc.h>
+
+
+#include <Include/protocol/eip_soc.h>
 
 extern PRUICSS_Handle handle;
 extern ICSSEMAC_Handle emachandle;

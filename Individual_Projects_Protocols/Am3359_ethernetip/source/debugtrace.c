@@ -34,7 +34,8 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
 
-#include <protocols/common/include/debugtrace.h>
+
+#include <Include/protocol/debugtrace.h>
 
 dbgtrc_cfg_t gDbgTraceCfg = {DEF_DEBUG_PRINT_LEVEL, DEF_DEBUG_ABORT_LEVEL};
 void Debug_Printf(uint32_t Level, char *fmt, ...)

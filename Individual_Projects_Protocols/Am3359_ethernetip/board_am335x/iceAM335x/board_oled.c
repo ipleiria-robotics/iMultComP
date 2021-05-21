@@ -38,8 +38,8 @@
  * \brief This contains specific oled functions.
  *
  ******************************************************************************/
+#include <Include/board/oled_drv.h>
 
-#include <examples/board/include/oled_drv.h>
 
 OLED_RET Board_oledGPIOInit(void)
 {

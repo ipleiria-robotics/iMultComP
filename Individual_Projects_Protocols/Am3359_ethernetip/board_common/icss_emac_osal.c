@@ -44,8 +44,7 @@
 #include <ti/sysbios/hal/Hwi.h>
 #include <ti/sysbios/knl/Clock.h>
 #include <ti/sysbios/timers/dmtimer/Timer.h>
-
-#include <examples/board/include/test_common_utils.h>
+#include <Include/board/test_common_utils.h>
 #include <ti/drv/icss_emac/icss_emac_ver.h>
 /**********************************************************************
  ************************** Local Definitions *************************

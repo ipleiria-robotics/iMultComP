@@ -41,13 +41,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <xdc/runtime/Types.h>
-
-#include <examples/board/include/board_tlkphy.h>
-#include <examples/board/include/soc_icss_header.h>
+#include <Include/board/board_tlkphy.h>
+#include <Include/board/soc_icss_header.h>
 #include <ti/drv/icss_emac/src/phy.h>
 
 #ifdef INCLUDE_TLK_WORKAROUND
-#include <examples/osal/TaskP.h>
+#include <osal/TaskP.h>
+
 
 /**Task Handle for the TLK thread which swaps MDI/MDI-X bits for link*/
 void *tlkTask;
