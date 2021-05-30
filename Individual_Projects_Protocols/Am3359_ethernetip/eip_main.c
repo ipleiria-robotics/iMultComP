@@ -786,7 +786,7 @@ int EIPAPP_main(ICSSEMAC_Handle eipicssEmacHandle)
                     user_input_processing = 0;
                     ipCounter = 0;
 
-                    while((!user_input_processing) && (ipCounter < 20))
+                    while((!user_input_processing) && (ipCounter < 40))  // Increase ipCounter to insert IpAdress
                     {
                         ipCounter++;
                         Task_sleep(1000);
@@ -801,11 +801,10 @@ int EIPAPP_main(ICSSEMAC_Handle eipicssEmacHandle)
                     else
                     {
                         EIPAPP_exitSample();
-
                         ptpDrvStackDeInit(timeSyncHandle);
-
                         NC_NetStop(0);
                         EIPAPP_restartApplication();
+
                     }
 
                     user_input_processing = 1;

@@ -1,7 +1,7 @@
 /**
 * @file main.c
 *
-* @brief Basic example for an EtherNet/IP device running on AM57xx devices.
+* @brief Basic example for an EtherNet/IP device running on AM335x devices.
 * Requires a full ICSS system (both PRUs) and two external phys connected to
 * ICSS MII/MDIO interfaces
 *
@@ -31,8 +31,6 @@
 
  * \section install_sec Installation
  *
- * Build any configuration of the examples and use resulting binaries on
- * Am57xx boards.
  *
  */
 
@@ -73,23 +71,13 @@
 #include <ti/csl/src/ip/mdio/V2/cslr_mdio.h>
 #include <ti/csl/src/ip/mdio/V2/csl_mdio.h>
 #include <ti/csl/src/ip/icss/V1/cslr_icss_cfg.h>
-#if defined(SOC_K2G)
-#include <ti/csl/src/ip/bootcfg/V3/csl_bootcfgAux.h>
-#include <ti/csl/src/ip/bootcfg/V3/csl_bootcfg.h>
-#include <ti/board/src/iceK2G/include/iceK2G_ethernet_config.h>
-#include <ti/csl/src/ip/mdio/V1/cslr_mdio.h>
-#include <ti/csl/src/ip/mdio/V1/csl_mdio.h>
-#include <ti/csl/src/ip/mdio/V1/csl_mdioAux.h>
-#include <ti/csl/src/ip/icss/V1/cslr_icss_pru_ctrl.h>
-#endif
-#if !defined(SOC_K2G)
+
+
 #include <ti/csl/src/ip/mdio/V2/csl_mdioAux.h>
-#endif
 #include <ti/transport/ndk/nimu_icss/nimu_icssEth.h>
-#ifdef SOC_AM335x
 #include <ti/csl/src/ip/gpio/V1/gpio_v2.h>
 #include <ti/starterware/include/hw/soc_am335x.h>
-#endif
+
 #include <ti/drv/spi/SPI.h>
 #include <ti/drv/spi/soc/QSPI_v1.h>
 /* Flash header file */
@@ -102,6 +90,7 @@
 #include <Include/board/board_phy.h>
 #include <Include/board/board_spi.h>
 #include <Include/board/board_eeprom.h>
+#include <Include/board/board_oled.h>
 
 #include <ti/starterware/include/chipdb.h>
 #include <ti/starterware/include/soc_control.h>
@@ -122,14 +111,6 @@
 #include <Include/protocol/eip_soc.h>
 
 
-#ifdef SOC_K2G
-#define CSL_ICSSCFG_GPCFG0_PRU0_GP_MUX_SEL_MASK                 (0x3C000000U)
-#define CSL_ICSSCFG_GPCFG0_PRU0_GP_MUX_SEL_SHIFT                (26U)
-#define CSL_ICSSCFG_GPCFG0_PRU0_GP_MUX_SEL_RESETVAL             (0x00000000U)
-#define CSL_ICSSCFG_GPCFG0_PRU0_GP_MUX_SEL_MAX                  (0x00000004U)
-#define CSL_ICSSCFG_GPCFG0_PRU0_GP_MUX_SEL_MII_MODE_VAL         (2u)
-#endif
-
 /**PTP EDMA scratch memory offsets in L3 OCMC*/
 #define IEP_CONFIG_ADJ_OFFSET               0xC200
 
@@ -141,12 +122,9 @@
  */
 #define ECAP_CLR_CONFIG_OFFSET              IEP_CONFIG_ADJ_OFFSET + 0x10
 
-/* Board specific definitions */
-#ifdef SOC_AM437x
-#define MCSPI_INSTANCE         (2U)
-#else
+
 #define MCSPI_INSTANCE         (3U)
-#endif
+
 
 #define QSPI_PER_CNT            (1U)
 #define QSPI_INSTANCE           (1U)
@@ -168,14 +146,9 @@ PRUICSS_Handle prusshandle;
 ICSS_EmacHandle emachandle;
 
 
-#if defined(SOC_AM335x)
+
 Board_flashHandle flashHandle;
-#elif defined(SOC_K2G)
-extern Board_flashHandle flashHandle;
-extern Board_flashHandle boardFlashHandle;
-#else
-extern S25FL_Handle flashHandle;
-#endif
+
 
 SPI_Handle handle;
 
@@ -315,9 +288,17 @@ void EIPAPP_taskPruss(UArg a0, UArg a1)
 
     GPIO_init();
 
+    // init display
+    Board_oledInit();
+    clear();
+    setline(0);
+    setOrientation(1);
+    printstr((int8_t *)"Ethernet/IP");
+
     PRUICSS_pruDisable(prusshandle, ICSS_EMAC_PORT_1 - 1);
     PRUICSS_pruDisable(prusshandle, ICSS_EMAC_PORT_2 - 1);
 
+    // write firmware into PRU
     if(PRUICSS_pruWriteMemory(prusshandle, PRU_ICSS_IRAM(0) , 0, (uint32_t *) PRU0_FIRMWARE_NAME, sizeof(PRU0_FIRMWARE_NAME)))
     {
         if(PRUICSS_pruWriteMemory(prusshandle, PRU_ICSS_IRAM(1) , 0, (uint32_t *) PRU1_FIRMWARE_NAME, sizeof(PRU1_FIRMWARE_NAME)))
@@ -488,6 +469,8 @@ int main()
     ((ICSS_EmacObject *)emachandle->object)->linkTaskHandle = Task_create((Task_FuncPtr)ICSS_EMacOsLinkTaskFnc, &taskParams, NULL);
 
     PRUICSS_pinMuxConfig(prusshandle, 0x0); // PRUSS pinmuxing
+
+
 
     if(OSDRV_addNetifEntry((NIMUInitFn)&EmacInit, emachandle) == 0)
     {

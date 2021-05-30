@@ -45,6 +45,8 @@
 #include "app_restart.h"
 #include "user_acd_ndk.h"
 
+
+
 /**Escape Key ASCI*/
 #define ESC_KEY     0x1b
 #define ENTER_KEY       0x0D

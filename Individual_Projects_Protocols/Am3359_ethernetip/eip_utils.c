@@ -40,6 +40,7 @@
 #include <Include/protocol/eip_main.h>
 #include <Include/board/board_gpioLed.h>
 #include <Include/board/board_spi.h>
+#include <Include/board/board_oled.h>
 
 #include <ti/drv/spi/SPIver.h>
 #include <ti/drv/spi/test/qspi_flash/src/Flash_S25FL/S25FL.h>
@@ -224,6 +225,16 @@ void EIPUTILS_displayIPDetails()
     UART_printf("\n\rIP Address Assigned: ");
     UART_printf((char *)(chDefaultIP));
     UART_printf("\n\r");
+
+    // print on display Onboard
+    clear();
+    setline(0);
+    setOrientation(1);
+    printstr((int8_t *)" Ethernet/IP    ");
+    setline(2);
+    printstr((int8_t *)(chDefaultIP));
+    scrollDisplayRight();
+
 }
 /**
  *  @brief  Function displays Assigned macid in serial console
@@ -371,7 +382,7 @@ EIP_BOOL EIPUTILS_assignUserIP(char *userIPAddress)
         ipAddr = inet_addr(userIPAddress);
         EIPUTILS_changeIPEndianness(&ipAddr);
         tcpControl.deviceIP = ipAddr;
-        tcpControl.networkMask = 0xffffff00;
+        tcpControl.networkMask = 0xffffff00;  // 255 255 255 0
         tcpControl.startupType = EIP_STARTUP_STATICIP;
 
         Board_flashOffsetToBlkPage((Board_flashHandle)flashHandle, SPI_EEPROM_DEVICEIP_OFFSET,
