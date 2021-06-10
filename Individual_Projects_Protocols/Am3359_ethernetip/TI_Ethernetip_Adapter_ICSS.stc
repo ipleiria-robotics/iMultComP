@@ -1,0 +1,155 @@
+ StcRev Data |1.24|CT-15|TI_Ethernetip_Adapter_ICSS|1540901130| DevData |255|0|2000|600|15000,3000| ||ENet|
+[<00>]-------|TI/Molex EIP Adapter||
+  General    |3.23|EtherNet/IP Vol 2, Ed 1.23||1.01|Texas Instruments|806|1026|
+  DevProfile |12|Communications Adapter|,04,05,06,07,08,09,10,11,15,16,29,30,32,33,43,55,243,244,245,246,67,71,72,77,84,85,86,87,69,81,68,70,82,78,79,80,83,92|
+  PhysConf   |10|X| |X| | | | | |0|X| | |
+  LEDs       |X|X| | | |
+  IP MAC Set | |X| |192.168.1.12| |X||68:9e:19:ba:e4:06| |X|X|
+  CRate Set  | |X|X| |X|X||
+  CRate Sup  |X|X| |X|X|
+  Net Behavi | | ||| | | | |X|X|X|
+  Cxn Behavi | | | |X| | | | | | ||| | |-1|1000|1000| |1024| |
+  FO Path    ||||||||||||| |
+  FO-IO Data | | | | | | | | | | | || | | | | | || | | |
+  Cfg-IO Dat ||||
+  Reserved   ||
+  Safety Data| | | | | | | | | | | | | | | | |X| | |
+  Reserved   | |
+  Safety IO  |||||||||||||15|1000|1|1||
+  Safety Cfg |||||||||||| | | | |||2|
+  Reserved   | |
+[<01>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | =(1)| =(1)| | | | |
+  CS         |X| |X| | | | | | | | | |
+  CSP        |||||||||||||
+  IAG        |X|X|X|X|X|X|X| | | | | | | | | | | | |
+  IAS        | | | | | | | | | | | | | | | | | | | |
+  IAL        | =(806)| =(12)| =(1026)| =(1.01)| | | =(TI/Molex EIP Adapter)| | | | | | | | | | | | |
+  IS         |X|X|X| | | | | | | | | |
+  ISP        ||1|||||||||||
+  VSA        | |
+  OPT        | | |
+[<02>]--------------------------------------------------
+  CAG        | | | | | | | |
+  CAS        | | | | | | | |
+  CAL        | | | | | | | |
+  CS         | | | | | | | | | | | |
+  CSP        ||||||||||||
+  IAG        | | | | |
+  IAS        | | | | |
+  IAL        | | | | |
+  IS         | | | | | | | | | | | |
+  ISP        ||||||||||||
+  VSA        | |
+  OPT        | | |
+[<04a>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | | | | | | |
+  CS         | | |X| | | | | | | | |
+  CSP        ||||||||||||
+  IAG        | | |X| |
+  IAS        | | | | |
+  IAL        | | | | |
+  IS         | |X|X| | | | | | | |
+  ISP        |||||||||||
+  VSA        | |
+  OPT        | | |
+  OPT        |101|
+[<04b>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | | | | | | |
+  CS         | | |X| | | | | | | | |
+  CSP        ||||||||||||
+  IAG        | | |X| |
+  IAS        | | |X| |
+  IAL        | | | | |
+  IS         | |X|X| | | | | | | |
+  ISP        |||||||||||
+  VSA        | |
+  OPT        | | |
+  OPT        |102,198,199|
+[<04d>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | | | | | | |
+  CS         | | |X| | | | | | | | |
+  CSP        ||||||||||||
+  IAG        | | |X| |
+  IAS        | | | | |
+  IAL        | | | | |
+  IS         | |X|X| | | | | | | |
+  ISP        |||||||||||
+  VSA        | |
+  OPT        | | |
+  OPT        |103|
+[<06>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | =(1)| =(1)| | | | |
+  CS         |X|X| | | | | | | | |
+  CSP        |||||||||||
+  IAG        |X|X|X|X|X|X|X|X| | | | | | | | | | | |
+  IAS        | | | | | | | | | | | | | | | | | | | |
+  IAL        | | | | | | | | | | | | | | | | | | | |
+  IS         |X| |X| |X| |X| | | |X| | | | | | | |
+  ISP        |||||||||||||||||||
+  VSA        | |
+  OPT        | | |
+  OPT        |<PossibleConnections><CIPConnection connectionNameString="Exclusive Owner 1" ePath="200424672c662c65"><TriggerAndTransport class1="1" triggerCyclic="1" triggerChangeOfState="1"><TransportTypeExclusiveOwner transportTypeExclusiveOwner="1"/></TriggerAndTransport><Originator2TargetParameters><ConnectionParameters fixedSizeSupported="1" realTimeTransferFormat="4" connectionTypeMulticast="1" connectionTypePoint2Point="1" priorityLow="1" priorityHigh="1" priorityScheduled="1"/><Size><Constant constValue="1" minValue="1" maxValue="1"/></Size></Originator2TargetParameters><Target2OriginatorParameters><ConnectionParameters fixedSizeSupported="1" realTimeTransferFormat="0" connectionTypeMulticast="1" connectionTypePoint2Point="1" priorityScheduled="1"/><Size><Constant constValue="1" minValue="1" maxValue="1"/></Size></Target2OriginatorParameters></CIPConnection><CIPConnection connectionNameString="Listen Only 1" ePath="200424672cc72c65"><TriggerAndTransport class1="1" server="1" triggerCyclic="1"><TransportTypeListenOnly transportTypeListenOnly="1"/></TriggerAndTransport><Originator2TargetParameters><ConnectionParameters fixedSizeSupported="1" realTimeTransferFormat="3" connectionTypePoint2Point="1" priorityScheduled="1"/><Size><Constant constValue="0" minValue="0" maxValue="0"/></Size></Originator2TargetParameters><Target2OriginatorParameters><ConnectionParameters fixedSizeSupported="1" realTimeTransferFormat="0" connectionTypeMulticast="1" priorityScheduled="1"/><Size><Constant constValue="1" minValue="1" maxValue="1"/></Size></Target2OriginatorParameters></CIPConnection><CIPConnection connectionNameString="Input Only 1" ePath="200424672cc62c65"><TriggerAndTransport class1="1" server="1" triggerCyclic="1"><TransportTypeInputOnly transportTypeInputOnly="1"/></TriggerAndTransport><Originator2TargetParameters><ConnectionParameters fixedSizeSupported="1" realTimeTransferFormat="3" connectionTypePoint2Point="1" priorityScheduled="1"/><Size><Constant constValue="0" minValue="0" maxValue="0"/></Size></Originator2TargetParameters><Target2OriginatorParameters><ConnectionParameters fixedSizeSupported="1" realTimeTransferFormat="0" connectionTypeMulticast="1" priorityScheduled="1"/><Size><Constant constValue="1" minValue="1" maxValue="1"/></Size></Target2OriginatorParameters></CIPConnection></PossibleConnections>|
+[<245>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | =(1)| =(1)| | | | |
+  CS         |X|X| | | | | | | | |
+  CSP        |||||||||||
+  IAG        |X|X|X|X|X|X| | |X|X| |X| | | | |
+  IAS        | | |X| |X|X| | |X|X| |X| | | | |
+  IAL        | =(1,17)| =(212)| | | | | =(1..255)| | | | | =(0..3600)| | | | |
+  IS         |X| |X|X| | | | | | | | | |
+  ISP        ||||||||||||||
+  VSA        | |
+  OPT        | | |
+[<246>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | | | | | | |
+  CS         |X|X| | | | | | | | |
+  CSP        |||||||||||
+  IAG        |X|X|X|X|X|X| | | |X|X| | | | |
+  IAS        | | | | | |X| | | | | | | | | |
+  IAL        | =(0,10,100)| |MAC address (68:9e:19:ba:e4:06)| | | | | | | | | | | | |
+  IS         |X|X|X|X| | | | | | | |
+  ISP        ||||||||||||
+  VSA        | |
+  OPT        | | |
+[<71>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | | | | | | |
+  CS         |X|X| | | | | | | | |
+  CSP        |||||||||||
+  IAG        |X|X| | | | | | | |X| |X| | | | | | | |
+  IAS        | | | | | | | | | | | | | | | | | | | |
+  IAL        | =(0..1)| =(0..4)| =(0..4)| | | | | | | | | =(129,130,161,162,193,194,225,226)| | =(0..5)| | | | | |
+  IS         |X|X| | | | | | | | | | | | |
+  ISP        |||||||||||||||
+  VSA        | |
+  OPT        | | |
+[<72>]--------------------------------------------------
+  CAG        |X|X|X| | | | |
+  CAS        | | | | | | | |
+  CAL        | | =(1)| =(1)| | | | |
+  CS         |X| | | | | | | | | |
+  CSP        |||||||||||
+  IAG        | | | |X|X|X|X|X|
+  IAS        | | | |X|X|X|X|X|
+  IAL        | =(0)| =(59)| =(47)| =(55)| =(47)| =(43)| =(31)| =(27)|
+  IS         |X|X| | | | | | | |
+  ISP        ||||||||||
+  VSA        | |
+  OPT        | | |
+[--------------------------------------------------------

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.33.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x0127" DeviceID="0x0301">
+      <InfoText TextId="Device sale Name"/>
+      <VendorName Value="Molex"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="Molex I/O Device"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DIM 1" MultipleWriteSupported="true" NameOfStationNotTransferable="true" PhysicalSlots="0..3" ModuleIdentNumber="0x10100000" MinDeviceInterval="32" ImplementationType="Intel" DNS_CompatibleName="molex-dev" FixedInSlots="0" ObjectUUID_LocalIndex="1" IO_SupervisorSupported="false" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" CheckDeviceID_Allowed="false" PNIO_Version="V2.33" ResetToFactoryModes="2" LLDP_NoD_Supported="true">
+          <!--                 -->
+          <!-- Molex I/O Device sample-->
+          <!--                 -->
+          <ModuleInfo>
+            <Name TextId="DAP"/>
+            <InfoText TextId="DAP Desc"/>
+            <VendorName Value="Molex"/>
+            <OrderNumber Value="SDK-PFN-DEV"/>
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+          <SubslotList>  
+           <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>  
+           <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>  
+           <SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>  
+         </SubslotList>                       
+         <IOConfigData MaxInputLength="22" MaxOutputLength="22"/>
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="IN_MODULE" AllowedInSlots="1..3"/>
+            <ModuleItemRef ModuleItemTarget="OUT_MODULE" AllowedInSlots="1..3"/>
+            <ModuleItemRef ModuleItemTarget="IN_OUT_MODULE" AllowedInSlots="1..3"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMI 1" SubmoduleIdentNumber="0x10110000" MayIssueProcessAlarm="true">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="DAP"/>
+                <InfoText TextId="DAP Desc"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="ISMI00000001" SupportedProtocols="LLDP;SNMP" DCP_HelloSupported="false" NetworkComponentDiagnosisSupported="false" SubslotNumber="32768" TextId="TOK_Subslot_8000" SubmoduleIdentNumber="0x10110001" SupportedRT_Classes="RT_CLASS_1" PTP_BoundarySupported="true" DCP_BoundarySupported="true" Writeable_IM_Records="1 2 3 4">
+              <ApplicationRelations PullModuleAlarmSupported="true" StartupMode="Advanced;Legacy">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client" MRPD_Supported="false" MRT_Supported="false" AdditionalProtocolsSupported="false"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_1P1" SubslotNumber="32769" TextId="TOK_Port1" SubmoduleIdentNumber="0x10110002" SupportsRingportConfig="false" IsDefaultRingport="true">
+              <MAUTypeList>
+                <MAUTypeItem Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_1P2" SubslotNumber="32770" TextId="TOK_Port2" SubmoduleIdentNumber="0x10110003" SupportsRingportConfig="false" IsDefaultRingport="true">
+              <MAUTypeList>
+                <MAUTypeItem Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="IN_MODULE" ModuleIdentNumber="0x10200000">
+          <ModuleInfo CategoryRef="Input slot">
+            <Name TextId="Input Integer 8"/>
+            <InfoText TextId="Input Integer 8 Info"/>
+            <OrderNumber Value="SDK-PFN-DEV"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="SM_IN" SubmoduleIdentNumber="0x10220001" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Integer8" TextId="Data"/>
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="3" TransferSequence="0">
+                  <Name TextId="General parameters"/>
+                  <Const Data="0x34,0x01,0x00" ByteOffset="0"/>
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="Input Integer 8"/>
+                <InfoText TextId="Input Integer 8 Info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="OUT_MODULE" ModuleIdentNumber="0x10300000">
+          <ModuleInfo CategoryRef="Output slot">
+            <Name TextId="Output Integer 8"/>
+            <InfoText TextId="Output Integer 8 Info"/>
+            <OrderNumber Value="SDK-PFN-DEV"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="SM_OUT" SubmoduleIdentNumber="0x10330001" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Integer8" TextId="Data"/>
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="3" TransferSequence="0">
+                  <Name TextId="General parameters"/>
+                  <Const Data="0x34,0x01,0x00" ByteOffset="0"/>
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="Output Integer 8"/>
+                <InfoText TextId="Output Integer 8 Info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="IN_OUT_MODULE" ModuleIdentNumber="0x10400000" PhysicalSubslots="2..3">
+          <ModuleInfo CategoryRef="Modular slot">
+            <Name TextId="Modular module text"/>
+            <InfoText TextId="Modular module help"/>
+            <OrderNumber Value="SDK-PFN-DEV"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="SM_IN_OUT" SubmoduleIdentNumber="0x10400003" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Unsigned16" TextId="Data IN"/>
+                  <DataItem DataType="Unsigned16" TextId="Data IN"/>
+                  <DataItem DataType="Unsigned16" TextId="Data IN"/>
+                  <DataItem DataType="Unsigned16" TextId="Data IN"/>
+                </Input>
+                <Output>
+                  <DataItem DataType="Unsigned16" TextId="Data OUT"/>
+                  <DataItem DataType="Unsigned16" TextId="Data OUT"/>
+                  <DataItem DataType="Unsigned16" TextId="Data OUT"/>
+                  <DataItem DataType="Unsigned16" TextId="Data OUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="Main Subslot List">
+                <Name TextId="Subslot In/Out"/>
+                <InfoText TextId="Subslot In/Out Desc"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <UseableSubmodules>
+            <SubmoduleItemRef SubmoduleItemTarget="SM1_IN" AllowedInSubslots="2..3"/>
+            <SubmoduleItemRef SubmoduleItemTarget="SM1_OUT" AllowedInSubslots="2..3"/>
+          </UseableSubmodules>
+        </ModuleItem>
+      </ModuleList>
+   
+   <SubmoduleList>
+            <SubmoduleItem ID="SM1_IN" SubmoduleIdentNumber="0x10400001" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned16" TextId="Data IN"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="SM1_OUT" SubmoduleIdentNumber="0x10400002" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned16" TextId="Data OUT"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+      </SubmoduleList>
+      <CategoryList>
+        <CategoryItem ID="Input slot" TextId="Input slot"/>
+        <CategoryItem ID="Output slot" TextId="Output slot"/>
+        <CategoryItem ID="Modular slot" TextId="Modular slot"/>
+        <CategoryItem ID="Main Subslot List" TextId="Main Subslot List"/>
+      </CategoryList>
+      <!--      -->
+      <!-- Text -->
+      <!--      -->
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!-- Information -->
+          <Text TextId="TOK_Subslot_8000" Value="X1"/>
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1"/>
+          <Text TextId="TOK_Subslot_8002" Value="X1 P2"/>
+          <Text TextId="Data IN" Value="Input Data"/>
+          <Text TextId="Data OUT" Value="Output Data"/>
+          <Text TextId="TOK_Port1" Value="Port 1"/>
+          <Text TextId="TOK_Port2" Value="Port 2"/>
+          
+          <Text TextId="Main Subslot List" Value="Main Subslot"/>
+          <Text TextId="Subslot In/Out" Value="Subslot In/Out"/>
+          <Text TextId="Subslot In/Out Desc" Value="Subslot In/Out Description"/>
+          <Text TextId="Subslot In" Value="Subslot In"/>
+          <Text TextId="Subslot In Desc" Value="Subslot In Description"/>
+          <Text TextId="Subslot Out" Value="Subslot Out"/>
+          <Text TextId="Subslot Out Desc" Value="SubslotOut Description"/>
+          <Text TextId="Modular module text" Value="Modular"/>
+          <Text TextId="Modular module help" Value="A Module  that accept different submmodule "/>
+          <Text TextId="Modular slot" Value="Modular slot"/>
+          <Text TextId="Output slot" Value="Output slot"/>
+          <Text TextId="Input slot" Value="Input slot"/>
+          <Text TextId="Device sale Name" Value="Molex device"/>
+          <Text TextId="DAP" Value="Molex-TI sample device"/>
+          <Text TextId="DAP Desc" Value="Device Access Point Description"/>
+          <Text TextId="Data" Value="Data"/>
+          
+          <!-- Module Name -->
+          <Text TextId="Input Integer 8" Value="Input Integer 8"/>
+          <Text TextId="Input Integer 8 Info" Value="Input Integer 8"/>
+          <Text TextId="Output Integer 8" Value="Output Integer 8"/>
+          <Text TextId="Output Integer 8 Info" Value="Output Integer 8"/>
+          <Text TextId="General parameters" Value="General parameters"/>
+        </PrimaryLanguage>
+        <Language xml:lang="fr">
+          <!-- Information -->
+          <Text TextId="TOK_Subslot_8000" Value="X1"/> 
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1"/> 
+          <Text TextId="TOK_Subslot_8002" Value="X1 P2"/> 
+          <Text TextId="TOK_Port1" Value="Port 1"/> 
+          <Text TextId="TOK_Port2" Value="Port 2"/>          
+          <Text TextId="Data IN" Value="Donnee d entree"/>
+          <Text TextId="Data OUT" Value="donnee de sortie"/>
+          
+          
+          
+          <Text TextId="Main Subslot List" Value="Sous slot principal"/>
+          <Text TextId="Subslot In/Out" Value="Sous slot entree/sortie"/>
+          <Text TextId="Subslot In/Out Desc" Value="Description du sous slot"/>
+          <Text TextId="Subslot In" Value="Sous slot d entree"/>
+          <Text TextId="Subslot In Desc" Value="Description du Sous slot d entree"/>
+          <Text TextId="Subslot Out" Value="Sous slot de sortie"/>
+          <Text TextId="Subslot Out Desc" Value="Description du sous slot de sortie"/>
+          <Text TextId="Modular module text" Value="Modulaire"/>
+          <Text TextId="Modular module help" Value="Un module qui accepte different sous module "/>
+          <Text TextId="Modular slot" Value="Slot Modulaire"/>
+          <Text TextId="Output slot" Value="Slot de sortie"/>
+          <Text TextId="Input slot" Value="Slot d entree"/>
+          <Text TextId="Device sale Name" Value="Molex device"/>
+          <Text TextId="DAP" Value="Exemple de device Molex-TI"/>
+          <Text TextId="DAP Desc" Value="Description du point d'acces"/>
+          <Text TextId="Data" Value="Donnee"/>
+          
+          <!-- Module Name -->
+          <Text TextId="Input Integer 8" Value="entree 8 bits"/>
+          <Text TextId="Input Integer 8 Info" Value="entree 8 bits"/>
+          <Text TextId="Output Integer 8" Value="Sortie 8 bits"/>
+          <Text TextId="Output Integer 8 Info" Value="Sortie 8 bits"/>
+          <Text TextId="General parameters" Value="Parametres generaux"/>
+        </Language>
+  
+        <Language xml:lang="de">
+          <!-- Information -->
+          <Text TextId="TOK_Subslot_8000" Value="X1"/> 
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1"/> 
+          <Text TextId="TOK_Subslot_8002" Value="X1 P2"/> 
+          <Text TextId="TOK_Port1" Value="Port 1"/> 
+          <Text TextId="TOK_Port2" Value="Port 2"/> 
+
+          <Text TextId="Data IN" Value="Eingang data"/>
+          <Text TextId="Data OUT" Value="Ausgang data"/>
+          
+          
+          
+          <Text TextId="Main Subslot List" Value="Haupt Subslot"/>
+          <Text TextId="Subslot In/Out" Value="Eingang/Ausgang subslot"/>
+          <Text TextId="Subslot In/Out Desc" Value="Eingang/Ausgang Subslot Beschreibung"/>
+          <Text TextId="Subslot In" Value="Eingang subslot"/>
+          <Text TextId="Subslot In Desc" Value="Eingang subslot Beschreibung"/>
+          <Text TextId="Subslot Out" Value="Ausgang subslot"/>
+          <Text TextId="Subslot Out Desc" Value="Ausgang subslot Beschreibung"/>
+          <Text TextId="Modular module text" Value="Modular"/>
+          <Text TextId="Modular module help" Value="Ein Modul, das verschiedene Sub-Modul akzeptiert"/>
+          <Text TextId="Modular slot" Value="Modular Slot"/>
+          <Text TextId="Output slot" Value="Ausgang subslot"/>
+          <Text TextId="Input slot" Value="Eingang slot"/>
+          <Text TextId="Device sale Name" Value="Molex device"/>
+          <Text TextId="DAP" Value="Molex-TI device"/>
+          <Text TextId="DAP Desc" Value="Dap "/>
+          <Text TextId="Data" Value="Daten"/>
+          
+          <!-- Module Name -->
+          <Text TextId="Input Integer 8" Value="8 bits eingang"/>
+          <Text TextId="Input Integer 8 Info" Value="8 bits eingang information"/>
+          <Text TextId="Output Integer 8" Value="8 bits Ausgang"/>
+          <Text TextId="Output Integer 8 Info" Value="8 bits Ausgang information"/>
+          <Text TextId="General parameters" Value="General parametrizerung"/>
+        </Language>  
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

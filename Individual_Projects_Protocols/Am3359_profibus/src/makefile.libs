@@ -1,6 +1,6 @@
 #
 # This file was generated based on the configuration script:
-#     C:\iMultComP\Individual_Projects_Protocols\Am3359_ethernetip\am335x_app.cfg
+#     C:\Users\varod\OneDrive\Ambiente de Trabalho\iMultComP\Individual_Projects_Protocols\Am3359_profibus\am335x_app.cfg
 #
 # This makefile may be included in other makefiles that need to build
 # the libraries containing the compiled source files generated as
@@ -14,7 +14,7 @@
 #
 # The absolute path to the generated source directory (at the time the
 # sources were generated) is:
-#    C:\iMultComP\Individual_Projects_Protocols\Am3359_ethernetip\src
+#    C:\Users\varod\OneDrive\Ambiente de Trabalho\iMultComP\Individual_Projects_Protocols\Am3359_profibus\src
 #
 GEN_SRC_DIR ?= ../src
 

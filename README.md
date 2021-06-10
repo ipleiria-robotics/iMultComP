@@ -34,7 +34,12 @@ PRU-ICSS was designed with real-time industrial communications in mind. Ethernet
 - In the folder AM335x_PRU_Examples, there are several tutorials to learn how to program the PRU´s but also to better understand how the PRU´s work inside the ARM AM335x processor
 
 
+## Github Organization 
 
+-  In order to have competence on Texas tools I recommend starting with the tutorials that are in the folder `AM335X_PRU_Examples`
 
+- After performing the previous step, you are ready to understand the construction of industrial protocols with TI-RTOS. The projects are in the `Individual_Projects_Protocols` folder. 
+
+- In the folder `Auto_detection_protocol` there is a project that detects the protocol automatically. This project is useful for creating a bootloader capable of automatically starting any project present in the `Individual_Projects_Protocols` folder. 
 
 
